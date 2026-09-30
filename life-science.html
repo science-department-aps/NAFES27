@@ -3,1294 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بنك أسئلة علوم الحياة - الصف السادس</title>
+    <title>بنك أسئلة علوم الحياة - منصة الاختبارات التفاعلية</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Cairo Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #2e7d32;
-            --primary-hover: #1b5e20;
-            --bg-color: #f4f8f5;
-            --card-bg: #ffffff;
-            --border-color: #c8e6c9;
-            --badge-bg: #4caf50;
-            --text-color: #2c3e50;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-            direction: rtl;
-        }
-
-        .quiz-container {
-            max-width: 900px;
-            margin: auto;
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .header-title {
-            text-align: center;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-
-        .question-card {
-            border: 1px solid var(--border-color);
-            background-color: #fafdfa;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .question-card:hover {
-            box-shadow: 0 2px 8px rgba(46, 125, 50, 0.15);
-            border-color: var(--primary-color);
-        }
-
-        .badge-ls {
-            display: inline-block;
-            background-color: var(--badge-bg);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .question-text {
-            font-size: 16px;
-            font-weight: 600;
-            margin: 12px 0;
-            line-height: 1.6;
-        }
-
-        .options-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .options-list li {
-            margin-bottom: 10px;
-        }
-
-        .options-list label {
-            display: flex;
-            align-items: center;
-            padding: 10px 14px;
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            background-color: #fff;
-            cursor: pointer;
-            transition: background 0.2s, border-color 0.2s;
-        }
-
-        .options-list label:hover {
-            background-color: #e8f5e9;
-            border-color: var(--badge-bg);
-        }
-
-        .options-list input[type="radio"] {
-            margin-left: 12px;
-            accent-color: var(--primary-color);
-        }
+        body { font-family: 'Cairo', sans-serif; }
     </style>
 </head>
-<body>
-
-<div class="quiz-container">
-    <div class="header-title">
-        <h2>بنك أسئلة علوم الحياة - الصف السادس</h2>
-        <p>تحليل المؤشرات والأسئلة الشاملة (106 سؤالًا)</p>
-    </div>
-
-    <!-- 1-1 – المؤشر 1-1-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="1-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-1-1-5-6</span>
-        <div class="question-text">س1: أي تركيب خلوي يُعد مركز التحكم في معظم أنشطة الخلية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q1" value="A"> أ) النواة</label></li>
-            <li><label><input type="radio" name="q1" value="B"> ب) الجدار الخلوي</label></li>
-            <li><label><input type="radio" name="q1" value="C"> ج) السيتوبلازم</label></li>
-            <li><label><input type="radio" name="q1" value="D"> د) الغشاء الخلوي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-1-1-5-6</span>
-        <div class="question-text">س2: أي مما يأتي يوجد داخل الخلية ويساعد على احتواء التراكيب الخلوية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q2" value="A"> أ) الغشاء الخلوي</label></li>
-            <li><label><input type="radio" name="q2" value="B"> ب) النواة</label></li>
-            <li><label><input type="radio" name="q2" value="C"> ج) الجدار الخلوي</label></li>
-            <li><label><input type="radio" name="q2" value="D"> د) البلاستيدة الخضراء</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-1-1-5-6</span>
-        <div class="question-text">س3: ما الوظيفة الأساسية للغشاء الخلوي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q3" value="A"> أ) تنظيم دخول المواد وخروجها</label></li>
-            <li><label><input type="radio" name="q3" value="B"> ب) إنتاج الغذاء</label></li>
-            <li><label><input type="radio" name="q3" value="C"> ج) حمل الصفات الوراثية فقط</label></li>
-            <li><label><input type="radio" name="q3" value="D"> د) إعطاء النبات لونه الأخضر</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-1-1-5-6</span>
-        <div class="question-text">س4: أي تركيب يوجد في الخلية النباتية ويساعدها على القيام بالبناء الضوئي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q4" value="A"> أ) البلاستيدات الخضراء</label></li>
-            <li><label><input type="radio" name="q4" value="B"> ب) النواة</label></li>
-            <li><label><input type="radio" name="q4" value="C"> ج) السيتوبلازم</label></li>
-            <li><label><input type="radio" name="q4" value="D"> د) الغشاء الخلوي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-1-1-5-6</span>
-        <div class="question-text">س5: أين توجد معظم مكونات الخلية وتحدث فيها كثير من العمليات الحيوية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q5" value="A"> أ) السيتوبلازم</label></li>
-            <li><label><input type="radio" name="q5" value="B"> ب) الجدار الخلوي</label></li>
-            <li><label><input type="radio" name="q5" value="C"> ج) النواة</label></li>
-            <li><label><input type="radio" name="q5" value="D"> د) البلاستيدات الخضراء</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-1-1-5-6</span>
-        <div class="question-text">س6: أي زوج يمثل تركيبًا خلويًا ووظيفة مرتبطة به بصورة صحيحة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q6" value="A"> أ) النواة ـ تنظيم أنشطة الخلية</label></li>
-            <li><label><input type="radio" name="q6" value="B"> ب) الجدار الخلوي ـ إنتاج الغذاء</label></li>
-            <li><label><input type="radio" name="q6" value="C"> ج) السيتوبلازم ـ منع مرور جميع المواد</label></li>
-            <li><label><input type="radio" name="q6" value="D"> د) الغشاء الخلوي ـ تخزين المعلومات الوراثية</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-1-1-5-6</span>
-        <div class="question-text">س7: أي مما يأتي مثال على مخلوق وحيد الخلية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q7" value="A"> أ) البكتيريا</label></li>
-            <li><label><input type="radio" name="q7" value="B"> ب) الإنسان</label></li>
-            <li><label><input type="radio" name="q7" value="C"> ج) شجرة النخيل</label></li>
-            <li><label><input type="radio" name="q7" value="D"> د) القط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-1-1-5-6</span>
-        <div class="question-text">س8: ما الذي يميز المخلوق عديد الخلايا عن المخلوق وحيد الخلية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q8" value="A"> أ) يتكون من عدد كبير من الخلايا</label></li>
-            <li><label><input type="radio" name="q8" value="B"> ب) لا يحتوي على خلايا</label></li>
-            <li><label><input type="radio" name="q8" value="C"> ج) لا يقوم بعمليات حيوية</label></li>
-            <li><label><input type="radio" name="q8" value="D"> د) لا يحتاج إلى الغذاء</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-1-1-5-6</span>
-        <div class="question-text">س9: إذا تضررت النواة في خلية، فأي وظيفة تتأثر مباشرة أكثر؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q9" value="A"> أ) تنظيم أنشطة الخلية</label></li>
-            <li><label><input type="radio" name="q9" value="B"> ب) تكوين الجدار الخلوي فقط</label></li>
-            <li><label><input type="radio" name="q9" value="C"> ج) امتصاص الضوء فقط</label></li>
-            <li><label><input type="radio" name="q9" value="D"> د) إعطاء الخلية شكلها فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-1-1-5-6</span>
-        <div class="question-text">س10: أي عبارة تربط التركيب بالوظيفة بصورة صحيحة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q10" value="A"> أ) البلاستيدات الخضراء تساعد النبات على إنتاج الغذاء</label></li>
-            <li><label><input type="radio" name="q10" value="B"> ب) النواة تسمح بمرور الماء فقط</label></li>
-            <li><label><input type="radio" name="q10" value="C"> ج) الغشاء الخلوي ينتج الضوء</label></li>
-            <li><label><input type="radio" name="q10" value="D"> د) السيتوبلازم يحمي النبات من الحيوانات</label></li>
-        </ul>
-    </div>
-
-    <!-- 1-1 – المؤشر 2-1-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="2-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-1-1-5-6</span>
-        <div class="question-text">س11: أي تركيب يميز الخلية النباتية عن الخلية الحيوانية ويساعدها على الدعامة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q11" value="A"> أ) الجدار الخلوي</label></li>
-            <li><label><input type="radio" name="q11" value="B"> ب) الغشاء الخلوي</label></li>
-            <li><label><input type="radio" name="q11" value="C"> ج) النواة</label></li>
-            <li><label><input type="radio" name="q11" value="D"> د) السيتوبلازم</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-1-1-5-6</span>
-        <div class="question-text">س12: أي تركيب يوجد في الخلايا النباتية ويساعد على إنتاج الغذاء؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q12" value="A"> أ) البلاستيدات الخضراء</label></li>
-            <li><label><input type="radio" name="q12" value="B"> ب) الجدار الخلوي</label></li>
-            <li><label><input type="radio" name="q12" value="C"> ج) النواة</label></li>
-            <li><label><input type="radio" name="q12" value="D"> د) السيتوبلازم</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-1-1-5-6</span>
-        <div class="question-text">س13: ما التركيب الموجود في الخلية النباتية والحيوانية معًا؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q13" value="A"> أ) الغشاء الخلوي</label></li>
-            <li><label><input type="radio" name="q13" value="B"> ب) الجدار الخلوي</label></li>
-            <li><label><input type="radio" name="q13" value="C"> ج) البلاستيدة الخضراء</label></li>
-            <li><label><input type="radio" name="q13" value="D"> د) لا شيء مما سبق</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-1-1-5-6</span>
-        <div class="question-text">س14: ما الوظيفة المشتركة للغشاء الخلوي في الخلية النباتية والحيوانية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q14" value="A"> أ) تنظيم مرور المواد إلى الخلية ومنها</label></li>
-            <li><label><input type="radio" name="q14" value="B"> ب) إنتاج الغذاء</label></li>
-            <li><label><input type="radio" name="q14" value="C"> ج) إعطاء الخلية اللون الأخضر</label></li>
-            <li><label><input type="radio" name="q14" value="D"> د) تكوين الجدار الخلوي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-1-1-5-6</span>
-        <div class="question-text">س15: أي مقارنة صحيحة بين الجدار الخلوي والغشاء الخلوي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q15" value="A"> أ) الجدار الخلوي أكثر دعامة، والغشاء ينظم مرور المواد</label></li>
-            <li><label><input type="radio" name="q15" value="B"> ب) كلاهما ينتج الغذاء</label></li>
-            <li><label><input type="radio" name="q15" value="C"> ج) الغشاء يوجد في النبات فقط</label></li>
-            <li><label><input type="radio" name="q15" value="D"> د) الجدار الخلوي يوجد في الحيوان فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-1-1-5-6</span>
-        <div class="question-text">س16: وجود البلاستيدات الخضراء في خلية يدل غالبًا على أن الخلية:</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q16" value="A"> أ) نباتية وقادرة على البناء الضوئي</label></li>
-            <li><label><input type="radio" name="q16" value="B"> ب) حيوانية ولا تنتج الغذاء</label></li>
-            <li><label><input type="radio" name="q16" value="C"> ج) وحيدة الخلية بالضرورة</label></li>
-            <li><label><input type="radio" name="q16" value="D"> د) لا تحتوي على غشاء خلوي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-1-1-5-6</span>
-        <div class="question-text">س17: أي عملية حيوية ذُكرت ضمن العمليات التي تقوم بها الخلايا النباتية والحيوانية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q17" value="A"> أ) التنفس الخلوي</label></li>
-            <li><label><input type="radio" name="q17" value="B"> ب) تكوين الصخور</label></li>
-            <li><label><input type="radio" name="q17" value="C"> ج) دوران الكواكب</label></li>
-            <li><label><input type="radio" name="q17" value="D"> د) التجوية</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-1-1-5-6</span>
-        <div class="question-text">س18: أي تركيب يمنح الخلية النباتية دعامة إضافية مقارنة بالخلية الحيوانية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q18" value="A"> أ) الجدار الخلوي</label></li>
-            <li><label><input type="radio" name="q18" value="B"> ب) السيتوبلازم</label></li>
-            <li><label><input type="radio" name="q18" value="C"> ج) النواة</label></li>
-            <li><label><input type="radio" name="q18" value="D"> د) الغشاء الخلوي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-1-1-5-6</span>
-        <div class="question-text">س19: إذا فقدت خلية نباتية البلاستيدات الخضراء، فما العملية التي تتأثر مباشرة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q19" value="A"> أ) البناء الضوئي</label></li>
-            <li><label><input type="radio" name="q19" value="B"> ب) التنفس فقط</label></li>
-            <li><label><input type="radio" name="q19" value="C"> ج) الانتشار فقط</label></li>
-            <li><label><input type="radio" name="q19" value="D"> د) النقل السلبي فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-1-1-5-6</span>
-        <div class="question-text">س20: أي عبارة أدق عن الخلايا النباتية والحيوانية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q20" value="A"> أ) تشترك في تراكيب أساسية، وتختلف في تراكيب ووظائف أخرى</label></li>
-            <li><label><input type="radio" name="q20" value="B"> ب) لا تشترك في أي تركيب</label></li>
-            <li><label><input type="radio" name="q20" value="C"> ج) الخلايا الحيوانية تحتوي على جدار خلوي</label></li>
-            <li><label><input type="radio" name="q20" value="D"> د) الخلايا النباتية لا تحتوي على غشاء خلوي</label></li>
-        </ul>
-    </div>
-
-    <!-- 1-1 – المؤشر 3-1-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="3-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-1-1-5-6</span>
-        <div class="question-text">س21: أي جهاز مسؤول بصورة رئيسة عن هضم الطعام؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q21" value="A"> أ) الجهاز الهضمي</label></li>
-            <li><label><input type="radio" name="q21" value="B"> ب) الجهاز العصبي</label></li>
-            <li><label><input type="radio" name="q21" value="C"> ج) الجهاز الهيكلي</label></li>
-            <li><label><input type="radio" name="q21" value="D"> د) الجهاز الإخراجي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-1-1-5-6</span>
-        <div class="question-text">س22: أي جهاز ينقل المواد المختلفة عبر الجسم؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q22" value="A"> أ) الجهاز الدوري</label></li>
-            <li><label><input type="radio" name="q22" value="B"> ب) الجهاز الهضمي</label></li>
-            <li><label><input type="radio" name="q22" value="C"> ج) الجهاز الهيكلي</label></li>
-            <li><label><input type="radio" name="q22" value="D"> د) الجهاز العصبي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-1-1-5-6</span>
-        <div class="question-text">س23: أي جهاز يساعد الجسم على الحصول على الأكسجين والتخلص من ثاني أكسيد الكربون؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q23" value="A"> أ) الجهاز التنفسي</label></li>
-            <li><label><input type="radio" name="q23" value="B"> ب) الجهاز الدوري</label></li>
-            <li><label><input type="radio" name="q23" value="C"> ج) الجهاز الهضمي</label></li>
-            <li><label><input type="radio" name="q23" value="D"> د) الجهاز العضلي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-1-1-5-6</span>
-        <div class="question-text">س24: أي جهاز يتخلص من بعض الفضلات الناتجة عن العمليات الحيوية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q24" value="A"> أ) الجهاز الإخراجي</label></li>
-            <li><label><input type="radio" name="q24" value="B"> ب) الجهاز الهيكلي</label></li>
-            <li><label><input type="radio" name="q24" value="C"> ج) الجهاز العصبي</label></li>
-            <li><label><input type="radio" name="q24" value="D"> د) الجهاز الهضمي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-1-1-5-6</span>
-        <div class="question-text">س25: أي جهاز يساعد على استقبال المعلومات والاستجابة لها؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q25" value="A"> أ) الجهاز العصبي</label></li>
-            <li><label><input type="radio" name="q25" value="B"> ب) الجهاز الهضمي</label></li>
-            <li><label><input type="radio" name="q25" value="C"> ج) الجهاز الهيكلي</label></li>
-            <li><label><input type="radio" name="q25" value="D"> د) الجهاز الإخراجي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-1-1-5-6</span>
-        <div class="question-text">س26: أي تركيب نباتي يمتص الماء والأملاح من التربة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q26" value="A"> أ) الجذر</label></li>
-            <li><label><input type="radio" name="q26" value="B"> ب) الساق</label></li>
-            <li><label><input type="radio" name="q26" value="C"> ج) الورقة</label></li>
-            <li><label><input type="radio" name="q26" value="D"> د) الزهرة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-1-1-5-6</span>
-        <div class="question-text">س27: أي تركيب نباتي ينقل الماء والمواد داخل النبات ويدعم أجزاءه؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q27" value="A"> أ) الساق</label></li>
-            <li><label><input type="radio" name="q27" value="B"> ب) الجذر</label></li>
-            <li><label><input type="radio" name="q27" value="C"> ج) الزهرة</label></li>
-            <li><label><input type="radio" name="q27" value="D"> د) الثمرة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-1-1-5-6</span>
-        <div class="question-text">س28: أي تركيب نباتي يرتبط بصورة رئيسة بإنتاج الغذاء؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q28" value="A"> أ) الأوراق</label></li>
-            <li><label><input type="radio" name="q28" value="B"> ب) الجذور</label></li>
-            <li><label><input type="radio" name="q28" value="C"> ج) الساق فقط</label></li>
-            <li><label><input type="radio" name="q28" value="D"> د) الأزهار فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-1-1-5-6</span>
-        <div class="question-text">س29: أي عبارة تفسر أهمية تخصص الأعضاء؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q29" value="A"> أ) تؤدي الأعضاء المتخصصة وظائف تساعد المخلوق على النمو والبقاء</label></li>
-            <li><label><input type="radio" name="q29" value="B"> ب) تمنع المخلوق من القيام بالعمليات الحيوية</label></li>
-            <li><label><input type="radio" name="q29" value="C"> ج) تجعل جميع الأعضاء تؤدي الوظيفة نفسها</label></li>
-            <li><label><input type="radio" name="q29" value="D"> د) تقلل حاجة المخلوق إلى الغذاء</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-1-1-5-6</span>
-        <div class="question-text">س30: أي زوج يمثل تركيبًا ووظيفة بصورة صحيحة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q30" value="A"> أ) الجذر ـ امتصاص الماء والأملاح</label></li>
-            <li><label><input type="radio" name="q30" value="B"> ب) المعدة ـ ضخ الدم</label></li>
-            <li><label><input type="radio" name="q30" value="C"> ج) القلب ـ هضم الطعام</label></li>
-            <li><label><input type="radio" name="q30" value="D"> د) الورقة ـ إخراج الفضلات من الحيوان</label></li>
-        </ul>
-    </div>
-
-    <!-- 1-1 – المؤشر 4-1-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="4-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-1-1-5-6</span>
-        <div class="question-text">س31: أي مرحلة تُعد جزءًا من دورة حياة المخلوق الحي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q31" value="A"> أ) مرحلة النمو</label></li>
-            <li><label><input type="radio" name="q31" value="B"> ب) تكوين الصخور</label></li>
-            <li><label><input type="radio" name="q31" value="C"> ج) التجوية</label></li>
-            <li><label><input type="radio" name="q31" value="D"> د) تبخر الماء فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-1-1-5-6</span>
-        <div class="question-text">س32: أي مجموعة تمثل أنماطًا لدورات حياة ذُكرت في المؤشر؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q32" value="A"> أ) الحشرات والبرمائيات والثدييات</label></li>
-            <li><label><input type="radio" name="q32" value="B"> ب) الطيور والصخور والمعادن</label></li>
-            <li><label><input type="radio" name="q32" value="C"> ج) الأسماك والتربة والهواء</label></li>
-            <li><label><input type="radio" name="q32" value="D"> د) الجبال والأنهار والحشرات</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-1-1-5-6</span>
-        <div class="question-text">س33: أي مخلوق يمر عادة بمرحلة يرقة خلال دورة حياته؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q33" value="A"> أ) الفراشة</label></li>
-            <li><label><input type="radio" name="q33" value="B"> ب) القطة</label></li>
-            <li><label><input type="radio" name="q33" value="C"> ج) الإنسان</label></li>
-            <li><label><input type="radio" name="q33" value="D"> د) الحصان</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-1-1-5-6</span>
-        <div class="question-text">س34: ما الذي يمكن استخدامه للمقارنة بين دورات حياة المخلوقات؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q34" value="A"> أ) التغيرات والمراحل التي تمر بها</label></li>
-            <li><label><input type="radio" name="q34" value="B"> ب) لون موطنها فقط</label></li>
-            <li><label><input type="radio" name="q34" value="C"> ج) درجة حرارة جسمها فقط</label></li>
-            <li><label><input type="radio" name="q34" value="D"> د) حجمها النهائي فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-1-1-5-6</span>
-        <div class="question-text">س35: أي عبارة تصف دورة حياة بصورة صحيحة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q35" value="A"> أ) تتغير صفات المخلوق خلال مراحل نموه وتطوره</label></li>
-            <li><label><input type="radio" name="q35" value="B"> ب) يبقى المخلوق دون تغير منذ ولادته</label></li>
-            <li><label><input type="radio" name="q35" value="C"> ج) لا تتكرر الأنماط في النوع نفسه</label></li>
-            <li><label><input type="radio" name="q35" value="D"> د) لا علاقة للتكاثر بدورة الحياة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-1-1-5-6</span>
-        <div class="question-text">س36: أي مجموعة تتضمن مخلوقات لها دورات حياة مختلفة يمكن مقارنتها؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q36" value="A"> أ) ضفدع وفراشة</label></li>
-            <li><label><input type="radio" name="q36" value="B"> ب) صخرة وفراشة</label></li>
-            <li><label><input type="radio" name="q36" value="C"> ج) ماء وقطة</label></li>
-            <li><label><input type="radio" name="q36" value="D"> د) هواء وضفدع</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-1-1-5-6</span>
-        <div class="question-text">س37: عند دراسة دورة حياة نبات، ما الذي ينبغي تتبعه؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q37" value="A"> أ) المراحل والتغيرات من بداية النمو إلى النضج</label></li>
-            <li><label><input type="radio" name="q37" value="B"> ب) لون التربة فقط</label></li>
-            <li><label><input type="radio" name="q37" value="C"> ج) عدد الصخور حوله فقط</label></li>
-            <li><label><input type="radio" name="q37" value="D"> د) درجة حرارة الشمس فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-1-1-5-6</span>
-        <div class="question-text">س38: ما العامل الذي يساعد على توقع التغيرات في دورة الحياة وفق المؤشر؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q38" value="A"> أ) نمط التكاثر ودورة الحياة</label></li>
-            <li><label><input type="radio" name="q38" value="B"> ب) لون الحيوان فقط</label></li>
-            <li><label><input type="radio" name="q38" value="C"> ج) حجم الموطن فقط</label></li>
-            <li><label><input type="radio" name="q38" value="D"> د) عدد أفراد النوع فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-1-1-5-6</span>
-        <div class="question-text">س39: أي عبارة تمثل المقارنة العلمية بين دورتَي حياة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q39" value="A"> أ) تحديد أوجه التشابه والاختلاف في المراحل والتغيرات</label></li>
-            <li><label><input type="radio" name="q39" value="B"> ب) اختيار الدورة الأطول دون دليل</label></li>
-            <li><label><input type="radio" name="q39" value="C"> ج) تجاهل مراحل النمو</label></li>
-            <li><label><input type="radio" name="q39" value="D"> د) مقارنة الألوان فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-1-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-1-1-5-6</span>
-        <div class="question-text">س40: لماذا تعد دراسة دورات الحياة مهمة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q40" value="A"> أ) لفهم التغيرات التي تحدث للمخلوقات أثناء نموها وتكاثرها</label></li>
-            <li><label><input type="radio" name="q40" value="B"> ب) لإثبات أن جميع المخلوقات لها الدورة نفسها</label></li>
-            <li><label><input type="radio" name="q40" value="C"> ج) لتحديد درجة حرارة البيئة فقط</label></li>
-            <li><label><input type="radio" name="q40" value="D"> د) لتصنيف الصخور</label></li>
-        </ul>
-    </div>
-
-    <!-- 2-1 – المؤشر 1-2-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="1-2-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-2-1-5-6</span>
-        <div class="question-text">س41: على أي أساس يمكن تصنيف المخلوقات الحية إلى مجموعات؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q41" value="A"> أ) الصفات الظاهرية المشتركة</label></li>
-            <li><label><input type="radio" name="q41" value="B"> ب) مكان وجودها فقط</label></li>
-            <li><label><input type="radio" name="q41" value="C"> ج) حجمها فقط</label></li>
-            <li><label><input type="radio" name="q41" value="D"> د) اسمها الشائع فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-2-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-2-1-5-6</span>
-        <div class="question-text">س42: أي صفة يمكن استخدامها في تصنيف النباتات ظاهريًا؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q42" value="A"> أ) وجود الأزهار</label></li>
-            <li><label><input type="radio" name="q42" value="B"> ب) سرعة نموها فقط</label></li>
-            <li><label><input type="radio" name="q42" value="C"> ج) كمية الماء التي تحتاجها فقط</label></li>
-            <li><label><input type="radio" name="q42" value="D"> د) عمر النبات فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-2-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-2-1-5-6</span>
-        <div class="question-text">س43: النباتات الزهرية وغير الزهرية تمثلان مجموعتين يمكن التمييز بينهما اعتمادًا على:</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q43" value="A"> أ) سمات وخصائص ظاهرية مشتركة</label></li>
-            <li><label><input type="radio" name="q43" value="B"> ب) درجة حرارة التربة فقط</label></li>
-            <li><label><input type="radio" name="q43" value="C"> ج) حجم الجذر فقط</label></li>
-            <li><label><input type="radio" name="q43" value="D"> د) لون الماء</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-2-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-2-1-5-6</span>
-        <div class="question-text">س44: إذا تشابهت مجموعة من الحيوانات في صفات ظاهرية مشتركة، فإن ذلك قد يساعد على:</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q44" value="A"> أ) تصنيفها في مجموعة واحدة</label></li>
-            <li><label><input type="radio" name="q44" value="B"> ب) إثبات أنها من النوع نفسه دائمًا</label></li>
-            <li><label><input type="radio" name="q44" value="C"> ج) إثبات أنها تعيش في الموطن نفسه</label></li>
-            <li><label><input type="radio" name="q44" value="D"> د) إثبات أنها تتغذى بالطريقة نفسها</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-2-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-2-1-5-6</span>
-        <div class="question-text">س45: أي مثال يمثل تصنيفًا اعتمادًا على صفة ظاهرة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q45" value="A"> أ) جمع الحيوانات ذات الجسم المغطى بالشعر في مجموعة</label></li>
-            <li><label><input type="radio" name="q45" value="B"> ب) جمع الحيوانات حسب أسماء أصحابها</label></li>
-            <li><label><input type="radio" name="q45" value="C"> ج) جمع النباتات حسب سعرها</label></li>
-            <li><label><input type="radio" name="q45" value="D"> د) جمع الكائنات حسب تاريخ اكتشافها</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-2-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-2-1-5-6</span>
-        <div class="question-text">س46: ما الهدف من تصنيف المخلوقات الحية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q46" value="A"> أ) تنظيمها في مجموعات وفق صفات مشتركة</label></li>
-            <li><label><input type="radio" name="q46" value="B"> ب) تغيير صفاتها الوراثية</label></li>
-            <li><label><input type="radio" name="q46" value="C"> ج) زيادة عددها</label></li>
-            <li><label><input type="radio" name="q46" value="D"> د) تغيير مواطنها</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-2-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-2-1-5-6</span>
-        <div class="question-text">س47: أي سؤال يساعد في تصنيف نباتين إلى مجموعتين زهريّة وغير زهريّة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q47" value="A"> أ) هل ينتج النبات أزهارًا؟</label></li>
-            <li><label><input type="radio" name="q47" value="B"> ب) كم عمر النبات؟</label></li>
-            <li><label><input type="radio" name="q47" value="C"> ج) كم مرة رُوي؟</label></li>
-            <li><label><input type="radio" name="q47" value="D"> د) كم شخصًا شاهده؟</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-2-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-2-1-5-6</span>
-        <div class="question-text">س48: إذا كان لحيوانين صفات ظاهرية مشتركة، فما الاستنتاج الأكثر مباشرة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q48" value="A"> أ) يمكن وضعهما في مجموعة تصنيفية مناسبة وفق تلك الصفات</label></li>
-            <li><label><input type="radio" name="q48" value="B"> ب) هما متطابقان في كل الصفات</label></li>
-            <li><label><input type="radio" name="q48" value="C"> ج) لا يمكن تصنيفهما</label></li>
-            <li><label><input type="radio" name="q48" value="D"> د) هما من البيئة نفسها بالضرورة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-2-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-2-1-5-6</span>
-        <div class="question-text">س49: أي عبارة تتفق مع مؤشر التصنيف؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q49" value="A"> أ) يمكن استخدام أكثر من صفة ظاهرية مشتركة لتكوين مجموعات</label></li>
-            <li><label><input type="radio" name="q49" value="B"> ب) يُصنف كل مخلوق في مجموعة منفردة</label></li>
-            <li><label><input type="radio" name="q49" value="C"> ج) التصنيف يعتمد على اللون وحده دائمًا</label></li>
-            <li><label><input type="radio" name="q49" value="D"> د) التصنيف لا يحتاج إلى ملاحظة الصفات</label></li>
-        </ul>
-    </div>
-
-    <!-- 3-1 – المؤشر 1-3-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="1-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-3-1-5-6</span>
-        <div class="question-text">س50: ما المجتمع الحيوي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q50" value="A"> أ) مجموعة من الجماعات الحيوية التي تعيش في منطقة معينة</label></li>
-            <li><label><input type="radio" name="q50" value="B"> ب) مخلوق حي واحد</label></li>
-            <li><label><input type="radio" name="q50" value="C"> ج) عامل غير حي فقط</label></li>
-            <li><label><input type="radio" name="q50" value="D"> د) مجموعة من الصخور</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-3-1-5-6</span>
-        <div class="question-text">س51: ما المقصود بالجماعة الحيوية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q51" value="A"> أ) مجموعة من أفراد النوع نفسه تعيش في منطقة معينة</label></li>
-            <li><label><input type="radio" name="q51" value="B"> ب) جميع المكونات غير الحيوية</label></li>
-            <li><label><input type="radio" name="q51" value="C"> ج) جميع أنواع الصخور</label></li>
-            <li><label><input type="radio" name="q51" value="D"> د) مخلوق واحد فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-3-1-5-6</span>
-        <div class="question-text">س52: أي مما يأتي يمثل تفاعلًا بين مخلوق حي ومكوّن غير حي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q52" value="A"> أ) نبات يحصل على الماء من التربة</label></li>
-            <li><label><input type="radio" name="q52" value="B"> ب) أسد يصطاد غزالًا</label></li>
-            <li><label><input type="radio" name="q52" value="C"> ج) نحلة تزور زهرة</label></li>
-            <li><label><input type="radio" name="q52" value="D"> د) طائر يبني عشًا</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-3-1-5-6</span>
-        <div class="question-text">س53: كيف تؤثر الموارد المتاحة في قدرة المخلوقات على البقاء؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q53" value="A"> أ) توفير الموارد يساعدها على تلبية حاجاتها</label></li>
-            <li><label><input type="radio" name="q53" value="B"> ب) الموارد لا تؤثر مطلقًا</label></li>
-            <li><label><input type="radio" name="q53" value="C"> ج) زيادة الموارد تمنع جميع المخلوقات من البقاء</label></li>
-            <li><label><input type="radio" name="q53" value="D"> د) الموارد تؤثر في الصخور فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-3-1-5-6</span>
-        <div class="question-text">س54: إذا انخفض عدد النباتات في مجتمع حيوي، فما احتمال حدوثه مباشرة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q54" value="A"> أ) تتأثر الجماعات التي تعتمد عليها في الغذاء</label></li>
-            <li><label><input type="radio" name="q54" value="B"> ب) لا يتأثر أي مخلوق</label></li>
-            <li><label><input type="radio" name="q54" value="C"> ج) تزداد الموارد الغذائية دائمًا</label></li>
-            <li><label><input type="radio" name="q54" value="D"> د) تختفي جميع المكونات غير الحيوية</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-3-1-5-6</span>
-        <div class="question-text">س55: أي مثال يوضح علاقة متبادلة بين مخلوقات حية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q55" value="A"> أ) افتراس صقر لفأر</label></li>
-            <li><label><input type="radio" name="q55" value="B"> ب) تبخر الماء</label></li>
-            <li><label><input type="radio" name="q55" value="C"> ج) سقوط المطر</label></li>
-            <li><label><input type="radio" name="q55" value="D"> د) ارتفاع درجة الحرارة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-3-1-5-6</span>
-        <div class="question-text">س56: أي عامل غير حي يمكن أن يؤثر في الجماعات الحيوية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q56" value="A"> أ) درجة الحرارة</label></li>
-            <li><label><input type="radio" name="q56" value="B"> ب) الحيوانات المفترسة</label></li>
-            <li><label><input type="radio" name="q56" value="C"> ج) النباتات</label></li>
-            <li><label><input type="radio" name="q56" value="D"> د) الفطريات</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-3-1-5-6</span>
-        <div class="question-text">س57: إذا تغيرت مكونات المجتمع الحيوي، فقد يحدث:</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q57" value="A"> أ) تغير في بقاء الأنواع واستمرارها</label></li>
-            <li><label><input type="radio" name="q57" value="B"> ب) ثبات جميع الجماعات دائمًا</label></li>
-            <li><label><input type="radio" name="q57" value="C"> ج) اختفاء العوامل غير الحيوية</label></li>
-            <li><label><input type="radio" name="q57" value="D"> د) عدم تغير أي علاقة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-3-1-5-6</span>
-        <div class="question-text">س58: أي تمثيل يساعد على دراسة العلاقات داخل مجتمع حيوي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q58" value="A"> أ) مخطط يوضح الجماعات وتفاعلاتها</label></li>
-            <li><label><input type="radio" name="q58" value="B"> ب) قائمة بأسماء الطلاب</label></li>
-            <li><label><input type="radio" name="q58" value="C"> ج) جدول درجات الحرارة وحده</label></li>
-            <li><label><input type="radio" name="q58" value="D"> د) صورة لمخلوق منفرد دون سياق</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-3-1-5-6</span>
-        <div class="question-text">س59: لماذا تحتاج المخلوقات إلى التفاعل مع مكونات مواطنها؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q59" value="A"> أ) للحصول على حاجاتها والبقاء</label></li>
-            <li><label><input type="radio" name="q59" value="B"> ب) لتغيير نوعها</label></li>
-            <li><label><input type="radio" name="q59" value="C"> ج) لإلغاء العلاقات الغذائية</label></li>
-            <li><label><input type="radio" name="q59" value="D"> د) لمنع انتقال الطاقة</label></li>
-        </ul>
-    </div>
-
-    <!-- 3-1 – المؤشر 2-3-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="2-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-3-1-5-6</span>
-        <div class="question-text">س60: أي مما يأتي مكوّن حيوي في النظام البيئي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q60" value="A"> أ) نبات</label></li>
-            <li><label><input type="radio" name="q60" value="B"> ب) ماء</label></li>
-            <li><label><input type="radio" name="q60" value="C"> ج) ضوء</label></li>
-            <li><label><input type="radio" name="q60" value="D"> د) تربة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-3-1-5-6</span>
-        <div class="question-text">س61: أي مما يأتي مكوّن غير حيوي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q61" value="A"> أ) درجة الحرارة</label></li>
-            <li><label><input type="radio" name="q61" value="B"> ب) الأشجار</label></li>
-            <li><label><input type="radio" name="q61" value="C"> ج) الحشرات</label></li>
-            <li><label><input type="radio" name="q61" value="D"> د) الفطريات</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-3-1-5-6</span>
-        <div class="question-text">س62: كيف تؤثر الموارد في بقاء المخلوقات؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q62" value="A"> أ) توافر الغذاء والماء والمأوى يساعد على البقاء</label></li>
-            <li><label><input type="radio" name="q62" value="B"> ب) الموارد تمنع النمو</label></li>
-            <li><label><input type="radio" name="q62" value="C"> ج) الموارد لا علاقة لها بالبقاء</label></li>
-            <li><label><input type="radio" name="q62" value="D"> د) الموارد تؤثر في المخلوقات غير الحية فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-3-1-5-6</span>
-        <div class="question-text">س63: إذا قلت كمية الماء في موطن ما، فما النتيجة المحتملة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q63" value="A"> أ) تتأثر المخلوقات التي تعتمد على الماء</label></li>
-            <li><label><input type="radio" name="q63" value="B"> ب) تزداد جميع الجماعات</label></li>
-            <li><label><input type="radio" name="q63" value="C"> ج) لا يتغير أي مخلوق</label></li>
-            <li><label><input type="radio" name="q63" value="D"> د) تزداد كمية الماء تلقائيًا</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-3-1-5-6</span>
-        <div class="question-text">س64: أي حالة تمثل تغيرًا في موطن بيئي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q64" value="A"> أ) انخفاض مصادر الماء بسبب الجفاف</label></li>
-            <li><label><input type="radio" name="q64" value="B"> ب) تغير اسم الحيوان</label></li>
-            <li><label><input type="radio" name="q64" value="C"> ج) زيادة عدد صفحات كتاب</label></li>
-            <li><label><input type="radio" name="q64" value="D"> د) تغير لون لوحة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-3-1-5-6</span>
-        <div class="question-text">س65: ما الخطوة المناسبة عند تحديد مشكلة تهدد استقرار نظام بيئي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q65" value="A"> أ) تحديد سبب المشكلة وتأثيرها ثم اقتراح حل مناسب</label></li>
-            <li><label><input type="radio" name="q65" value="B"> ب) تجاهل السبب</label></li>
-            <li><label><input type="radio" name="q65" value="C"> ج) إزالة جميع المخلوقات</label></li>
-            <li><label><input type="radio" name="q65" value="D"> د) الاعتماد على التخمين فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-3-1-5-6</span>
-        <div class="question-text">س66: أي حل قد يساعد على استعادة اتزان نظام بيئي متضرر من نقص الموارد؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q66" value="A"> أ) ترشيد استخدام المورد وحمايته</label></li>
-            <li><label><input type="radio" name="q66" value="B"> ب) زيادة استهلاكه</label></li>
-            <li><label><input type="radio" name="q66" value="C"> ج) إزالة النباتات</label></li>
-            <li><label><input type="radio" name="q66" value="D"> د) منع جميع المخلوقات من التكاثر</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-3-1-5-6</span>
-        <div class="question-text">س67: لماذا تؤثر المكونات غير الحيوية في المخلوقات الحية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q67" value="A"> أ) لأنها توفر ظروفًا وموارد تؤثر في حياتها</label></li>
-            <li><label><input type="radio" name="q67" value="B"> ب) لأنها مخلوقات حية</label></li>
-            <li><label><input type="radio" name="q67" value="C"> ج) لأنها تنتج الحيوانات</label></li>
-            <li><label><input type="radio" name="q67" value="D"> د) لأنها تغير الصفات الوراثية مباشرة دائمًا</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-3-1-5-6</span>
-        <div class="question-text">س68: أي مثال يوضح أثر تغير الموطن؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q68" value="A"> أ) تلوث الماء قد يقلل قدرة الكائنات المائية على البقاء</label></li>
-            <li><label><input type="radio" name="q68" value="B"> ب) زيادة الضوء تجعل كل الحيوانات تختفي</label></li>
-            <li><label><input type="radio" name="q68" value="C"> ج) تغير الصخور لا يؤثر في أي مخلوق</label></li>
-            <li><label><input type="radio" name="q68" value="D"> د) زيادة الماء تمنع النباتات من النمو دائمًا</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="2-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 2-3-1-5-6</span>
-        <div class="question-text">س69: ما المقصود باستقرار النظام البيئي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q69" value="A"> أ) استمرار تفاعلاته وتوازن مكوناته بما يدعم بقاء المخلوقات</label></li>
-            <li><label><input type="radio" name="q69" value="B"> ب) اختفاء جميع المفترسات</label></li>
-            <li><label><input type="radio" name="q69" value="C"> ج) ثبات عدد كل المخلوقات دائمًا</label></li>
-            <li><label><input type="radio" name="q69" value="D"> د) غياب التغير تمامًا</label></li>
-        </ul>
-    </div>
-
-    <!-- 3-1 – المؤشر 3-3-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="3-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-3-1-5-6</span>
-        <div class="question-text">س70: أي مخلوق يُعد منتجًا في السلسلة الغذائية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q70" value="A"> أ) نبات أخضر</label></li>
-            <li><label><input type="radio" name="q70" value="B"> ب) أسد</label></li>
-            <li><label><input type="radio" name="q70" value="C"> ج) فطر محلل</label></li>
-            <li><label><input type="radio" name="q70" value="D"> د) أرنب مستهلك</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-3-1-5-6</span>
-        <div class="question-text">س71: أي دور يصف الحيوان الذي يتغذى على مخلوقات أخرى؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q71" value="A"> أ) مستهلك</label></li>
-            <li><label><input type="radio" name="q71" value="B"> ب) منتج</label></li>
-            <li><label><input type="radio" name="q71" value="C"> ج) محلل</label></li>
-            <li><label><input type="radio" name="q71" value="D"> د) مكوّن غير حي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-3-1-5-6</span>
-        <div class="question-text">س72: ما دور المحللات في النظام البيئي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q72" value="A"> أ) تفكيك بقايا المخلوقات والمساعدة في تدوير المواد</label></li>
-            <li><label><input type="radio" name="q72" value="B"> ب) إنتاج ضوء الشمس</label></li>
-            <li><label><input type="radio" name="q72" value="C"> ج) منع انتقال الطاقة</label></li>
-            <li><label><input type="radio" name="q72" value="D"> د) إنتاج الصخور</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-3-1-5-6</span>
-        <div class="question-text">س73: في السلسلة: عشب ← أرنب ← ثعلب، ما دور الأرنب؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q73" value="A"> أ) مستهلك</label></li>
-            <li><label><input type="radio" name="q73" value="B"> ب) منتج</label></li>
-            <li><label><input type="radio" name="q73" value="C"> ج) محلل</label></li>
-            <li><label><input type="radio" name="q73" value="D"> د) مكوّن غير حي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-3-1-5-6</span>
-        <div class="question-text">س74: ما مصدر الطاقة الذي تعتمد عليه النباتات لإنتاج الغذاء؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q74" value="A"> أ) الشمس</label></li>
-            <li><label><input type="radio" name="q74" value="B"> ب) التربة فقط</label></li>
-            <li><label><input type="radio" name="q74" value="C"> ج) القمر</label></li>
-            <li><label><input type="radio" name="q74" value="D"> د) الرياح فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-3-1-5-6</span>
-        <div class="question-text">س75: ما العملية التي يستخدم فيها النبات طاقة الشمس لإنتاج الغذاء؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q75" value="A"> أ) البناء الضوئي</label></li>
-            <li><label><input type="radio" name="q75" value="B"> ب) الهضم</label></li>
-            <li><label><input type="radio" name="q75" value="C"> ج) الإخراج</label></li>
-            <li><label><input type="radio" name="q75" value="D"> د) الافتراس</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-3-1-5-6</span>
-        <div class="question-text">س76: ما الذي ينتقل في السلسلة الغذائية بين المخلوقات؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q76" value="A"> أ) الطاقة</label></li>
-            <li><label><input type="radio" name="q76" value="B"> ب) الصخور فقط</label></li>
-            <li><label><input type="radio" name="q76" value="C"> ج) الماء فقط دون تغير</label></li>
-            <li><label><input type="radio" name="q76" value="D"> د) الضوء دون تحول</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-3-1-5-6</span>
-        <div class="question-text">س77: أي عبارة تشرح تدوير المواد في النظام البيئي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q77" value="A"> أ) تنتقل المواد بين المخلوقات والبيئة عبر عمليات مختلفة</label></li>
-            <li><label><input type="radio" name="q77" value="B"> ب) تختفي المواد نهائيًا بعد استخدامها</label></li>
-            <li><label><input type="radio" name="q77" value="C"> ج) تنتقل الطاقة إلى النبات من الحيوان</label></li>
-            <li><label><input type="radio" name="q77" value="D"> د) لا تعود المواد إلى البيئة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-3-1-5-6</span>
-        <div class="question-text">س78: أي زوج يمثل نمطَي تغذية وردا في المؤشر؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q78" value="A"> أ) ذاتية التغذية وغير ذاتية التغذية</label></li>
-            <li><label><input type="radio" name="q78" value="B"> ب) هوائية ولاهوائية فقط</label></li>
-            <li><label><input type="radio" name="q78" value="C"> ج) سريعة وبطيئة</label></li>
-            <li><label><input type="radio" name="q78" value="D"> د) ليلية ونهارية</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="3-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 3-3-1-5-6</span>
-        <div class="question-text">س79: أي تسلسل يوضح علاقة النبات بالطاقة الشمسية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q79" value="A"> أ) الشمس &rarr; النبات &rarr; إنتاج الغذاء</label></li>
-            <li><label><input type="radio" name="q79" value="B"> ب) النبات &rarr; الشمس &rarr; إنتاج الغذاء</label></li>
-            <li><label><input type="radio" name="q79" value="C"> ج) الحيوان &rarr; الشمس &rarr; النبات</label></li>
-            <li><label><input type="radio" name="q79" value="D"> د) التربة &rarr; الشمس &rarr; الحيوان</label></li>
-        </ul>
-    </div>
-
-    <!-- 3-1 – المؤشر 4-3-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="4-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-3-1-5-6</span>
-        <div class="question-text">س80: أي عامل فيزيائي قد يؤثر في بقاء حيوان في موطنه؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q80" value="A"> أ) درجة الحرارة</label></li>
-            <li><label><input type="radio" name="q80" value="B"> ب) عدد المفترسات فقط</label></li>
-            <li><label><input type="radio" name="q80" value="C"> ج) نوع غذائه فقط</label></li>
-            <li><label><input type="radio" name="q80" value="D"> د) عدد النباتات فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-3-1-5-6</span>
-        <div class="question-text">س81: إذا انخفضت درجة الحرارة بشدة في موطن ما، فما الذي قد يحدث؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q81" value="A"> أ) تتأثر قدرة بعض المخلوقات على البقاء</label></li>
-            <li><label><input type="radio" name="q81" value="B"> ب) تزداد قدرة جميع المخلوقات</label></li>
-            <li><label><input type="radio" name="q81" value="C"> ج) لا يتغير أي مخلوق</label></li>
-            <li><label><input type="radio" name="q81" value="D"> د) تختفي الشمس</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-3-1-5-6</span>
-        <div class="question-text">س82: ما المقصود بالتكيف التركيبي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q82" value="A"> أ) صفة في تركيب الجسم تساعد المخلوق على البقاء</label></li>
-            <li><label><input type="radio" name="q82" value="B"> ب) تغير مؤقت في الطقس</label></li>
-            <li><label><input type="radio" name="q82" value="C"> ج) سلوك لا علاقة له بالبقاء</label></li>
-            <li><label><input type="radio" name="q82" value="D"> د) تغير في الصخور</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-3-1-5-6</span>
-        <div class="question-text">س83: أي مثال يمثل تكيفًا سلوكيًا؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q83" value="A"> أ) هجرة بعض الطيور إلى مناطق أنسب</label></li>
-            <li><label><input type="radio" name="q83" value="B"> ب) وجود فرو كثيف</label></li>
-            <li><label><input type="radio" name="q83" value="C"> ج) شكل منقار الطائر</label></li>
-            <li><label><input type="radio" name="q83" value="D"> د) وجود أشواك على النبات</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-3-1-5-6</span>
-        <div class="question-text">س84: أي مثال يمثل تكيفًا تركيبيًا؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q84" value="A"> أ) فرو كثيف يساعد حيوانًا على العيش في البرد</label></li>
-            <li><label><input type="radio" name="q84" value="B"> ب) هجرة الطيور</label></li>
-            <li><label><input type="radio" name="q84" value="C"> ج) اختباء الحيوان عند الخطر</label></li>
-            <li><label><input type="radio" name="q84" value="D"> د) تغير وقت النشاط اليومي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-3-1-5-6</span>
-        <div class="question-text">س85: كيف تساعد التكيفات المخلوقات؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q85" value="A"> أ) تزيد قدرتها على العيش والبقاء في مواطن محددة</label></li>
-            <li><label><input type="radio" name="q85" value="B"> ب) تمنعها من الحصول على الغذاء</label></li>
-            <li><label><input type="radio" name="q85" value="C"> ج) تجعل جميع المخلوقات متشابهة</label></li>
-            <li><label><input type="radio" name="q85" value="D"> د) تلغي تأثير البيئة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-3-1-5-6</span>
-        <div class="question-text">س86: إذا اختفى مصدر الغذاء الرئيس من موطن ما، فما التوقع الأكثر مباشرة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q86" value="A"> أ) قد تتغير أعداد المخلوقات التي تعتمد عليه</label></li>
-            <li><label><input type="radio" name="q86" value="B"> ب) تزداد جميع الجماعات</label></li>
-            <li><label><input type="radio" name="q86" value="C"> ج) لا يتأثر أي نوع</label></li>
-            <li><label><input type="radio" name="q86" value="D"> د) تتوقف العوامل المناخية</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-3-1-5-6</span>
-        <div class="question-text">س87: أي عبارة تصف العلاقة بين المناخ والمخلوقات؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q87" value="A"> أ) الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة</label></li>
-            <li><label><input type="radio" name="q87" value="B"> ب) المناخ لا تؤثر في المخلوقات</label></li>
-            <li><label><input type="radio" name="q87" value="C"> ج) المخلوقات تغير المناخ دائمًا</label></li>
-            <li><label><input type="radio" name="q87" value="D"> د) المناخ تؤثر في الصخور فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-3-1-5-6</span>
-        <div class="question-text">س88: أي موقف يوضح تكيفًا يساعد على البقاء في موطن محدد؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q88" value="A"> أ) حيوان صحراوي يحتفظ بالماء بكفاءة</label></li>
-            <li><label><input type="radio" name="q88" value="B"> ب) حيوان يختار اسمًا جديدًا</label></li>
-            <li><label><input type="radio" name="q88" value="C"> ج) نبات يتغير لونه بسبب رسم عليه</label></li>
-            <li><label><input type="radio" name="q88" value="D"> د) سمكة تعيش خارج الماء</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="4-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 4-3-1-5-6</span>
-        <div class="question-text">س89: عند توقع أثر تغير بيئي على نوع معين، ما المعلومات الأكثر فائدة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q89" value="A"> أ) ظروف الموطن واحتياجات النوع وتكيفاته</label></li>
-            <li><label><input type="radio" name="q89" value="B"> ب) اسم النوع فقط</label></li>
-            <li><label><input type="radio" name="q89" value="C"> ج) حجم الكتاب المدرسي</label></li>
-            <li><label><input type="radio" name="q89" value="D"> د) لون الصورة</label></li>
-        </ul>
-    </div>
-
-    <!-- 3-1 – المؤشر 5-3-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="5-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 5-3-1-5-6</span>
-        <div class="question-text">س90: أي نشاط بشري قد يؤدي إلى تدهور موطن بيئي؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q90" value="A"> أ) إزالة الغطاء النباتي</label></li>
-            <li><label><input type="radio" name="q90" value="B"> ب) حماية الغابات</label></li>
-            <li><label><input type="radio" name="q90" value="C"> ج) ترشيد استهلاك الماء</label></li>
-            <li><label><input type="radio" name="q90" value="D"> د) إعادة التشجير</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="5-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 5-3-1-5-6</span>
-        <div class="question-text">س91: أي نشاط بشري يمكن أن يكون له أثر إيجابي في الموطن؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q91" value="A"> أ) إعادة التشجير</label></li>
-            <li><label><input type="radio" name="q91" value="B"> ب) رمي النفايات</label></li>
-            <li><label><input type="radio" name="q91" value="C"> ج) الصيد الجائر</label></li>
-            <li><label><input type="radio" name="q91" value="D"> د) تجريف المواطن</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="5-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 5-3-1-5-6</span>
-        <div class="question-text">س92: ما أثر التلوث في جماعة حيوية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q92" value="A"> أ) قد يقلل قدرتها على البقاء والتكاثر</label></li>
-            <li><label><input type="radio" name="q92" value="B"> ب) يزيد أعدادها دائمًا</label></li>
-            <li><label><input type="radio" name="q92" value="C"> ج) لا يؤثر فيها مطلقًا</label></li>
-            <li><label><input type="radio" name="q92" value="D"> د) يمنع تغير الموطن</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="5-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 5-3-1-5-6</span>
-        <div class="question-text">س93: إذا زادت النفايات في موطن طبيعي، فما الأثر المتوقع؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q93" value="A"> أ) قد تتدهور جودة الموطن وتتعرض المخلوقات للخطر</label></li>
-            <li><label><input type="radio" name="q93" value="B"> ب) تزداد جودة الموطن</label></li>
-            <li><label><input type="radio" name="q93" value="C"> ج) تزداد الموارد دائمًا</label></li>
-            <li><label><input type="radio" name="q93" value="D"> د) لا يحدث أي تغير</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="5-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 5-3-1-5-6</span>
-        <div class="question-text">س94: أي حل يساعد على حماية مورد مائي من النشاط البشري؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q94" value="A"> أ) تقليل مصادر التلوث وترشيد الاستهلاك</label></li>
-            <li><label><input type="radio" name="q94" value="B"> ب) زيادة تصريف الملوثات</label></li>
-            <li><label><input type="radio" name="q94" value="C"> ج) إلقاء النفايات في الماء</label></li>
-            <li><label><input type="radio" name="q94" value="D"> د) إزالة النباتات حوله</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="5-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 5-3-1-5-6</span>
-        <div class="question-text">س95: ما الذي ينبغي فعله عند اقتراح حل لمشكلة بيئية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q95" value="A"> أ) ربط الحل بسبب المشكلة وقياس أثره المتوقع</label></li>
-            <li><label><input type="radio" name="q95" value="B"> ب) اختيار الحل دون تحديد المشكلة</label></li>
-            <li><label><input type="radio" name="q95" value="C"> ج) تجاهل البيانات</label></li>
-            <li><label><input type="radio" name="q95" value="D"> د) اختيار الحل الأكثر تكلفة دائمًا</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="5-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 5-3-1-5-6</span>
-        <div class="question-text">س96: أي حدث طبيعي ذُكر في نواتج التعلم بوصفه موضوعًا للدراسة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q96" value="A"> أ) الأحداث الطبيعية في بيئات المملكة العربية السعودية</label></li>
-            <li><label><input type="radio" name="q96" value="B"> ب) تغير أسعار المنتجات</label></li>
-            <li><label><input type="radio" name="q96" value="C"> ج) ازدحام الطرق</label></li>
-            <li><label><input type="radio" name="q96" value="D"> د) تغير ألوان المباني</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="5-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 5-3-1-5-6</span>
-        <div class="question-text">س97: إذا وقع حدث طبيعي في بيئة سعودية، فما الذي يمكن دراسته؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q97" value="A"> أ) آثاره الإيجابية والسلبية في البيئة</label></li>
-            <li><label><input type="radio" name="q97" value="B"> ب) عدد سكان العالم فقط</label></li>
-            <li><label><input type="radio" name="q97" value="C"> ج) أسعار الغذاء العالمية فقط</label></li>
-            <li><label><input type="radio" name="q97" value="D"> د) تركيب الخلية</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="5-3-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 5-3-1-5-6</span>
-        <div class="question-text">س98: أي ممارسة تدعم حماية المواطن والجماعات البيئية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q98" value="A"> أ) المحافظة على الموارد وتقليل الأنشطة الضارة</label></li>
-            <li><label><input type="radio" name="q98" value="B"> ب) إزالة المواطن الطبيعية</label></li>
-            <li><label><input type="radio" name="q98" value="C"> ج) زيادة التلوث</label></li>
-            <li><label><input type="radio" name="q98" value="D"> د) استنزاف الموارد</label></li>
-        </ul>
-    </div>
-
-    <!-- 4-1 – المؤشر 1-4-1-5-6 -->
-    <div class="question-card" data-category="life-science" data-code="1-4-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-4-1-5-6</span>
-        <div class="question-text">س99: ما المقصود بالصفة الوراثية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q99" value="A"> أ) صفة يمكن أن تنتقل من الآباء إلى الأبناء</label></li>
-            <li><label><input type="radio" name="q99" value="B"> ب) صفة تنتج فقط عن التدريب</label></li>
-            <li><label><input type="radio" name="q99" value="C"> ج) صفة لا تظهر في المخلوقات</label></li>
-            <li><label><input type="radio" name="q99" value="D"> د) صفة مرتبطة بالطقس فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-4-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-4-1-5-6</span>
-        <div class="question-text">س100: ما الذي يمكن أن يسبب تباينًا في الصفات الوراثية بين أفراد النوع؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q100" value="A"> أ) اختلاف الصفات الوراثية</label></li>
-            <li><label><input type="radio" name="q100" value="B"> ب) تشابه جميع الجينات تمامًا</label></li>
-            <li><label><input type="radio" name="q100" value="C"> ج) نوع الغذاء فقط</label></li>
-            <li><label><input type="radio" name="q100" value="D"> د) درجة الحرارة فقط</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-4-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-4-1-5-6</span>
-        <div class="question-text">س101: ما الأداة التي تستخدم لتتبع انتقال الصفات من الآباء إلى الأبناء؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q101" value="A"> أ) مخطط السلالة</label></li>
-            <li><label><input type="radio" name="q101" value="B"> ب) خريطة الطقس</label></li>
-            <li><label><input type="radio" name="q101" value="C"> ج) السلسلة الغذائية</label></li>
-            <li><label><input type="radio" name="q101" value="D"> د) مخطط دورة الماء</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-4-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-4-1-5-6</span>
-        <div class="question-text">س102: أي صفة تمثل صفة مكتسبة أكثر من كونها وراثية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q102" value="A"> أ) مهارة تعلمها الفرد بالتدريب</label></li>
-            <li><label><input type="radio" name="q102" value="B"> ب) لون العينين</label></li>
-            <li><label><input type="radio" name="q102" value="C"> ج) فصيلة الدم</label></li>
-            <li><label><input type="radio" name="q102" value="D"> د) نوع الشعر الوراثي</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-4-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-4-1-5-6</span>
-        <div class="question-text">س103: أي عبارة تميز الصفة السائدة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q103" value="A"> أ) يمكن أن تظهر عند وجود نسخة واحدة منها في بعض أنماط الوراثة</label></li>
-            <li><label><input type="radio" name="q103" value="B"> ب) لا تظهر إلا بوجود نسختين دائمًا</label></li>
-            <li><label><input type="radio" name="q103" value="C"> ج) لا يمكن أن تنتقل للأبناء</label></li>
-            <li><label><input type="radio" name="q103" value="D"> د) تنتج فقط عن البيئة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-4-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-4-1-5-6</span>
-        <div class="question-text">س104: أي مما يأتي عامل بيئي يمكن أن يؤثر في صفات مكتسبة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q104" value="A"> أ) كمية الغذاء</label></li>
-            <li><label><input type="radio" name="q104" value="B"> ب) رموز الحروف الوراثية فقط</label></li>
-            <li><label><input type="radio" name="q104" value="C"> ج) عدد الكروموسومات فقط</label></li>
-            <li><label><input type="radio" name="q104" value="D"> د) نوع مخطط السلالة</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-4-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-4-1-5-6</span>
-        <div class="question-text">س105: أي صفة وردت مثالًا على صفة قد تتأثر بالعوامل البيئية؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q105" value="A"> أ) الطول</label></li>
-            <li><label><input type="radio" name="q105" value="B"> ب) فصيلة الدم</label></li>
-            <li><label><input type="radio" name="q105" value="C"> ج) نوع الجين</label></li>
-            <li><label><input type="radio" name="q105" value="D"> د) عدد الكروموسومات</label></li>
-        </ul>
-    </div>
-
-    <div class="question-card" data-category="life-science" data-code="1-4-1-5-6">
-        <span class="badge-ls">Life Science | الكود: 1-4-1-5-6</span>
-        <div class="question-text">س106: لماذا نستخدم مخطط السلالة؟</div>
-        <ul class="options-list">
-            <li><label><input type="radio" name="q106" value="A"> أ) لتتبع انتقال صفة وراثية عبر الأجيال</label></li>
-            <li><label><input type="radio" name="q106" value="B"> ب) لتحديد درجة حرارة البيئة</label></li>
-            <li><label><input type="radio" name="q106" value="C"> ج) لتصنيف الأنظمة البيئية</label></li>
-            <li><label><input type="radio" name="q106" value="D"> د) لرسم السلاسل الغذائية</label></li>
-        </ul>
-    </div>
-
-</div>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between">
+
+    <!-- Header Navigation -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-brand-600 text-white p-2.5 rounded-xl flex items-center justify-center shadow-sm">
+                    <i class="fa-solid fa-dna text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-slate-900 text-lg leading-tight">بنك أسئلة علوم الحياة</h1>
+                    <p class="text-xs text-slate-500">منصة الاختبارات التفاعلية والمؤشرات</p>
+                </div>
+            </div>
+            
+            <nav class="flex items-center gap-6 text-sm font-semibold text-slate-600">
+                <a href="#" class="hover:text-brand-600 flex items-center gap-2 transition">
+                    <i class="fa-solid fa-chart-line text-slate-400"></i> التحليلات والتطور
+                </a>
+                <a href="#" class="text-brand-600 flex items-center gap-2">
+                    <i class="fa-solid fa-house"></i> الرئيسية
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1">
+        
+        <!-- Hero Banner -->
+        <div class="bg-gradient-to-r from-brand-700 to-brand-600 rounded-3xl p-8 text-white relative overflow-hidden shadow-lg mb-8">
+            <div class="absolute -left-10 -bottom-10 opacity-10 text-white pointer-events-none">
+                <i class="fa-solid fa-seedling text-[240px]"></i>
+            </div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="inline-block bg-brand-800/60 backdrop-blur-md text-emerald-200 text-xs px-3 py-1 rounded-full font-semibold mb-4 border border-brand-500/30">
+                    100 سؤال اختيار من متعدد
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-3 leading-snug">
+                    مرحبًا بك في منصة تقييم علوم الحياة
+                </h2>
+                <p class="text-brand-100 text-sm sm:text-base mb-8 leading-relaxed">
+                    يمكنك التدريب على كافة موضوعات الأحياء والكائنات الحية أو اختيار موضوع محدد لقياس مستوى استيعابك وتتبع تقدمك في المؤشرات المحددة بكل دقة.
+                </p>
+
+                <div class="flex flex-wrap gap-4 items-center">
+                    <button class="bg-white text-brand-700 hover:bg-brand-50 px-6 py-3 rounded-xl font-bold text-sm shadow-md transition flex items-center gap-2">
+                        <i class="fa-solid fa-play text-xs"></i> بدء الاختبار الشامل (100 سؤال)
+                    </button>
+                    <button class="bg-brand-800/50 hover:bg-brand-800/80 text-white px-5 py-3 rounded-xl font-bold text-sm border border-brand-500/30 transition flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie"></i> عرض سجل التطور والنتائج
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            <!-- Stat Card 1 -->
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-500 font-semibold mb-1">الأسئلة المجابة</p>
+                    <p class="text-xl font-bold text-slate-800">100 / 0</p>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-brand-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+            </div>
+
+            <!-- Stat Card 2 -->
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-500 font-semibold mb-1">نسبة الإنجاز العامة</p>
+                    <p class="text-xl font-bold text-slate-800">0%</p>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-brand-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-circle-notch"></i>
+                </div>
+            </div>
+
+            <!-- Stat Card 3 -->
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-500 font-semibold mb-1">معدل الإجابات الصحيحة</p>
+                    <p class="text-xl font-bold text-slate-800">0%</p>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+            </div>
+
+            <!-- Stat Card 4 -->
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-500 font-semibold mb-1">عدد المحاولات المكتملة</p>
+                    <p class="text-xl font-bold text-slate-800">0</p>
+                </div>
+                <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Title -->
+        <div class="mb-6">
+            <h3 class="text-xl font-bold text-slate-900">الموضوعات الرئيسية (6 موضوعات)</h3>
+            <p class="text-xs text-slate-500 mt-0.5">اختر موضوعاً لبدء اختبار مخصص أو متابعة نسبة التقدم والمؤشرات</p>
+        </div>
+
+        <!-- Topics Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Topic Card 1 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs text-slate-400 font-medium">18 سؤال</span>
+                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 1</span>
+                    </div>
+                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع الأول: خلية الكائن الحي (التركيب، العضيات، والوظائف)</h4>
+                    <p class="text-xs text-slate-400 mb-4">النطاق 1-3 — مؤشراته 1 إلى 4</p>
+
+                    <div class="mb-4">
+                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/5)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/4)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/5)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 4 (0/4)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
+                        <span>نسبة التقدم</span>
+                        <span>0% (0/18)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
+                        <div class="bg-brand-600 h-full w-0"></div>
+                    </div>
+                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
+                    </button>
+                </div>
+            </div>
+
+            <!-- Topic Card 2 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs text-slate-400 font-medium">16 سؤال</span>
+                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 2</span>
+                    </div>
+                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع الثاني: أجهزة جسم الإنسان والتكامل الوظيفي</h4>
+                    <p class="text-xs text-slate-400 mb-4">النطاق 2-1 — مؤشرات 1 إلى 5</p>
+
+                    <div class="mb-4">
+                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/3)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/3)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/4)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 4 (0/3)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 5 (0/3)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
+                        <span>نسبة التقدم</span>
+                        <span>0% (0/16)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
+                        <div class="bg-brand-600 h-full w-0"></div>
+                    </div>
+                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
+                    </button>
+                </div>
+            </div>
+
+            <!-- Topic Card 3 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs text-slate-400 font-medium">20 سؤال</span>
+                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 3</span>
+                    </div>
+                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع الثالث: الوراثة والصفات والانقسام الخلوي</h4>
+                    <p class="text-xs text-slate-400 mb-4">النطاق 3-2 — مؤشرات 1 إلى 4</p>
+
+                    <div class="mb-4">
+                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/5)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/5)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/5)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 4 (0/5)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
+                        <span>نسبة التقدم</span>
+                        <span>0% (0/20)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
+                        <div class="bg-brand-600 h-full w-0"></div>
+                    </div>
+                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
+                    </button>
+                </div>
+            </div>
+
+            <!-- Topic Card 4 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs text-slate-400 font-medium">15 سؤال</span>
+                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 4</span>
+                    </div>
+                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع الرابع: الأنظمة البيئية والسلاسل الغذائية</h4>
+                    <p class="text-xs text-slate-400 mb-4">النطاق 4-1 — مؤشرات 1 إلى 3</p>
+
+                    <div class="mb-4">
+                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/5)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/5)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/5)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
+                        <span>نسبة التقدم</span>
+                        <span>0% (0/15)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
+                        <div class="bg-brand-600 h-full w-0"></div>
+                    </div>
+                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
+                    </button>
+                </div>
+            </div>
+
+            <!-- Topic Card 5 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs text-slate-400 font-medium">16 سؤال</span>
+                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 5</span>
+                    </div>
+                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع الخامس: التكيّف والبقاء والتنوع الحيوي</h4>
+                    <p class="text-xs text-slate-400 mb-4">النطاق 5-2 — مؤشرات 1 إلى 3</p>
+
+                    <div class="mb-4">
+                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/6)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/5)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/5)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
+                        <span>نسبة التقدم</span>
+                        <span>0% (0/16)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
+                        <div class="bg-brand-600 h-full w-0"></div>
+                    </div>
+                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
+                    </button>
+                </div>
+            </div>
+
+            <!-- Topic Card 6 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs text-slate-400 font-medium">15 سؤال</span>
+                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 6</span>
+                    </div>
+                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع السادس: عمليات الحياة في النباتات (البناء الضوئي والتنفس)</h4>
+                    <p class="text-xs text-slate-400 mb-4">النطاق 6-1 — مؤشرات 1 إلى 3</p>
+
+                    <div class="mb-4">
+                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/5)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/5)</span>
+                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/5)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
+                        <span>نسبة التقدم</span>
+                        <span>0% (0/15)</span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
+                        <div class="bg-brand-600 h-full w-0"></div>
+                    </div>
+                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-12">
+        تطبيق بنك أسئلة علوم الحياة والمؤشرات © 2026 - نظام تقييم نواتج التعلم التفاعلي
+    </footer>
 
 </body>
 </html>
