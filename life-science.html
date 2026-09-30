@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بنك أسئلة علوم الحياة - منصة الاختبارات التفاعلية</title>
-    <!-- Tailwind CSS CDN -->
+    <title>اختبار علوم الحياة الشامل - 106 سؤالاً</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,21 +40,21 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="bg-brand-600 text-white p-2.5 rounded-xl flex items-center justify-center shadow-sm">
-                    <i class="fa-solid fa-dna text-xl"></i>
+                    <i class="fa-solid fa-vial text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-slate-900 text-lg leading-tight">بنك أسئلة علوم الحياة</h1>
-                    <p class="text-xs text-slate-500">منصة الاختبارات التفاعلية والمؤشرات</p>
+                    <h1 class="font-bold text-slate-900 text-lg leading-tight">بنك أسئلة علوم الحياة (106 سؤالاً)</h1>
+                    <p class="text-xs text-slate-500">منصة الاختبارات التفاعلية - الصف السادس</p>
                 </div>
             </div>
             
             <nav class="flex items-center gap-6 text-sm font-semibold text-slate-600">
-                <a href="#" class="hover:text-brand-600 flex items-center gap-2 transition">
-                    <i class="fa-solid fa-chart-line text-slate-400"></i> التحليلات والتطور
-                </a>
-                <a href="#" class="text-brand-600 flex items-center gap-2">
-                    <i class="fa-solid fa-house"></i> الرئيسية
-                </a>
+                <button onclick="showSection('overview')" class="hover:text-brand-600 flex items-center gap-2 transition">
+                    <i class="fa-solid fa-layer-group text-slate-400"></i> المحاور والكتل
+                </button>
+                <button onclick="startQuiz('all')" class="text-brand-600 flex items-center gap-2 font-bold bg-brand-50 px-3 py-1.5 rounded-lg">
+                    <i class="fa-solid fa-play"></i> الاختبار الشامل (106)
+                </button>
             </nav>
         </div>
     </header>
@@ -62,304 +62,392 @@
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1">
         
-        <!-- Hero Banner -->
-        <div class="bg-gradient-to-r from-brand-700 to-brand-600 rounded-3xl p-8 text-white relative overflow-hidden shadow-lg mb-8">
-            <div class="absolute -left-10 -bottom-10 opacity-10 text-white pointer-events-none">
-                <i class="fa-solid fa-seedling text-[240px]"></i>
-            </div>
-            <div class="relative z-10 max-w-3xl">
-                <span class="inline-block bg-brand-800/60 backdrop-blur-md text-emerald-200 text-xs px-3 py-1 rounded-full font-semibold mb-4 border border-brand-500/30">
-                    100 سؤال اختيار من متعدد
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold mb-3 leading-snug">
-                    مرحبًا بك في منصة تقييم علوم الحياة
-                </h2>
-                <p class="text-brand-100 text-sm sm:text-base mb-8 leading-relaxed">
-                    يمكنك التدريب على كافة موضوعات الأحياء والكائنات الحية أو اختيار موضوع محدد لقياس مستوى استيعابك وتتبع تقدمك في المؤشرات المحددة بكل دقة.
-                </p>
+        <!-- Dashboard Section -->
+        <div id="overview-section">
+            <!-- Hero Banner -->
+            <div class="bg-gradient-to-r from-brand-700 to-brand-600 rounded-3xl p-8 text-white relative overflow-hidden shadow-lg mb-8">
+                <div class="absolute -left-10 -bottom-10 opacity-10 text-white pointer-events-none">
+                    <i class="fa-solid fa-dna text-[240px]"></i>
+                </div>
+                <div class="relative z-10 max-w-3xl">
+                    <span class="inline-block bg-brand-800/60 backdrop-blur-md text-emerald-200 text-xs px-3 py-1 rounded-full font-semibold mb-4 border border-brand-500/30">
+                        بنك الأسئلة المعتمد والكامل
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mb-3 leading-snug">
+                        اختبارات علوم الحياة التفاعلية
+                    </h2>
+                    <p class="text-brand-100 text-sm sm:text-base mb-8 leading-relaxed">
+                        يحتوي هذا بنك على 106 سؤالاً موزعة بصلابة على جميع المؤشرات الوطنية لعلوم الحياة للصف السادس.
+                    </p>
 
-                <div class="flex flex-wrap gap-4 items-center">
-                    <button class="bg-white text-brand-700 hover:bg-brand-50 px-6 py-3 rounded-xl font-bold text-sm shadow-md transition flex items-center gap-2">
-                        <i class="fa-solid fa-play text-xs"></i> بدء الاختبار الشامل (100 سؤال)
+                    <div class="flex flex-wrap gap-4 items-center">
+                        <button onclick="startQuiz('all')" class="bg-white text-brand-700 hover:bg-brand-50 px-6 py-3 rounded-xl font-bold text-sm shadow-md transition flex items-center gap-2">
+                            <i class="fa-solid fa-play text-xs"></i> بدء الاختبار الشامل (106 سؤالاً)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Branch 1 -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs text-slate-400 font-medium">40 سؤالاً</span>
+                            <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">المحور 1-1</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">التركيب والوظيفة في المخلوقات الحية</h4>
+                        <p class="text-xs text-slate-500 mb-4">الخلايا، العضيات، مقارنة الخلية النباتية والحيوانية، أجهزة الجسم، ودورات الحياة.</p>
+                    </div>
+                    <button onclick="startQuiz('1-1')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-xs"></i> بدء أسئلة هذا المحور (40 سؤالاً)
                     </button>
-                    <button class="bg-brand-800/50 hover:bg-brand-800/80 text-white px-5 py-3 rounded-xl font-bold text-sm border border-brand-500/30 transition flex items-center gap-2">
-                        <i class="fa-solid fa-chart-pie"></i> عرض سجل التطور والنتائج
+                </div>
+
+                <!-- Branch 2 -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs text-slate-400 font-medium">9 أسئلة</span>
+                            <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">المحور 2-1</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">تنظيم المخلوقات الحية وتنوعها</h4>
+                        <p class="text-xs text-slate-500 mb-4">تصنيف المخلوقات الحية، النباتات الزهرية واللازهرية، والصفات الظاهرية المشتركة.</p>
+                    </div>
+                    <button onclick="startQuiz('2-1')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-xs"></i> بدء أسئلة هذا المحور (9 أسئلة)
+                    </button>
+                </div>
+
+                <!-- Branch 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs text-slate-400 font-medium">49 سؤالاً</span>
+                            <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">المحور 3-1</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">الأنظمة البيئية وتفاعلاتها</h4>
+                        <p class="text-xs text-slate-500 mb-4">المجتمع والجماعات الحيوية، السلاسل الغذائية، التكيف التركيبي والسلوكي، وأثر الإنسان.</p>
+                    </div>
+                    <button onclick="startQuiz('3-1')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-xs"></i> بدء أسئلة هذا المحور (49 سؤالاً)
+                    </button>
+                </div>
+
+                <!-- Branch 4 -->
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs text-slate-400 font-medium">8 أسئلة</span>
+                            <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">المحور 4-1</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">الوراثة</h4>
+                        <p class="text-xs text-slate-500 mb-4">وراثة الصفات، التباين، الصفات السائدة والمتنحية، مخطط السلالة، والعوامل البيئية.</p>
+                    </div>
+                    <button onclick="startQuiz('4-1')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-pen-to-square text-xs"></i> بدء أسئلة هذا المحور (8 أسئلة)
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Quick Stats Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-            <!-- Stat Card 1 -->
-            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
-                <div>
-                    <p class="text-xs text-slate-500 font-semibold mb-1">الأسئلة المجابة</p>
-                    <p class="text-xl font-bold text-slate-800">100 / 0</p>
+        <!-- Quiz Container Section -->
+        <div id="quiz-section" class="hidden max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8">
+                <!-- Quiz Progress Bar -->
+                <div class="flex justify-between items-center mb-4 text-xs font-semibold text-slate-500">
+                    <span id="question-indicator">السؤال 1 من 106</span>
+                    <span id="indicator-tag" class="bg-emerald-100 text-brand-800 px-2.5 py-0.5 rounded-md">مؤشر: ---</span>
                 </div>
-                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-brand-600 flex items-center justify-center font-bold">
-                    <i class="fa-solid fa-check"></i>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden mb-6">
+                    <div id="quiz-progress" class="bg-brand-600 h-full w-0 transition-all duration-300"></div>
                 </div>
-            </div>
 
-            <!-- Stat Card 2 -->
-            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
-                <div>
-                    <p class="text-xs text-slate-500 font-semibold mb-1">نسبة الإنجاز العامة</p>
-                    <p class="text-xl font-bold text-slate-800">0%</p>
-                </div>
-                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-brand-600 flex items-center justify-center font-bold">
-                    <i class="fa-solid fa-circle-notch"></i>
-                </div>
-            </div>
+                <!-- Question Box -->
+                <h3 id="question-text" class="text-lg font-bold text-slate-800 mb-6 leading-relaxed">
+                    نص السؤال يظهر هنا...
+                </h3>
 
-            <!-- Stat Card 3 -->
-            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
-                <div>
-                    <p class="text-xs text-slate-500 font-semibold mb-1">معدل الإجابات الصحيحة</p>
-                    <p class="text-xl font-bold text-slate-800">0%</p>
+                <!-- Options -->
+                <div id="options-container" class="space-y-3 mb-8">
+                    <!-- Options injected dynamically -->
                 </div>
-                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
-                    <i class="fa-solid fa-trophy"></i>
-                </div>
-            </div>
 
-            <!-- Stat Card 4 -->
-            <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex items-center justify-between">
-                <div>
-                    <p class="text-xs text-slate-500 font-semibold mb-1">عدد المحاولات المكتملة</p>
-                    <p class="text-xl font-bold text-slate-800">0</p>
-                </div>
-                <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center font-bold">
-                    <i class="fa-solid fa-rotate-left"></i>
+                <!-- Feedback Area -->
+                <div id="feedback-area" class="hidden p-4 rounded-xl mb-6 text-sm"></div>
+
+                <!-- Quiz Actions -->
+                <div class="flex justify-between items-center pt-4 border-t border-slate-100">
+                    <button onclick="exitQuiz()" class="text-slate-400 hover:text-slate-600 text-sm font-semibold">
+                        إلغاء الاختبار
+                    </button>
+                    <button id="next-btn" onclick="nextQuestion()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition hidden">
+                        السؤال التالي <i class="fa-solid fa-arrow-left text-xs mr-1"></i>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- Section Title -->
-        <div class="mb-6">
-            <h3 class="text-xl font-bold text-slate-900">الموضوعات الرئيسية (6 موضوعات)</h3>
-            <p class="text-xs text-slate-500 mt-0.5">اختر موضوعاً لبدء اختبار مخصص أو متابعة نسبة التقدم والمؤشرات</p>
+        <!-- Result Screen -->
+        <div id="result-section" class="hidden max-w-lg mx-auto text-center bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+            <div class="w-20 h-20 bg-emerald-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-2">أحسنت! اكملت الاختبار</h3>
+            <p class="text-slate-500 text-sm mb-6">إليك ملخص نتيجتك النهائية:</p>
+
+            <div class="bg-slate-50 p-4 rounded-2xl mb-6 flex justify-around">
+                <div>
+                    <span class="block text-xs text-slate-400 font-semibold">الدرجة النهائية</span>
+                    <span id="score-text" class="text-2xl font-bold text-brand-700">0 / 0</span>
+                </div>
+                <div>
+                    <span class="block text-xs text-slate-400 font-semibold">النسبة المئوية</span>
+                    <span id="percentage-text" class="text-2xl font-bold text-brand-700">0%</span>
+                </div>
+            </div>
+
+            <button onclick="showSection('overview')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-xl transition">
+                العودة للشاشة الرئيسية
+            </button>
         </div>
 
-        <!-- Topics Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <!-- Topic Card 1 -->
-            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs text-slate-400 font-medium">18 سؤال</span>
-                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 1</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع الأول: خلية الكائن الحي (التركيب، العضيات، والوظائف)</h4>
-                    <p class="text-xs text-slate-400 mb-4">النطاق 1-3 — مؤشراته 1 إلى 4</p>
-
-                    <div class="mb-4">
-                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/5)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/4)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/5)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 4 (0/4)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
-                        <span>نسبة التقدم</span>
-                        <span>0% (0/18)</span>
-                    </div>
-                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
-                        <div class="bg-brand-600 h-full w-0"></div>
-                    </div>
-                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
-                    </button>
-                </div>
-            </div>
-
-            <!-- Topic Card 2 -->
-            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs text-slate-400 font-medium">16 سؤال</span>
-                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 2</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع الثاني: أجهزة جسم الإنسان والتكامل الوظيفي</h4>
-                    <p class="text-xs text-slate-400 mb-4">النطاق 2-1 — مؤشرات 1 إلى 5</p>
-
-                    <div class="mb-4">
-                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/3)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/3)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/4)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 4 (0/3)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 5 (0/3)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
-                        <span>نسبة التقدم</span>
-                        <span>0% (0/16)</span>
-                    </div>
-                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
-                        <div class="bg-brand-600 h-full w-0"></div>
-                    </div>
-                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
-                    </button>
-                </div>
-            </div>
-
-            <!-- Topic Card 3 -->
-            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs text-slate-400 font-medium">20 سؤال</span>
-                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 3</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع الثالث: الوراثة والصفات والانقسام الخلوي</h4>
-                    <p class="text-xs text-slate-400 mb-4">النطاق 3-2 — مؤشرات 1 إلى 4</p>
-
-                    <div class="mb-4">
-                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/5)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/5)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/5)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 4 (0/5)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
-                        <span>نسبة التقدم</span>
-                        <span>0% (0/20)</span>
-                    </div>
-                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
-                        <div class="bg-brand-600 h-full w-0"></div>
-                    </div>
-                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
-                    </button>
-                </div>
-            </div>
-
-            <!-- Topic Card 4 -->
-            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs text-slate-400 font-medium">15 سؤال</span>
-                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 4</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع الرابع: الأنظمة البيئية والسلاسل الغذائية</h4>
-                    <p class="text-xs text-slate-400 mb-4">النطاق 4-1 — مؤشرات 1 إلى 3</p>
-
-                    <div class="mb-4">
-                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/5)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/5)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/5)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
-                        <span>نسبة التقدم</span>
-                        <span>0% (0/15)</span>
-                    </div>
-                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
-                        <div class="bg-brand-600 h-full w-0"></div>
-                    </div>
-                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
-                    </button>
-                </div>
-            </div>
-
-            <!-- Topic Card 5 -->
-            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs text-slate-400 font-medium">16 سؤال</span>
-                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 5</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع الخامس: التكيّف والبقاء والتنوع الحيوي</h4>
-                    <p class="text-xs text-slate-400 mb-4">النطاق 5-2 — مؤشرات 1 إلى 3</p>
-
-                    <div class="mb-4">
-                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/6)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/5)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/5)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
-                        <span>نسبة التقدم</span>
-                        <span>0% (0/16)</span>
-                    </div>
-                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
-                        <div class="bg-brand-600 h-full w-0"></div>
-                    </div>
-                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
-                    </button>
-                </div>
-            </div>
-
-            <!-- Topic Card 6 -->
-            <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition">
-                <div>
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="text-xs text-slate-400 font-medium">15 سؤال</span>
-                        <span class="bg-emerald-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md">الموضوع 6</span>
-                    </div>
-                    <h4 class="font-bold text-slate-800 text-base mb-1">الموضوع السادس: عمليات الحياة في النباتات (البناء الضوئي والتنفس)</h4>
-                    <p class="text-xs text-slate-400 mb-4">النطاق 6-1 — مؤشرات 1 إلى 3</p>
-
-                    <div class="mb-4">
-                        <span class="text-[11px] text-slate-400 block mb-2 font-medium">المؤشرات:</span>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 1 (0/5)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 2 (0/5)</span>
-                            <span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">مؤشر 3 (0/5)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex justify-between items-center text-xs text-slate-400 mb-1.5">
-                        <span>نسبة التقدم</span>
-                        <span>0% (0/15)</span>
-                    </div>
-                    <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden mb-4">
-                        <div class="bg-brand-600 h-full w-0"></div>
-                    </div>
-                    <button class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-pen-to-square text-xs"></i> ابدأ الاختبار
-                    </button>
-                </div>
-            </div>
-
-        </div>
     </main>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-12">
-        تطبيق بنك أسئلة علوم الحياة والمؤشرات © 2026 - نظام تقييم نواتج التعلم التفاعلي
+        بنك أسئلة علوم الحياة المعتمد (106 أسئلة) - الصف السادس © 2026
     </footer>
 
+    <!-- Full 106 Questions Data Script -->
+    <script>
+        const questionsBank = [
+            // --- 1-1 – المؤشر 1-1-1-5-6 (1-10) ---
+            { category: '1-1', indicator: '1-1-1-5-6', question: '1. أي تركيب خلوي يُعد مركز التحكم في معظم أنشطة الخلية؟', options: ['أ) النواة', 'ب) الجدار الخلوي', 'ج) السيتوبلازم', 'د) الغشاء الخلوي'], correct: 0 },
+            { category: '1-1', indicator: '1-1-1-5-6', question: '2. أي مما يأتي يوجد داخل الخلية ويساعد على احتواء التراكيب الخلوية؟', options: ['أ) الغشاء الخلوي', 'ب) النواة', 'ج) الجدار الخلوي', 'د) البلاستيدة الخضراء'], correct: 0 },
+            { category: '1-1', indicator: '1-1-1-5-6', question: '3. ما الوظيفة الأساسية للغشاء الخلوي؟', options: ['أ) تنظيم دخول المواد وخروجها', 'ب) إنتاج الغذاء', 'ج) حمل الصفات الوراثية فقط', 'د) إعطاء النبات لونه الأخضر'], correct: 0 },
+            { category: '1-1', indicator: '1-1-1-5-6', question: '4. أي تركيب يوجد في الخلية النباتية ويساعدها على القيام بالبناء الضوئي؟', options: ['أ) البلاستيدات الخضراء', 'ب) النواة', 'ج) السيتوبلازم', 'د) الغشاء الخلوي'], correct: 0 },
+            { category: '1-1', indicator: '1-1-1-5-6', question: '5. أين توجد معظم مكونات الخلية وتحدث فيها كثير من العمليات الحيوية؟', options: ['أ) السيتوبلازم', 'ب) الجدار الخلوي', 'ج) النواة', 'د) البلاستيدات الخضراء'], correct: 0 },
+            { category: '1-1', indicator: '1-1-1-5-6', question: '6. أي زوج يمثل تركيبًا خلويًا ووظيفة مرتبطة به بصورة صحيحة؟', options: ['أ) النواة ـ تنظيم أنشطة الخلية', 'ب) الجدار الخلوي ـ إنتاج الغذاء', 'ج) السيتوبلازم ـ منع مرور جميع المواد', 'د) الغشاء الخلوي ـ تخزين المعلومات الوراثية'], correct: 0 },
+            { category: '1-1', indicator: '1-1-1-5-6', question: '7. أي مما يأتي مثال على مخلوق وحيد الخلية؟', options: ['أ) البكتيريا', 'ب) الإنسان', 'ج) شجرة النخيل', 'د) القط'], correct: 0 },
+            { category: '1-1', indicator: '1-1-1-5-6', question: '8. ما الذي يميز المخلوق عديد الخلايا عن المخلوق وحيد الخلية؟', options: ['أ) يتكون من عدد كبير من الخلايا', 'ب) لا يحتوي على خلايا', 'ج) لا يقوم بعمليات حيوية', 'د) لا يحتاج إلى الغذاء'], correct: 0 },
+            { category: '1-1', indicator: '1-1-1-5-6', question: '9. إذا تضررت النواة في خلية، فأي وظيفة تتأثر مباشرة أكثر؟', options: ['أ) تنظيم أنشطة الخلية', 'ب) تكوين الجدار الخلوي فقط', 'ج) امتصاص الضوء فقط', 'د) إعطاء الخلية شكلها فقط'], correct: 0 },
+            { category: '1-1', indicator: '1-1-1-5-6', question: '10. أي عبارة تربط التركيب بالوظيفة بصورة صحيحة؟', options: ['أ) البلاستيدات الخضراء تساعد النبات على إنتاج الغذاء', 'ب) النواة تسمح بمرور الماء فقط', 'ج) الغشاء الخلوي ينتج الضوء', 'د) السيتوبلازم يحمي النبات من الحيوانات'], correct: 0 },
+
+            // --- 1-1 – المؤشر 2-1-1-5-6 (11-20) ---
+            { category: '1-1', indicator: '2-1-1-5-6', question: '11. أي تركيب يميز الخلية النباتية عن الخلية الحيوانية ويساعدها على الدعامة؟', options: ['أ) الجدار الخلوي', 'ب) الغشاء الخلوي', 'ج) النواة', 'د) السيتوبلازم'], correct: 0 },
+            { category: '1-1', indicator: '2-1-1-5-6', question: '12. أي تركيب يوجد في الخلايا النباتية ويساعد على إنتاج الغذاء؟', options: ['أ) البلاستيدات الخضراء', 'ب) الجدار الخلوي', 'ج) النواة', 'د) السيتوبلازم'], correct: 0 },
+            { category: '1-1', indicator: '2-1-1-5-6', question: '13. ما التركيب الموجود في الخلية النباتية والحيوانية معًا؟', options: ['أ) الغشاء الخلوي', 'ب) الجدار الخلوي', 'ج) البلاستيدة الخضراء', 'د) لا شيء مما سبق'], correct: 0 },
+            { category: '1-1', indicator: '2-1-1-5-6', question: '14. ما الوظيفة المشتركة للغشاء الخلوي في الخلية النباتية والحيوانية؟', options: ['أ) تنظيم مرور المواد إلى الخلية ومنها', 'ب) إنتاج الغذاء', 'ج) إعطاء الخلية اللون الأخضر', 'د) تكوين الجدار الخلوي'], correct: 0 },
+            { category: '1-1', indicator: '2-1-1-5-6', question: '15. أي مقارنة صحيحة بين الجدار الخلوي والغشاء الخلوي؟', options: ['أ) الجدار الخلوي أكثر دعامة، والغشاء ينظم مرور المواد', 'ب) كلاهما ينتج الغذاء', 'ج) الغشاء يوجد في النبات فقط', 'د) الجدار الخلوي يوجد في الحيوان فقط'], correct: 0 },
+            { category: '1-1', indicator: '2-1-1-5-6', question: '16. وجود البلاستيدات الخضراء في خلية يدل غالبًا على أن الخلية:', options: ['أ) نباتية وقادرة على البناء الضوئي', 'ب) حيوانية ولا تنتج الغذاء', 'ج) وحيدة الخلية بالضرورة', 'د) لا تحتوي على غشاء خلوي'], correct: 0 },
+            { category: '1-1', indicator: '2-1-1-5-6', question: '17. أي عملية حيوية ذُكرت ضمن العمليات التي تقوم بها الخلايا النباتية والحيوانية؟', options: ['أ) التنفس الخلوي', 'ب) تكوين الصخور', 'ج) دوران الكواكب', 'د) التجوية'], correct: 0 },
+            { category: '1-1', indicator: '2-1-1-5-6', question: '18. أي تركيب يمنح الخلية النباتية دعامة إضافية مقارنة بالخلية الحيوانية؟', options: ['أ) الجدار الخلوي', 'ب) السيتوبلازم', 'ج) النواة', 'د) الغشاء الخلوي'], correct: 0 },
+            { category: '1-1', indicator: '2-1-1-5-6', question: '19. إذا فقدت خلية نباتية البلاستيدات الخضراء، فما العملية التي تتأثر مباشرة؟', options: ['أ) البناء الضوئي', 'ب) التنفس فقط', 'ج) الانتشار فقط', 'د) النقل السلبي فقط'], correct: 0 },
+            { category: '1-1', indicator: '2-1-1-5-6', question: '20. أي عبارة أدق عن الخلايا النباتية والحيوانية؟', options: ['أ) تشترك في تراكيب أساسية، وتختلف في تراكيب ووظائف أخرى', 'ب) لا تشترك في أي تركيب', 'ج) الخلايا الحيوانية تحتوي على جدار خلوي', 'د) الخلايا النباتية لا تحتوي على غشاء خلوي'], correct: 0 },
+
+            // --- 1-1 – المؤشر 3-1-1-5-6 (21-30) ---
+            { category: '1-1', indicator: '3-1-1-5-6', question: '21. أي جهاز مسؤول بصورة رئيسة عن هضم الطعام؟', options: ['أ) الجهاز الهضمي', 'ب) الجهاز العصبي', 'ج) الجهاز الهيكلي', 'د) الجهاز الإخراجي'], correct: 0 },
+            { category: '1-1', indicator: '3-1-1-5-6', question: '22. أي جهاز ينقل المواد المختلفة عبر الجسم؟', options: ['أ) الجهاز الدوري', 'ب) الجهاز الهضمي', 'ج) الجهاز الهيكلي', 'د) الجهاز العصبي'], correct: 0 },
+            { category: '1-1', indicator: '3-1-1-5-6', question: '23. أي جهاز يساعد الجسم على الحصول على الأكسجين والتخلص من ثاني أكسيد الكربون؟', options: ['أ) الجهاز التنفسي', 'ب) الجهاز الدوري', 'ج) الجهاز الهضمي', 'د) الجهاز العضلي'], correct: 0 },
+            { category: '1-1', indicator: '3-1-1-5-6', question: '24. أي جهاز يتخلص من بعض الفضلات الناتجة عن العمليات الحيوية؟', options: ['أ) الجهاز الإخراجي', 'ب) الجهاز الهيكلي', 'ج) الجهاز العصبي', 'د) الجهاز الهضمي'], correct: 0 },
+            { category: '1-1', indicator: '3-1-1-5-6', question: '25. أي جهاز يساعد على استقبال المعلومات والاستجابة لها؟', options: ['أ) الجهاز العصبي', 'ب) الجهاز الهضمي', 'ج) الجهاز الهيكلي', 'د) الجهاز الإخراجي'], correct: 0 },
+            { category: '1-1', indicator: '3-1-1-5-6', question: '26. أي تركيب نباتي يمتص الماء والأملاح من التربة؟', options: ['أ) الجذر', 'ب) الساق', 'ج) الورقة', 'د) الزهرة'], correct: 0 },
+            { category: '1-1', indicator: '3-1-1-5-6', question: '27. أي تركيب نباتي ينقل الماء والمواد داخل النبات ويدعم أجزاءه؟', options: ['أ) الساق', 'ب) الجذر', 'ج) الزهرة', 'د) الثمرة'], correct: 0 },
+            { category: '1-1', indicator: '3-1-1-5-6', question: '28. أي تركيب نباتي يرتبط بصورة رئيسة بإنتاج الغذاء؟', options: ['أ) الأوراق', 'ب) الجذور', 'ج) الساق فقط', 'د) الأزهار فقط'], correct: 0 },
+            { category: '1-1', indicator: '3-1-1-5-6', question: '29. أي عبارة تفسر أهمية تخصص الأعضاء؟', options: ['أ) تؤدي الأعضاء المتخصصة وظائف تساعد المخلوق على النمو والبقاء', 'ب) تمنع المخلوق من القيام بالعمليات الحيوية', 'ج) تجعل جميع الأعضاء تؤدي الوظيفة نفسها', 'د) تقلل حاجة المخلوق إلى الغذاء'], correct: 0 },
+            { category: '1-1', indicator: '3-1-1-5-6', question: '30. أي زوج يمثل تركيبًا ووظيفة بصورة صحيحة؟', options: ['أ) الجذر ـ امتصاص الماء والأملاح', 'ب) المعدة ـ ضخ الدم', 'ج) القلب ـ هضم الطعام', 'د) الورقة ـ إخراج الفضلات من الحيوان'], correct: 0 },
+
+            // --- 1-1 – المؤشر 4-1-1-5-6 (31-40) ---
+            { category: '1-1', indicator: '4-1-1-5-6', question: '31. أي مرحلة تُعد جزءًا من دورة حياة المخلوق الحي؟', options: ['أ) مرحلة النمو', 'ب) تكوين الصخور', 'ج) التجوية', 'د) تبخر الماء فقط'], correct: 0 },
+            { category: '1-1', indicator: '4-1-1-5-6', question: '32. أي مجموعة تمثل أنماطًا لدورات حياة ذُكرت في المؤشر؟', options: ['أ) الحشرات والبرمائيات والثدييات', 'ب) الطيور والصخور والمعادن', 'ج) الأسماك والتربة والهواء', 'د) الجبال والأنهار والحشرات'], correct: 0 },
+            { category: '1-1', indicator: '4-1-1-5-6', question: '33. أي مخلوق يمر عادة بمرحلة يرقة خلال دورة حياته؟', options: ['أ) الفراشة', 'ب) القطة', 'ج) الإنسان', 'د) الحصان'], correct: 0 },
+            { category: '1-1', indicator: '4-1-1-5-6', question: '34. ما الذي يمكن استخدامه للمقارنة بين دورات حياة المخلوقات؟', options: ['أ) التغيرات والمراحل التي تمر بها', 'ب) لون موطنها فقط', 'ج) درجة حرارة جسمها فقط', 'د) حجمها النهائي فقط'], correct: 0 },
+            { category: '1-1', indicator: '4-1-1-5-6', question: '35. أي عبارة تصف دورة حياة بصورة صحيحة؟', options: ['أ) تتغير صفات المخلوق خلال مراحل نموه وتطوره', 'ب) يبقى المخلوق دون تغير منذ ولادته', 'ج) لا تتكرر الأنماط في النوع نفسه', 'د) لا علاقة للتكاثر بدورة الحياة'], correct: 0 },
+            { category: '1-1', indicator: '4-1-1-5-6', question: '36. أي مجموعة تتضمن مخلوقات لها دورات حياة مختلفة يمكن مقارنتها؟', options: ['أ) ضفدع وفراشة', 'ب) صخرة وفراشة', 'ج) ماء وقطة', 'د) هواء وضفدع'], correct: 0 },
+            { category: '1-1', indicator: '4-1-1-5-6', question: '37. عند دراسة دورة حياة نبات، ما الذي ينبغي تتبعه؟', options: ['أ) المراحل والتغيرات من بداية النمو إلى النضج', 'ب) لون التربة فقط', 'ج) عدد الصخور حوله فقط', 'د) درجة حرارة الشمس فقط'], correct: 0 },
+            { category: '1-1', indicator: '4-1-1-5-6', question: '38. ما العامل الذي يساعد على توقع التغيرات في دورة الحياة وفق المؤشر؟', options: ['أ) نمط التكاثر ودورة الحياة', 'ب) لون الحيوان فقط', 'ج) حجم الموطن فقط', 'د) عدد أفراد النوع فقط'], correct: 0 },
+            { category: '1-1', indicator: '4-1-1-5-6', question: '39. أي عبارة تمثل المقارنة العلمية بين دورتَي حياة؟', options: ['أ) تحديد أوجه التشابه والاختلاف في المراحل والتغيرات', 'ب) اختيار الدورة الأطول دون دليل', 'ج) تجاهل مراحل النمو', 'د) مقارنة الألوان فقط'], correct: 0 },
+            { category: '1-1', indicator: '4-1-1-5-6', question: '40. لماذا تعد دراسة دورات الحياة مهمة؟', options: ['أ) لفهم التغيرات التي تحدث للمخلوقات أثناء نموها وتكاثرها', 'ب) لإثبات أن جميع المخلوقات لها الدورة نفسها', 'ج) لتحديد درجة حرارة البيئة فقط', 'د) لتصنيف الصخور'], correct: 0 },
+
+            // --- 2-1 – المؤشر 1-2-1-5-6 (41-49) ---
+            { category: '2-1', indicator: '1-2-1-5-6', question: '41. على أي أساس يمكن تصنيف المخلوقات الحية إلى مجموعات؟', options: ['أ) الصفات الظاهرية المشتركة', 'ب) مكان وجودها فقط', 'ج) حجمها فقط', 'د) اسمها الشائع فقط'], correct: 0 },
+            { category: '2-1', indicator: '1-2-1-5-6', question: '42. أي صفة يمكن استخدامها في تصنيف النباتات ظاهريًا؟', options: ['أ) وجود الأزهار', 'ب) سرعة نموها فقط', 'ج) كمية الماء التي تحتاجها فقط', 'د) عمر النبات فقط'], correct: 0 },
+            { category: '2-1', indicator: '1-2-1-5-6', question: '43. النباتات الزهرية وغير الزهرية تمثلان مجموعتين يمكن التمييز بينهما اعتمادًا على:', options: ['أ) سمات وخصائص ظاهرية مشتركة', 'ب) درجة حرارة التربة فقط', 'ج) حجم الجذر فقط', 'د) لون الماء'], correct: 0 },
+            { category: '2-1', indicator: '1-2-1-5-6', question: '44. إذا تشابهت مجموعة من الحيوانات في صفات ظاهرية مشتركة، فإن ذلك قد يساعد على:', options: ['أ) تصنيفها في مجموعة واحدة', 'ب) إثبات أنها من النوع نفسه دائمًا', 'ج) إثبات أنها تعيش في الموطن نفسه', 'د) إثبات أنها تتغذى بالطريقة نفسها'], correct: 0 },
+            { category: '2-1', indicator: '1-2-1-5-6', question: '45. أي مثال يمثل تصنيفًا اعتمادًا على صفة ظاهرة؟', options: ['أ) جمع الحيوانات ذات الجسم المغطى بالشعر في مجموعة', 'ب) جمع الحيوانات حسب أسماء أصحابها', 'ج) جمع النباتات حسب سعرها', 'د) جمع الكائنات حسب تاريخ اكتشافها'], correct: 0 },
+            { category: '2-1', indicator: '1-2-1-5-6', question: '46. ما الهدف من تصنيف المخلوقات الحية؟', options: ['أ) تنظيمها في مجموعات وفق صفات مشتركة', 'ب) تغيير صفاتها الوراثية', 'ج) زيادة عددها', 'د) تغيير مواطنها'], correct: 0 },
+            { category: '2-1', indicator: '1-2-1-5-6', question: '47. أي سؤال يساعد في تصنيف نباتين إلى مجموعتين زهريّة وغير زهريّة؟', options: ['أ) هل ينتج النبات أزهارًا؟', 'ب) كم عمر النبات؟', 'ج) كم مرة رُوي؟', 'د) كم شخصًا شاهده؟'], correct: 0 },
+            { category: '2-1', indicator: '1-2-1-5-6', question: '48. إذا كان لحيوانين صفات ظاهرية مشتركة، فما الاستنتاج الأكثر مباشرة؟', options: ['أ) يمكن وضعهما في مجموعة تصنيفية مناسبة وفق تلك الصفات', 'ب) هما متطابقان في كل الصفات', 'ج) لا يمكن تصنيفهما', 'د) هما من البيئة نفسها بالضرورة'], correct: 0 },
+            { category: '2-1', indicator: '1-2-1-5-6', question: '49. أي عبارة تتفق مع مؤشر التصنيف؟', options: ['أ) يمكن استخدام أكثر من صفة ظاهرية مشتركة لتكوين مجموعات', 'ب) يُصنف كل مخلوق في مجموعة منفردة', 'ج) التصنيف يعتمد على اللون وحده دائمًا', 'د) التصنيف لا يحتاج إلى ملاحظة الصفات'], correct: 0 },
+
+            // --- 3-1 – المؤشر 1-3-1-5-6 (50-59) ---
+            { category: '3-1', indicator: '1-3-1-5-6', question: '50. ما المجتمع الحيوي؟', options: ['أ) مجموعة من الجماعات الحيوية التي تعيش في منطقة معينة', 'ب) مخلوق حي واحد', 'ج) عامل غير حي فقط', 'د) مجموعة من الصخور'], correct: 0 },
+            { category: '3-1', indicator: '1-3-1-5-6', question: '51. ما المقصود بالجماعة الحيوية؟', options: ['أ) مجموعة من أفراد النوع نفسه تعيش في منطقة معينة', 'ب) جميع المكونات غير الحيوية', 'ج) جميع أنواع الصخور', 'د) مخلوق واحد فقط'], correct: 0 },
+            { category: '3-1', indicator: '1-3-1-5-6', question: '52. أي مما يأتي يمثل تفاعلًا بين مخلوق حي ومكوّن غير حي؟', options: ['أ) نبات يحصل على الماء من التربة', 'ب) أسد يصطاد غزالًا', 'ج) نحلة تزور زهرة', 'د) طائر يبني عشًا'], correct: 0 },
+            { category: '3-1', indicator: '1-3-1-5-6', question: '53. كيف تؤثر الموارد المتاحة في قدرة المخلوقات على البقاء؟', options: ['أ) توفير الموارد يساعدها على تلبية حاجاتها', 'ب) الموارد لا تؤثر مطلقًا', 'ج) زيادة الموارد تمنع جميع المخلوقات من البقاء', 'د) الموارد تؤثر في الصخور فقط'], correct: 0 },
+            { category: '3-1', indicator: '1-3-1-5-6', question: '54. إذا انخفض عدد النباتات في مجتمع حيوي، فما احتمال حدوثه مباشرة؟', options: ['أ) تتأثر الجماعات التي تعتمد عليها في الغذاء', 'ب) لا يتأثر أي مخلوق', 'ج) تزداد الموارد الغذائية دائمًا', 'د) تختفي جميع المكونات غير الحيوية'], correct: 0 },
+            { category: '3-1', indicator: '1-3-1-5-6', question: '55. أي مثال يوضح علاقة متبادلة بين مخلوقات حية؟', options: ['أ) افتراس صقر لفأر', 'ب) تبخر الماء', 'ج) سقوط المطر', 'د) ارتفاع درجة الحرارة'], correct: 0 },
+            { category: '3-1', indicator: '1-3-1-5-6', question: '56. أي عامل غير حي يمكن أن يؤثر في الجماعات الحيوية؟', options: ['أ) درجة الحرارة', 'ب) الحيوانات المفترسة', 'ج) النباتات', 'د) الفطريات'], correct: 0 },
+            { category: '3-1', indicator: '1-3-1-5-6', question: '57. إذا تغيرت مكونات المجتمع الحيوي، فقد يحدث:', options: ['أ) تغير في بقاء الأنواع واستمرارها', 'ب) ثبات جميع الجماعات دائمًا', 'ج) اختفاء العوامل غير الحيوية', 'د) عدم تغير أي علاقة'], correct: 0 },
+            { category: '3-1', indicator: '1-3-1-5-6', question: '58. أي تمثيل يساعد على دراسة العلاقات داخل مجتمع حيوي؟', options: ['أ) مخطط يوضح الجماعات وتفاعلاتها', 'ب) قائمة بأسماء الطلاب', 'ج) جدول درجات الحرارة وحده', 'د) صورة لمخلوق منفرد دون سياق'], correct: 0 },
+            { category: '3-1', indicator: '1-3-1-5-6', question: '59. لماذا تحتاج المخلوقات إلى التفاعل مع مكونات مواطنها؟', options: ['أ) للحصول على حاجاتها والبقاء', 'ب) لتغيير نوعها', 'ج) لإلغاء العلاقات الغذائية', 'د) لمنع انتقال الطاقة'], correct: 0 },
+
+            // --- 3-1 – المؤشر 2-3-1-5-6 (60-69) ---
+            { category: '3-1', indicator: '2-3-1-5-6', question: '60. أي مما يأتي مكوّن حيوي في النظام البيئي؟', options: ['أ) نبات', 'ب) ماء', 'ج) ضوء', 'د) تربة'], correct: 0 },
+            { category: '3-1', indicator: '2-3-1-5-6', question: '61. أي مما يأتي مكوّن غير حيوي؟', options: ['أ) درجة الحرارة', 'ب) الأشجار', 'ج) الحشرات', 'د) الفطريات'], correct: 0 },
+            { category: '3-1', indicator: '2-3-1-5-6', question: '62. كيف تؤثر الموارد في بقاء المخلوقات؟', options: ['أ) توافر الغذاء والماء والمأوى يساعد على البقاء', 'ب) الموارد تمنع النمو', 'ج) الموارد لا علاقة لها بالبقاء', 'د) الموارد تؤثر في المخلوقات غير الحية فقط'], correct: 0 },
+            { category: '3-1', indicator: '2-3-1-5-6', question: '63. إذا قلت كمية الماء في موطن ما، فما النتيجة المحتملة؟', options: ['أ) تتأثر المخلوقات التي تعتمد على الماء', 'ب) تزداد جميع الجماعات', 'ج) لا يتغير أي مخلوق', 'د) تزداد كمية الماء تلقائيًا'], correct: 0 },
+            { category: '3-1', indicator: '2-3-1-5-6', question: '64. أي حالة تمثل تغيرًا في موطن بيئي؟', options: ['أ) انخفاض مصادر الماء بسبب الجفاف', 'ب) تغير اسم الحيوان', 'ج) زيادة عدد صفحات كتاب', 'د) تغير لون لوحة'], correct: 0 },
+            { category: '3-1', indicator: '2-3-1-5-6', question: '65. ما الخطوة المناسبة عند تحديد مشكلة تهدد استقرار نظام بيئي؟', options: ['أ) تحديد سبب المشكلة وتأثيرها ثم اقتراح حل مناسب', 'ب) تجاهل السبب', 'ج) إزالة جميع المخلوقات', 'د) الاعتماد على التخمين فقط'], correct: 0 },
+            { category: '3-1', indicator: '2-3-1-5-6', question: '66. أي حل قد يساعد على استعادة اتزان نظام بيئي متضرر من نقص الموارد؟', options: ['أ) ترشيد استخدام المورد وحمايته', 'ب) زيادة استهلاكه', 'ج) إزالة النباتات', 'د) منع جميع المخلوقات من التكاثر'], correct: 0 },
+            { category: '3-1', indicator: '2-3-1-5-6', question: '67. لماذا تؤثر المكونات غير الحيوية في المخلوقات الحية؟', options: ['أ) لأنها توفر ظروفًا وموارد تؤثر في حياتها', 'ب) لأنها مخلوقات حية', 'ج) لأنها تنتج الحيوانات', 'د) لأنها تغير الصفات الوراثية مباشرة دائمًا'], correct: 0 },
+            { category: '3-1', indicator: '2-3-1-5-6', question: '68. أي مثال يوضح أثر تغير الموطن؟', options: ['أ) تلوث الماء قد يقلل قدرة الكائنات المائية على البقاء', 'ب) زيادة الضوء تجعل كل الحيوانات تختفي', 'ج) تغير الصخور لا يؤثر في أي مخلوق', 'د) زيادة الماء تمنع النباتات من النمو دائمًا'], correct: 0 },
+            { category: '3-1', indicator: '2-3-1-5-6', question: '69. ما المقصود باستقرار النظام البيئي؟', options: ['أ) استمرار تفاعلاته وتوازن مكوناته بما يدعم بقاء المخلوقات', 'ب) اختفاء جميع المفترسات', 'ج) ثبات عدد كل المخلوقات دائمًا', 'د) غياب التغير تمامًا'], correct: 0 },
+
+            // --- 3-1 – المؤشر 3-3-1-5-6 (70-79) ---
+            { category: '3-1', indicator: '3-3-1-5-6', question: '70. أي مخلوق يُعد منتجًا في السلسلة الغذائية؟', options: ['أ) نبات أخضر', 'ب) أسد', 'ج) فطر محلل', 'د) أرنب مستهلك'], correct: 0 },
+            { category: '3-1', indicator: '3-3-1-5-6', question: '71. أي دور يصف الحيوان الذي يتغذى على مخلوقات أخرى؟', options: ['أ) مستهلك', 'ب) منتج', 'ج) محلل', 'د) مكوّن غير حي'], correct: 0 },
+            { category: '3-1', indicator: '3-3-1-5-6', question: '72. ما دور المحللات في النظام البيئي؟', options: ['أ) تفكيك بقايا المخلوقات والمساعدة في تدوير المواد', 'ب) إنتاج ضوء الشمس', 'ج) منع انتقال الطاقة', 'د) إنتاج الصخور'], correct: 0 },
+            { category: '3-1', indicator: '3-3-1-5-6', question: '73. في السلسلة: عشب ← أرنب ← ثعلب، ما دور الأرنب؟', options: ['أ) مستهلك', 'ب) منتج', 'ج) محلل', 'د) مكوّن غير حي'], correct: 0 },
+            { category: '3-1', indicator: '3-3-1-5-6', question: '74. ما مصدر الطاقة الذي تعتمد عليه النباتات لإنتاج الغذاء؟', options: ['أ) الشمس', 'ب) التربة فقط', 'ج) القمر', 'د) الرياح فقط'], correct: 0 },
+            { category: '3-1', indicator: '3-3-1-5-6', question: '75. ما العملية التي يستخدم فيها النبات طاقة الشمس لإنتاج الغذاء؟', options: ['أ) البناء الضوئي', 'ب) الهضم', 'ج) الإخراج', 'د) الافتراس'], correct: 0 },
+            { category: '3-1', indicator: '3-3-1-5-6', question: '76. ما الذي ينتقل في السلسلة الغذائية بين المخلوقات؟', options: ['أ) الطاقة', 'ب) الصخور فقط', 'ج) الماء فقط دون تغير', 'د) الضوء دون تحول'], correct: 0 },
+            { category: '3-1', indicator: '3-3-1-5-6', question: '77. أي عبارة تشرح تدوير المواد في النظام البيئي؟', options: ['أ) تنتقل المواد بين المخلوقات والبيئة عبر عمليات مختلفة', 'ب) تختفي المواد نهائيًا بعد استخدامها', 'ج) تنتقل الطاقة إلى النبات من الحيوان', 'د) لا تعود المواد إلى البيئة'], correct: 0 },
+            { category: '3-1', indicator: '3-3-1-5-6', question: '78. أي زوج يمثل نمطَي تغذية وردا في المؤشر؟', options: ['أ) ذاتية التغذية وغير ذاتية التغذية', 'ب) هوائية ولاهوائية فقط', 'ج) سريعة وبطيئة', 'د) ليلية ونهارية'], correct: 0 },
+            { category: '3-1', indicator: '3-3-1-5-6', question: '79. أي تسلسل يوضح علاقة النبات بالطاقة الشمسية؟', options: ['أ) الشمس → النبات → إنتاج الغذاء', 'ب) النبات → الشمس → إنتاج الغذاء', 'ج) الحيوان → الشمس → النبات', 'د) التربة → الشمس → الحيوان'], correct: 0 },
+
+            // --- 3-1 – المؤشر 4-3-1-5-6 (80-89) ---
+            { category: '3-1', indicator: '4-3-1-5-6', question: '80. أي عامل فيزيائي قد يؤثر في بقاء حيوان في موطنه؟', options: ['أ) درجة الحرارة', 'ب) عدد المفترسات فقط', 'ج) نوع غذائه فقط', 'د) عدد النباتات فقط'], correct: 0 },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '81. إذا انخفضت درجة الحرارة بشدة في موطن ما، فما الذي قد يحدث؟', options: ['أ) تتأثر قدرة بعض المخلوقات على البقاء', 'ب) تزداد قدرة جميع المخلوقات', 'ج) لا يتغير أي مخلوق', 'د) تختفي الشمس'], correct: 0 },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '82. ما المقصود بالتكيف التركيبي؟', options: ['أ) صفة في تركيب الجسم تساعد المخلوق على البقاء', 'ب) تغير مؤقت في الطقس', 'ج) سلوك لا علاقة له بالبقاء', 'د) تغير في الصخور'], correct: 0 },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '83. أي مثال يمثل تكيفًا سلوكيًا؟', options: ['أ) هجرة بعض الطيور إلى مناطق أنسب', 'ب) وجود فرو كثيف', 'ج) شكل منقار الطائر', 'د) وجود أشواك على النبات'], correct: 0 },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '84. أي مثال يمثل تكيفًا تركيبيًا؟', options: ['أ) فرو كثيف يساعد حيوانًا على العيش في البرد', 'ب) هجرة الطيور', 'ج) اختباء الحيوان عند الخطر', 'د) تغير وقت النشاط اليومي'], correct: 0 },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '85. كيف تساعد التكيفات المخلوقات؟', options: ['أ) تزيد قدرتها على العيش والبقاء في مواطن محددة', 'ب) تمنعها من الحصول على الغذاء', 'ج) تجعل جميع المخلوقات متشابهة', 'د) تلغي تأثير البيئة'], correct: 0 },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '86. إذا اختفى مصدر الغذاء الرئيس من موطن ما، فما التوقع الأكثر مباشرة؟', options: ['أ) قد تتغير أعداد المخلوقات التي تعتمد عليه', 'ب) تزداد جميع الجماعات', 'ج) لا يتأثر أي نوع', 'د) تتوقف العوامل المناخية'], correct: 0 },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '87. أي عبارة تصف العلاقة بين المناخ والمخلوقات؟', options: ['أ) الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة', 'ب) المناخ لا يؤثر في المخلوقات', 'ج) المخلوقات تغير المناخ دائمًا', 'د) المناخ يؤثر في الصخور فقط'], correct: 0 },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '88. أي موقف يوضح تكيفًا يساعد على البقاء في موطن محدد؟', options: ['أ) حيوان صحراوي يحتفظ بالماء بكفاءة', 'ب) حيوان يختار اسمًا جديدًا', 'ج) نبات يتغير لونه بسبب رسم عليه', 'د) سمكة تعيش خارج الماء'], correct: 0 },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '89. عند توقع أثر تغير بيئي على نوع معين، ما المعلومات الأكثر فائدة؟', options: ['أ) ظروف الموطن واحتياجات النوع وتكيفاته', 'ب) اسم النوع فقط', 'ج) حجم الكتاب المدرسي', 'د) لون الصورة'], correct: 0 },
+
+            // --- 3-1 – المؤشر 5-3-1-5-6 (90-98) ---
+            { category: '3-1', indicator: '5-3-1-5-6', question: '90. أي نشاط بشري قد يؤدي إلى تدهور موطن بيئي؟', options: ['أ) إزالة الغطاء النباتي', 'ب) حماية الغابات', 'ج) ترشيد استهلاك الماء', 'د) إعادة التشجير'], correct: 0 },
+            { category: '3-1', indicator: '5-3-1-5-6', question: '91. أي نشاط بشري يمكن أن يكون له أثر إيجابي في الموطن؟', options: ['أ) إعادة التشجير', 'ب) رمي النفايات', 'ج) الصيد الجائر', 'د) تجريف المواطن'], correct: 0 },
+            { category: '3-1', indicator: '5-3-1-5-6', question: '92. ما أثر التلوث في جماعة حيوية؟', options: ['أ) قد يقلل قدرتها على البقاء والتكاثر', 'ب) يزيد أعدادها دائمًا', 'ج) لا يؤثر فيها مطلقًا', 'د) يمنع تغير الموطن'], correct: 0 },
+            { category: '3-1', indicator: '5-3-1-5-6', question: '93. إذا زادت النفايات في موطن طبيعي، فما الأثر المتوقع؟', options: ['أ) قد تتدهور جودة الموطن وتتعرض المخلوقات للخطر', 'ب) تزداد جودة الموطن', 'ج) تزداد الموارد دائمًا', 'د) لا يحدث أي تغير'], correct: 0 },
+            { category: '3-1', indicator: '5-3-1-5-6', question: '94. أي حل يساعد على حماية مورد مائي من النشاط البشري؟', options: ['أ) تقليل مصادر التلوث وترشيد الاستهلاك', 'ب) زيادة تصريف الملوثات', 'ج) إلقاء النفايات في الماء', 'د) إزالة النباتات حوله'], correct: 0 },
+            { category: '3-1', indicator: '5-3-1-5-6', question: '95. ما الذي ينبغي فعله عند اقتراح حل لمشكلة بيئية؟', options: ['أ) ربط الحل بسبب المشكلة وقياس أثره المتوقع', 'ب) اختيار الحل دون تحديد المشكلة', 'ج) تجاهل البيانات', 'د) اختيار الحل الأكثر تكلفة دائمًا'], correct: 0 },
+            { category: '3-1', indicator: '5-3-1-5-6', question: '96. أي حدث طبيعي ذُكر في نواتج التعلم بوصفه موضوعًا للدراسة؟', options: ['أ) الأحداث الطبيعية في بيئات المملكة العربية السعودية', 'ب) تغير أسعار المنتجات', 'ج) ازدحام الطرق', 'د) تغير ألوان المباني'], correct: 0 },
+            { category: '3-1', indicator: '5-3-1-5-6', question: '97. إذا وقع حدث طبيعي في بيئة سعودية، فما الذي يمكن دراسته؟', options: ['أ) آثاره الإيجابية والسلبية في البيئة', 'ب) عدد سكان العالم فقط', 'ج) أسعار الغذاء العالمية فقط', 'د) تركيب الخلية'], correct: 0 },
+            { category: '3-1', indicator: '5-3-1-5-6', question: '98. أي ممارسة تدعم حماية المواطن والجماعات البيئية؟', options: ['أ) المحافظة على الموارد وتقليل الأنشطة الضارة', 'ب) إزالة المواطن الطبيعية', 'ج) زيادة التلوث', 'د) استنزاف الموارد'], correct: 0 },
+
+            // --- 4-1 – المؤشر 1-4-1-5-6 (99-106) ---
+            { category: '4-1', indicator: '1-4-1-5-6', question: '99. ما المقصود بالصفة الوراثية؟', options: ['أ) صفة يمكن أن تنتقل من الآباء إلى الأبناء', 'ب) صفة تنتج فقط عن التدريب', 'ج) صفة لا تظهر في المخلوقات', 'د) صفة مرتبطة بالطقس فقط'], correct: 0 },
+            { category: '4-1', indicator: '1-4-1-5-6', question: '100. ما الذي يمكن أن يسبب تباينًا في الصفات الوراثية بين أفراد النوع؟', options: ['أ) اختلاف الصفات الوراثية', 'ب) تشابه جميع الجينات تمامًا', 'ج) نوع الغذاء فقط', 'د) درجة الحرارة فقط'], correct: 0 },
+            { category: '4-1', indicator: '1-4-1-5-6', question: '101. ما الأداة التي تستخدم لتتبع انتقال الصفات من الآباء إلى الأبناء؟', options: ['أ) مخطط السلالة', 'ب) خريطة الطقس', 'ج) السلسلة الغذائية', 'د) مخطط دورة الماء'], correct: 0 },
+            { category: '4-1', indicator: '1-4-1-5-6', question: '102. أي صفة تمثل صفة مكتسبة أكثر من كونها وراثية؟', options: ['أ) مهارة تعلمها الفرد بالتدريب', 'ب) لون العينين', 'ج) فصيلة الدم', 'د) نوع الشعر الوراثي'], correct: 0 },
+            { category: '4-1', indicator: '1-4-1-5-6', question: '103. أي عبارة تميز الصفة السائدة؟', options: ['أ) يمكن أن تظهر عند وجود نسخة واحدة منها في بعض أنماط الوراثة', 'ب) لا تظهر إلا بوجود نسختين دائمًا', 'ج) لا يمكن أن تنتقل للأبناء', 'د) تنتج فقط عن البيئة'], correct: 0 },
+            { category: '4-1', indicator: '1-4-1-5-6', question: '104. أي مما يأتي عامل بيئي يمكن أن تؤثر في صفات مكتسبة؟', options: ['أ) كمية الغذاء', 'ب) رموز الحروف الوراثية فقط', 'ج) عدد الكروموسومات فقط', 'د) نوع مخطط السلالة'], correct: 0 },
+            { category: '4-1', indicator: '1-4-1-5-6', question: '105. أي صفة وردت مثالًا على صفة قد تتأثر بالعوامل البيئية؟', options: ['أ) الطول', 'ب) فصيلة الدم', 'ج) نوع الجين', 'د) عدد الكروموسومات'], correct: 0 },
+            { category: '4-1', indicator: '1-4-1-5-6', question: '106. لماذا نستخدم مخطط السلالة؟', options: ['أ) لتتبع انتقال صفة وراثية عبر الأجيال', 'ب) لتحديد درجة حرارة البيئة', 'ج) لتصنيف الأنظمة البيئية', 'د) لرسم السلاسل الغذائية'], correct: 0 }
+        ];
+
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+
+        function showSection(sectionId) {
+            document.getElementById('overview-section').classList.add('hidden');
+            document.getElementById('quiz-section').classList.add('hidden');
+            document.getElementById('result-section').classList.add('hidden');
+
+            document.getElementById(sectionId + '-section').classList.remove('hidden');
+        }
+
+        function startQuiz(category) {
+            if (category === 'all') {
+                currentQuestions = [...questionsBank];
+            } else {
+                currentQuestions = questionsBank.filter(q => q.category === category);
+            }
+
+            currentIndex = 0;
+            score = 0;
+            showSection('quiz');
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const q = currentQuestions[currentIndex];
+            document.getElementById('question-indicator').innerText = `السؤال ${currentIndex + 1} من ${currentQuestions.length}`;
+            document.getElementById('indicator-tag').innerText = `المؤشر: ${q.indicator}`;
+            
+            const progressPct = ((currentIndex) / currentQuestions.length) * 100;
+            document.getElementById('quiz-progress').style.width = `${progressPct}%`;
+
+            document.getElementById('question-text').innerText = q.question;
+            
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            document.getElementById('feedback-area').classList.add('hidden');
+            document.getElementById('next-btn').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-right p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/50 transition font-medium text-sm text-slate-700 flex items-center justify-between';
+                btn.innerHTML = `<span>${opt}</span><i class="fa-regular fa-circle text-slate-300 text-xs"></i>`;
+                btn.onclick = () => selectOption(idx, q.correct);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectOption(selectedIdx, correctIdx) {
+            const buttons = document.getElementById('options-container').children;
+            
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].disabled = true;
+                if (i === correctIdx) {
+                    buttons[i].className = 'w-full text-right p-4 rounded-xl border border-emerald-500 bg-emerald-50 font-bold text-sm text-emerald-800 flex items-center justify-between';
+                } else if (i === selectedIdx && selectedIdx !== correctIdx) {
+                    buttons[i].className = 'w-full text-right p-4 rounded-xl border border-rose-500 bg-rose-50 font-bold text-sm text-rose-800 flex items-center justify-between';
+                }
+            }
+
+            const feedbackArea = document.getElementById('feedback-area');
+            feedbackArea.classList.remove('hidden');
+
+            if (selectedIdx === correctIdx) {
+                score++;
+                feedbackArea.className = 'p-4 rounded-xl mb-6 text-sm bg-emerald-100 text-emerald-900 border border-emerald-200';
+                feedbackArea.innerHTML = `<p class="font-bold"><i class="fa-solid fa-circle-check"></i> إجابة صحيحة!</p>`;
+            } else {
+                feedbackArea.className = 'p-4 rounded-xl mb-6 text-sm bg-rose-100 text-rose-900 border border-rose-200';
+                feedbackArea.innerHTML = `<p class="font-bold"><i class="fa-solid fa-circle-xmark"></i> إجابة خاطئة! الخيار الصحيح هو الخيار الأول (أ)</p>`;
+            }
+
+            document.getElementById('next-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentIndex++;
+            if (currentIndex < currentQuestions.length) {
+                loadQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function finishQuiz() {
+            showSection('result');
+            document.getElementById('score-text').innerText = `${score} / ${currentQuestions.length}`;
+            const pct = Math.round((score / currentQuestions.length) * 100);
+            document.getElementById('percentage-text').innerText = `${pct}%`;
+        }
+
+        function exitQuiz() {
+            showSection('overview');
+        }
+    </script>
 </body>
 </html>
