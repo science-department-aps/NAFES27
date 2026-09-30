@@ -77,7 +77,7 @@
                         اختبارات علوم الحياة التفاعلية
                     </h2>
                     <p class="text-brand-100 text-sm sm:text-base mb-8 leading-relaxed">
-                        يحتوي هذا بنك على 106 سؤالاً موزعة بصلابة على جميع المؤشرات الوطنية لعلوم الحياة للصف السادس، مع ترتيب خيارات عشوائي ومُعدَّل.
+                        يحتوي هذا بنك على 106 سؤالاً موزعة بصلابة على جميع المؤشرات الوطنية لعلوم الحياة للصف السادس، مع ترتيب خيارات عشوائي تمامًا وغير متكرر.
                     </p>
 
                     <div class="flex flex-wrap gap-4 items-center">
@@ -319,7 +319,7 @@
             { category: '3-1', indicator: '3-3-1-5-6', question: '79. أي تسلسل يوضح علاقة النبات بالطاقة الشمسية؟', options: ['الشمس → النبات → إنتاج الغذاء', 'النبات → الشمس → إنتاج الغذاء', 'الحيوان → الشمس → النبات', 'التربة → الشمس → الحيوان'], correctText: 'الشمس → النبات → إنتاج الغذاء' },
 
             // --- 3-1 – المؤشر 4-3-1-5-6 (80-89) ---
-            { category: '3-1', indicator: '4-3-1-5-6', question: '80. أي عامل فيزيائي قد يؤثر في بقاء حيوان في موطنه؟', options: ['درجة الحرارة', 'عدد المفترسات فقط', 'نوع غذائه فقط', 'عدد النباتات فقط'], correctText: 'درجة الحرارة' },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '80. أي عامل فيزيائي قد تؤثر في بقاء حيوان في موطنه؟', options: ['درجة الحرارة', 'عدد المفترسات فقط', 'نوع غذائه فقط', 'عدد النباتات فقط'], correctText: 'درجة الحرارة' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '81. إذا انخفضت درجة الحرارة بشدة في موطن ما، فما الذي قد يحدث؟', options: ['تتأثر قدرة بعض المخلوقات على البقاء', 'تزداد قدرة جميع المخلوقات', 'لا يتغير أي مخلوق', 'تختفي الشمس'], correctText: 'تتأثر قدرة بعض المخلوقات على البقاء' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '82. ما المقصود بالتكيف التركيبي؟', options: ['صفة في تركيب الجسم تساعد المخلوق على البقاء', 'تغير مؤقت في الطقس', 'سلوك لا علاقة له بالبقاء', 'تغير في الصخور'], correctText: 'صفة في تركيب الجسم تساعد المخلوق على البقاء' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '83. أي مثال يمثل تكيفًا سلوكيًا؟', options: ['هجرة بعض الطيور إلى مناطق أنسب', 'وجود فرو كثيف', 'شكل منقار الطائر', 'وجود أشواك على النبات'], correctText: 'هجرة بعض الطيور إلى مناطق أنسب' },
@@ -352,39 +352,17 @@
             { category: '4-1', indicator: '1-4-1-5-6', question: '106. لماذا نستخدم مخطط السلالة؟', options: ['لتتبع انتقال صفة وراثية عبر الأجيال', 'لتحديد درجة حرارة البيئة', 'لتصنيف الأنظمة البيئية', 'لرسم السلاسل الغذائية'], correctText: 'لتتبع انتقال صفة وراثية عبر الأجيال' }
         ];
 
-        // دالة تحويل الأسئلة وإعادة ترتيب خياراتها وتوليد الأحرف (أ، ب، ج، د)
         const prefixes = ['أ) ', 'ب) ', 'ج) ', 'د) '];
 
-        function processQuestions(rawBank) {
-            return rawBank.map((q, index) => {
-                // خلط الخيارات بأسلوب الحتمية الموزعة لضمان بقائها ثابته لكل تشغيل مع تنوع أرقام الخيارات (أ، ب، ج، د)
-                let shuffledOptions = [...q.options];
-                // استخدام دالة إزاحة محددة لتوزيع الخيارات بين أ، ب، ج، د
-                let shift = (index * 3 + 1) % 4; 
-                for (let i = 0; i < shift; i++) {
-                    shuffledOptions.push(shuffledOptions.shift());
-                }
-
-                let correctIndex = -1;
-                let formattedOptions = shuffledOptions.map((optText, i) => {
-                    if (optText === q.correctText) {
-                        correctIndex = i;
-                    }
-                    return prefixes[i] + optText;
-                });
-
-                return {
-                    category: q.category,
-                    indicator: q.indicator,
-                    question: q.question,
-                    options: formattedOptions,
-                    correct: correctIndex,
-                    correctLetter: prefixes[correctIndex].substring(0, 1)
-                };
-            });
+        // دالة الخلط العشوائي (Fisher-Yates Shuffle Algorithm) لضمان عدم وجود نمط متكرر
+        function shuffleArray(array) {
+            let arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
         }
-
-        const questionsBank = processQuestions(rawQuestionsBank);
 
         let currentQuestions = [];
         let currentIndex = 0;
@@ -400,10 +378,13 @@
 
         function startQuiz(category) {
             if (category === 'all') {
-                currentQuestions = [...questionsBank];
+                currentQuestions = [...rawQuestionsBank];
             } else {
-                currentQuestions = questionsBank.filter(q => q.category === category);
+                currentQuestions = rawQuestionsBank.filter(q => q.category === category);
             }
+
+            // خلط ترتيب الأسئلة أيضًا لزيادة التنوع في كل مرة
+            currentQuestions = shuffleArray(currentQuestions);
 
             currentIndex = 0;
             score = 0;
@@ -427,11 +408,23 @@
             document.getElementById('feedback-area').classList.add('hidden');
             document.getElementById('next-btn').classList.add('hidden');
 
-            q.options.forEach((opt, idx) => {
+            // خلط الخيارات ديناميكيًا بصورة عشوائية تمامًا لكل سؤال أثناء العرض
+            const shuffledOptions = shuffleArray(q.options);
+            let correctIndex = -1;
+
+            shuffledOptions.forEach((optText, idx) => {
+                if (optText === q.correctText) {
+                    correctIndex = idx;
+                }
+            });
+
+            const correctLetter = prefixes[correctIndex].substring(0, 1);
+
+            shuffledOptions.forEach((optText, idx) => {
                 const btn = document.createElement('button');
                 btn.className = 'w-full text-right p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/50 transition font-medium text-sm text-slate-700 flex items-center justify-between';
-                btn.innerHTML = `<span>${opt}</span><i class="fa-regular fa-circle text-slate-300 text-xs"></i>`;
-                btn.onclick = () => selectOption(idx, q.correct, q.correctLetter);
+                btn.innerHTML = `<span>${prefixes[idx]}${optText}</span><i class="fa-regular fa-circle text-slate-300 text-xs"></i>`;
+                btn.onclick = () => selectOption(idx, correctIndex, correctLetter);
                 optionsContainer.appendChild(btn);
             });
         }
