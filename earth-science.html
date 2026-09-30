@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق بنك أسئلة علوم الأرض والفضاء والمؤشرات</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Font for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+
+    <!-- Header Navbar -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo & Title -->
+                <div class="flex items-center space-x-3 space-x-reverse cursor-pointer" onclick="app.navigateTo('dashboard')">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-earth-americas text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-slate-800 leading-tight">بنك أسئلة علوم الأرض والفضاء</h1>
+                        <p class="text-xs text-slate-500">منصة الاختبارات التفاعلية والمؤشرات</p>
+                    </div>
+                </div>
+
+                <!-- Action Navigation -->
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <button onclick="app.navigateTo('dashboard')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="hidden sm:inline">الرئيسية</span>
+                    </button>
+                    <button onclick="app.navigateTo('analytics')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-brand-600 hover:bg-slate-100 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span class="hidden sm:inline">التحليلات والتطور</span>
+                    </button>
+                    <button onclick="app.confirmResetData()" class="p-2 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50 transition" title="إعادة ضبط كافة البيانات والتقدم">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        
+        <!-- DASHBOARD VIEW -->
+        <div id="view-dashboard" class="space-y-6">
+            <!-- Hero Stats Banner -->
+            <div class="bg-gradient-to-r from-brand-800 via-brand-700 to-teal-700 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+                <div class="absolute -left-10 -bottom-10 opacity-10 text-white pointer-events-none">
+                    <i class="fa-solid fa-shuttle-space text-[200px]"></i>
+                </div>
+                <div class="relative z-10 max-w-3xl">
+                    <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-medium mb-3">أسئلة اختيار من متعدد تفاعلية</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">مرحبًا بك في منصة تقييم علوم الأرض والفضاء</h2>
+                    <p class="text-slate-100 text-sm sm:text-base leading-relaxed mb-6">يمكنك التدرب على كافة موضوعات الجيولوجيا والفضاء أو اختيار موضوع محدد لقياس مستوى استيعابك وتتبع تقدمك في المؤشرات المحددة بكل دقة.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="app.startQuiz('all')" class="bg-white text-brand-800 hover:bg-slate-100 px-5 py-2.5 rounded-xl font-bold text-sm shadow-md transition flex items-center gap-2">
+                            <i class="fa-solid fa-play"></i> بدء الاختبار الشامل لكافة الموضوعات
+                        </button>
+                        <button onclick="app.navigateTo('analytics')" class="bg-brand-800/60 hover:bg-brand-800/80 border border-white/20 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition flex items-center gap-2">
+                            <i class="fa-solid fa-chart-line"></i> عرض سجل التطور والنتائج
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Overall Stats Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-check-double"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 font-medium">الأسئلة المجابة</p>
+                        <h3 id="stat-answered" class="text-xl font-bold text-slate-800">0 / 0</h3>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 font-medium">نسبة الإنجاز العامة</p>
+                        <h3 id="stat-progress-percent" class="text-xl font-bold text-slate-800">0%</h3>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 font-medium">معدل الإجابات الصحيحة</p>
+                        <h3 id="stat-correct-rate" class="text-xl font-bold text-slate-800">0%</h3>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-500 font-medium">عدد المحاولات المكتملة</p>
+                        <h3 id="stat-attempts" class="text-xl font-bold text-slate-800">0</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topics List Header -->
+            <div class="flex justify-between items-center pt-2">
+                <div>
+                    <h3 class="text-lg font-bold text-slate-800">موضوعات علوم الأرض والفضاء</h3>
+                    <p class="text-xs text-slate-500">اختر موضوعاً لبدء اختبار مخصص أو متابعة نسبة التقدم والمؤشرات</p>
+                </div>
+            </div>
+
+            <!-- Topics Grid -->
+            <div id="topics-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Topics inserted dynamically -->
+            </div>
+        </div>
+
+        <!-- QUIZ VIEW -->
+        <div id="view-quiz" class="hidden space-y-6 max-w-4xl mx-auto">
+            <!-- Top Controls Bar -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex justify-between items-center flex-wrap gap-3">
+                <button onclick="app.exitQuizConfirm()" class="text-xs font-bold text-slate-500 hover:text-slate-800 flex items-center gap-1 bg-slate-100 px-3 py-1.5 rounded-lg transition">
+                    <i class="fa-solid fa-arrow-right"></i> إنهاء وعودة
+                </button>
+                <div class="text-center">
+                    <span id="quiz-title" class="text-xs font-bold text-brand-600 uppercase tracking-wide">الموضوع الأول</span>
+                    <h4 id="quiz-question-counter" class="text-sm font-bold text-slate-800">سؤال 1 من 10</h4>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-medium text-slate-500">المؤشر:</span>
+                    <span id="quiz-indicator-badge" class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-md font-semibold border border-emerald-100">المؤشر 1</span>
+                </div>
+            </div>
+
+            <!-- Quiz Progress Bar -->
+            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                <div id="quiz-progress-bar" class="bg-brand-600 h-full transition-all duration-300 w-0"></div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 space-y-6">
+                <div class="flex items-start gap-4">
+                    <span id="quiz-q-num" class="w-9 h-9 rounded-xl bg-brand-100 text-brand-800 font-extrabold flex items-center justify-center shrink-0">1</span>
+                    <h3 id="quiz-question-text" class="text-lg sm:text-xl font-bold text-slate-800 leading-snug">نص السؤال يظهر هنا...</h3>
+                </div>
+
+                <!-- Choices -->
+                <div id="quiz-options-container" class="space-y-3 pt-2">
+                    <!-- Dynamic Choices -->
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between items-center pt-2">
+                <button id="btn-prev" onclick="app.prevQuestion()" class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 font-semibold text-sm transition disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2">
+                    <i class="fa-solid fa-chevron-right"></i> السابق
+                </button>
+                <button id="btn-next" onclick="app.nextQuestion()" class="px-6 py-2.5 rounded-xl bg-brand-600 text-white hover:bg-brand-700 font-semibold text-sm shadow-md transition flex items-center gap-2">
+                    التالي <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="btn-submit" onclick="app.submitQuiz()" class="hidden px-6 py-2.5 rounded-xl bg-teal-600 text-white hover:bg-teal-700 font-semibold text-sm shadow-md transition flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> تسليم الاختبار
+                </button>
+            </div>
+        </div>
+
+        <!-- RESULTS VIEW -->
+        <div id="view-results" class="hidden space-y-6 max-w-5xl mx-auto">
+            <!-- Overall Result Banner -->
+            <div id="result-banner" class="rounded-2xl p-6 sm:p-8 text-white text-center space-y-4 shadow-xl">
+                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md mx-auto flex items-center justify-center text-3xl">
+                    <i id="result-icon" class="fa-solid fa-trophy"></i>
+                </div>
+                <div>
+                    <h2 id="result-status-title" class="text-2xl sm:text-3xl font-extrabold mb-1">أداء ممتاز!</h2>
+                    <p id="result-status-desc" class="text-white/80 text-sm">لقد أكملت جميع الأسئلة بنجاح. إليك تحليل تفصيلي لدرجتك:</p>
+                </div>
+                <div class="flex justify-center items-baseline gap-2 pt-2">
+                    <span id="result-score-num" class="text-4xl sm:text-5xl font-black">0/0</span>
+                    <span id="result-score-percent" class="text-xl sm:text-2xl font-bold opacity-90">(0%)</span>
+                </div>
+            </div>
+
+            <!-- Breakdown Tabs / Summary -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-6">
+                <h3 class="text-lg font-bold text-slate-800 border-b border-slate-100 pb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-chart-bar text-brand-600"></i> تحليل المستوى في الموضوعات والمؤشرات
+                </h3>
+
+                <!-- Topic Performance Breakdown -->
+                <div id="results-topics-breakdown" class="space-y-4">
+                    <!-- Dynamic Topic Breakdown Bars -->
+                </div>
+            </div>
+
+            <!-- Review Questions Accordion -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+                <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                    <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-brand-600"></i> مراجعة الأسئلة والإجابات التفصيلية
+                    </h3>
+                    <div class="flex gap-2">
+                        <button onclick="app.filterReview('all')" class="review-filter-btn px-3 py-1 rounded-lg text-xs font-semibold bg-brand-600 text-white" data-filter="all">الكل</button>
+                        <button onclick="app.filterReview('wrong')" class="review-filter-btn px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200" data-filter="wrong">الأخطاء فقط</button>
+                    </div>
+                </div>
+
+                <div id="results-review-container" class="space-y-4">
+                    <!-- Review Questions Rendered Here -->
+                </div>
+            </div>
+
+            <!-- Bottom Actions -->
+            <div class="flex justify-center gap-4 pt-2">
+                <button onclick="app.navigateTo('dashboard')" class="px-6 py-3 rounded-xl bg-slate-800 text-white font-bold text-sm shadow-md hover:bg-slate-900 transition flex items-center gap-2">
+                    <i class="fa-solid fa-house"></i> العودة للرئيسية
+                </button>
+            </div>
+        </div>
+
+        <!-- ANALYTICS VIEW -->
+        <div id="view-analytics" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+                <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                    <i class="fa-solid fa-chart-line text-brand-600"></i> سجل التطور والتحليلات الشاملة
+                </h2>
+                <p class="text-slate-500 text-sm">متابعة دقيقة لمستوى الطالب عبر كافة مؤشرات علوم الأرض والفضاء.</p>
+            </div>
+
+            <!-- Indicator Details Matrix -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-6">
+                <h3 class="text-md font-bold text-slate-800 flex items-center gap-2">
+                    <i class="fa-solid fa-list-ol text-emerald-600"></i> أداء الطالب حسب مؤشرات علوم الأرض والفضاء
+                </h3>
+                <div id="analytics-indicators-matrix" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Indicators performance rendered dynamically -->
+                </div>
+            </div>
+
+            <!-- History Log -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 space-y-4">
+                <h3 class="text-md font-bold text-slate-800 flex items-center gap-2">
+                    <i class="fa-solid fa-history text-slate-600"></i> سجل المحاولات والاختبارات المكتملة
+                </h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-right border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50 border-b border-slate-200 text-slate-600 font-bold">
+                                <th class="p-3">التاريخ والوقت</th>
+                                <th class="p-3">نوع الاختبار</th>
+                                <th class="p-3">النتيجة</th>
+                                <th class="p-3">النسبة</th>
+                                <th class="p-3">الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody id="analytics-history-table">
+                            <!-- Dynamic History Rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+        <div class="max-w-7xl mx-auto px-4">
+            تطبيق بنك أسئلة علوم الأرض والفضاء والمؤشرات &copy; 2026 - نظام تقييم نواتج التعلم التفاعلي
+        </div>
+    </footer>
+
+    <!-- Custom Modal Dialog -->
+    <div id="custom-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 space-y-4 text-center">
+            <div id="modal-icon" class="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-xl mx-auto">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 id="modal-title" class="text-lg font-bold text-slate-800">تأكيد الإجراء</h3>
+            <p id="modal-message" class="text-sm text-slate-600">هل أنت تأكد من رغبتك في الاستمرار؟</p>
+            <div class="flex justify-center gap-3 pt-2">
+                <button id="modal-cancel-btn" class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 font-semibold text-sm hover:bg-slate-200 transition">إلغاء</button>
+                <button id="modal-confirm-btn" class="px-4 py-2 rounded-xl bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 transition">تأكيد</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Earth and Space Science Topics Data
+        const TOPICS_DATA = [
+            {
+                id: 1,
+                title: "الموضوع الأول: المعادن والصخور وبنية الأرض",
+                range: "جيولوجيا الأرض — مؤشرات 1 إلى 3",
+                indicators: [1, 2, 3]
+            },
+            {
+                id: 2,
+                title: "الموضوع الثاني: الصفائح التكتونية، الزلازل، والبراكين",
+                range: "عمليات ديناميكية الأرض — مؤشرات 1 إلى 3",
+                indicators: [1, 2, 3]
+            },
+            {
+                id: 3,
+                title: "الموضوع الثالث: الغلاف الجوي، الطقس والمناخ",
+                range: "علوم الغلاف الجوي — مؤشرات 1 إلى 3",
+                indicators: [1, 2, 3]
+            },
+            {
+                id: 4,
+                title: "الموضوع الرابع: النظام الشمسي وحركة الكواكب",
+                range: "علوم الفضاء والفلك — مؤشرات 1 إلى 3",
+                indicators: [1, 2, 3]
+            },
+            {
+                id: 5,
+                title: "الموضوع الخامس: النجوم والمجرات والكون",
+                range: "الفلك والكونيات — مؤشرات 1 إلى 2",
+                indicators: [1, 2]
+            }
+        ];
+
+        // Earth & Space Science Question Bank
+        const QUESTIONS_BANK = [
+            // Topic 1
+            { id: 1, topicId: 1, indicator: 1, question: "المعدن هو مادة صلبة غير عضوية تكونت في الطبيعة ولها تركيب كيميائي محدد وبناء بلوري منتظم، من أمثلتها:", options: ["الفحم الحجري", "الكوارتز", "النفط", "الزجاج الصناعي"], answer: 1 },
+            { id: 2, topicId: 1, indicator: 1, question: "مقياس موهس يُستخدم لقياس أي خاصية من خواص المعادن؟", options: ["البريق", "الخدش", "القساوة (الصلادة)", "المكسر"], answer: 2 },
+            { id: 3, topicId: 1, indicator: 2, question: "الصخور التي تتكون نتيجة تبريد وتبلور الماغما أو اللابة هي الصخور:", options: ["الرسوبية", "النارية", "المتحولة", "الاحفورية"], answer: 1 },
+            { id: 4, topicId: 1, indicator: 2, question: "من أمثلة الصخور الرسوبية الجيرية أو الفتاتية:", options: ["الجرانيت", "البازلت", "الحجر الرملي", "الرخام"], answer: 2 },
+            { id: 5, topicId: 1, indicator: 3, question: "النطاق الخارجي الصلب للغلاف الصخري للأرض يسمى:", options: ["الستار العلوي", "القشرة الأرضية", "اللب الخارجي", "اللب الداخلي"], answer: 1 },
+            { id: 6, topicId: 1, indicator: 3, question: "اللب الداخلي للأرض يتكون أساساً من النيكل والحديد في حالة:", options: ["سائلة", "غازية", "صلبة", "بلازما"], answer: 2 },
+
+            // Topic 2
+            { id: 7, topicId: 2, indicator: 1, question: "المفهوم الذي ينص على أن القارات كانت كتلة واحدة تسمى (بانجيا) وثم تباعدت هو:", options: ["الانجراف القاري", "الارتفاع التكتوني", "الزلزالية القارية", "الانطواء الصخري"], answer: 0 },
+            { id: 8, topicId: 2, indicator: 1, question: "حدود الصفائح التكتونية التي تتباعد عندها الصفائح عن بعضها تسمى حدوداً:", options: ["تقاربية", "تباعدية", "تحويلية", "مستقرة"], answer: 1 },
+            { id: 9, topicId: 2, indicator: 2, question: "النقطة التي تبدأ منها الهزة الزلزالية في باطن الأرض تسمى:", options: ["المركز السطحي", "بؤرة الزلزال", "صدع الزلزال", "خط السيزموجراف"], answer: 1 },
+            { id: 10, topicId: 2, indicator: 2, question: "الموجات الزلزالية الأسرع وصولاً لمحطات الرصد هي الموجات:", options: ["السطحية", "الثانوية (S)", "الأولية (P)", "الموجات الطويلة"], answer: 2 },
+            { id: 11, topicId: 2, indicator: 3, question: "الصهارة عندما تخرج إلى سطح الأرض تفقد معظم غازاتها وتسمى:", options: ["ماغما", "لابة (Lava)", "بلازما", "سيلكون"], answer: 1 },
+
+            // Topic 3
+            { id: 12, topicId: 3, indicator: 1, question: "أكثر الغازات وفرة في الغلاف الجوي للأرض بنسبة تصل 78% هو غاز:", options: ["الأكسجين", "النيتروجين", "ثاني أكسيد الكربون", "الأرجون"], answer: 1 },
+            { id: 13, topicId: 3, indicator: 1, question: "طبقة الغلاف الجوي التي تحدث فيها معظم الظواهر الجوية وتقلبات الطقس هي:", options: ["الستراتوسفير", "التروبوسفير", "الثرموسفير", "الميزوسفير"], answer: 1 },
+            { id: 14, topicId: 3, indicator: 2, question: "توجد طبقة الأوزون الواقية من الأشعة فوق البنفسجية في طبقة:", options: ["التروبوسفير", "الستراتوسفير", "الميزوسفير", "الإكسوسفير"], answer: 1 },
+            { id: 15, topicId: 3, indicator: 3, question: "حالة الغلاف الجوي في مكان وزمان محددين لفترة قصيرة تسمى:", options: ["المناخ", "الطقس", "الاحتباس الحراري", "الضغط الجوي"], answer: 1 },
+
+            // Topic 4
+            { id: 16, topicId: 4, indicator: 1, question: "أكبر كواكب النظام الشمسي حجماً هو كوكب:", options: ["الأرض", "المشتري", "زحل", "نبتون"], answer: 1 },
+            { id: 17, topicId: 4, indicator: 1, question: "تسمى الكواكب الأربعة القريبة من الشمس (عطارد، الزهرة، الأرض، المريخ) بـ:", options: ["الكواكب الغازية", "الكواكب الصخرية (الداخلية)", "الكواكب القزمة", "الكواكب العملاقة"], answer: 1 },
+            { id: 18, topicId: 4, indicator: 2, question: "ينص قانون كبلر الأول على أن مدارات الكواكب حول الشمس ذات شكل:", options: ["دائري تماماً", "بيضاوي (إهليلجي)", "مربع", "حلزوني"], answer: 1 },
+            { id: 19, topicId: 4, indicator: 3, question: "تحدث ظاهرة خسوف القمر عندما تكون الأرض:", options: ["بين الشمس والقمر على استقامة واحدة", "خلف القمر تماماً", "بين كوكب المريخ والشمس", "في زاوية قائمة مع القمر"], answer: 0 },
+
+            // Topic 5
+            { id: 20, topicId: 5, indicator: 1, question: "المصدر الرئيسي للطاقة المنبعثة من النجوم مثل الشمس هو تفاعلات:", options: ["الاندماج النووي", "الانشطار النووي", "الاحتراق الكيميائي", "التحلل الإشعاعي"], answer: 0 },
+            { id: 21, topicId: 5, indicator: 2, question: "تُصنف مجرة درب التبانة التي ينتمي إليها نظامنا الشمسي بأنها مجرة:", options: ["إهليلجية", "حلزونية", "غير منتظمة", "كروية"], answer: 1 }
+        ];
+
+        class QuizApp {
+            constructor() {
+                this.storageKey = 'earth_space_science_quiz_data_v1';
+                this.state = {
+                    userAnswers: {},
+                    history: [],
+                    currentQuiz: {
+                        mode: null,
+                        questions: [],
+                        currentIndex: 0,
+                        answers: {}
+                    }
+                };
+                
+                this.init();
+            }
+
+            init() {
+                this.loadFromStorage();
+                this.renderDashboard();
+            }
+
+            loadFromStorage() {
+                try {
+                    const saved = localStorage.getItem(this.storageKey);
+                    if (saved) {
+                        const parsed = JSON.parse(saved);
+                        this.state.userAnswers = parsed.userAnswers || {};
+                        this.state.history = parsed.history || [];
+                    }
+                } catch (e) {
+                    console.error('Failed to load from LocalStorage', e);
+                }
+            }
+
+            saveToStorage() {
+                try {
+                    localStorage.setItem(this.storageKey, JSON.stringify({
+                        userAnswers: this.state.userAnswers,
+                        history: this.state.history
+                    }));
+                } catch (e) {
+                    console.error('Failed to save to LocalStorage', e);
+                }
+            }
+
+            resetAllData() {
+                this.state.userAnswers = {};
+                this.state.history = [];
+                this.saveToStorage();
+                this.renderDashboard();
+                this.navigateTo('dashboard');
+            }
+
+            confirmResetData() {
+                this.showModal(
+                    'إعادة ضبط كافة البيانات',
+                    'هل أنت تأكد من رغبتك في حذف جميع الإجابات المحفوظة والسجلات وإعادة الضبط التام؟',
+                    () => this.resetAllData()
+                );
+            }
+
+            navigateTo(viewName) {
+                const views = ['dashboard', 'quiz', 'results', 'analytics'];
+                views.forEach(v => {
+                    const el = document.getElementById(`view-${v}`);
+                    if (el) el.classList.add('hidden');
+                });
+
+                const targetView = document.getElementById(`view-${viewName}`);
+                if (targetView) targetView.classList.remove('hidden');
+
+                if (viewName === 'dashboard') {
+                    this.renderDashboard();
+                } else if (viewName === 'analytics') {
+                    this.renderAnalytics();
+                }
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            renderDashboard() {
+                const totalQuestionsCount = QUESTIONS_BANK.length;
+                const answeredCount = Object.keys(this.state.userAnswers).length;
+                const progressPercent = totalQuestionsCount > 0 ? Math.round((answeredCount / totalQuestionsCount) * 100) : 0;
+
+                let correctCount = 0;
+                Object.entries(this.state.userAnswers).forEach(([qId, ans]) => {
+                    const q = QUESTIONS_BANK.find(item => item.id == qId);
+                    if (q && q.answer === ans) correctCount++;
+                });
+
+                const correctRate = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+
+                document.getElementById('stat-answered').innerText = `${answeredCount} / ${totalQuestionsCount}`;
+                document.getElementById('stat-progress-percent').innerText = `${progressPercent}%`;
+                document.getElementById('stat-correct-rate').innerText = `${correctRate}%`;
+                document.getElementById('stat-attempts').innerText = this.state.history.length;
+
+                const container = document.getElementById('topics-container');
+                container.innerHTML = '';
+
+                TOPICS_DATA.forEach(topic => {
+                    const topicQuestions = QUESTIONS_BANK.filter(q => q.topicId === topic.id);
+                    const topicAnswered = topicQuestions.filter(q => this.state.userAnswers.hasOwnProperty(q.id));
+                    const topicCorrect = topicQuestions.filter(q => this.state.userAnswers.hasOwnProperty(q.id) && this.state.userAnswers[q.id] === q.answer);
+                    
+                    const topicProgress = topicQuestions.length > 0 ? Math.round((topicAnswered.length / topicQuestions.length) * 100) : 0;
+
+                    const cardHtml = `
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition p-6 flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-start gap-2">
+                                    <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-brand-50 text-brand-700 border border-brand-100">
+                                        الموضوع ${topic.id}
+                                    </span>
+                                    <span class="text-xs text-slate-500 font-medium">
+                                        ${topicQuestions.length} سؤال
+                                    </span>
+                                </div>
+                                <h4 class="font-bold text-slate-800 text-base leading-snug">${topic.title}</h4>
+                                <p class="text-xs text-slate-500">${topic.range}</p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-1.5 pt-1">
+                                <span class="text-xs font-bold text-slate-400 ml-1">المؤشرات:</span>
+                                ${topic.indicators.map(ind => {
+                                    const indQs = topicQuestions.filter(q => q.indicator === ind);
+                                    const indCorrect = indQs.filter(q => this.state.userAnswers[q.id] === q.answer).length;
+                                    const indDone = indQs.filter(q => this.state.userAnswers.hasOwnProperty(q.id)).length;
+                                    let badgeColor = "bg-slate-100 text-slate-600";
+                                    if (indDone > 0) {
+                                        badgeColor = indCorrect === indQs.length ? "bg-emerald-100 text-emerald-800 font-bold" : "bg-amber-100 text-amber-800";
+                                    }
+                                    return `<span class="text-[11px] px-2 py-0.5 rounded-md ${badgeColor}">مؤشر ${ind} (${indCorrect}/${indQs.length})</span>`;
+                                }).join('')}
+                            </div>
+
+                            <div class="space-y-1.5 pt-2 border-t border-slate-100">
+                                <div class="flex justify-between text-xs font-semibold text-slate-600">
+                                    <span>نسبة التقدم</span>
+                                    <span>${topicProgress}% (${topicAnswered.length}/${topicQuestions.length})</span>
+                                </div>
+                                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-600 h-full transition-all duration-300" style="width: ${topicProgress}%"></div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-2 pt-1">
+                                <button onclick="app.startQuiz(${topic.id})" class="flex-1 py-2 px-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-sm">
+                                    <i class="fa-solid fa-pen-to-square"></i> ابدأ الاختبار
+                                </button>
+                                ${topicAnswered.length > 0 ? `
+                                    <button onclick="app.showTopicResults(${topic.id})" class="py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1" title="عرض أداء الموضوع">
+                                        <i class="fa-solid fa-chart-simple"></i>
+                                    </button>
+                                ` : ''}
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', cardHtml);
+                });
+            }
+
+            startQuiz(mode) {
+                let questionsToPlay = [];
+                let titleText = "";
+
+                if (mode === 'all') {
+                    questionsToPlay = [...QUESTIONS_BANK];
+                    titleText = "الاختبار الشامل لكافة الموضوعات";
+                } else {
+                    const topic = TOPICS_DATA.find(t => t.id === mode);
+                    questionsToPlay = QUESTIONS_BANK.filter(q => q.topicId === mode);
+                    titleText = topic ? topic.title : "اختبار موضوع مخصص";
+                }
+
+                this.state.currentQuiz = {
+                    mode: mode,
+                    title: titleText,
+                    questions: questionsToPlay,
+                    currentIndex: 0,
+                    answers: {}
+                };
+
+                questionsToPlay.forEach(q => {
+                    if (this.state.userAnswers.hasOwnProperty(q.id)) {
+                        this.state.currentQuiz.answers[q.id] = this.state.userAnswers[q.id];
+                    }
+                });
+
+                document.getElementById('quiz-title').innerText = titleText;
+                this.navigateTo('quiz');
+                this.renderQuestion();
+            }
+
+            renderQuestion() {
+                const quiz = this.state.currentQuiz;
+                const q = quiz.questions[quiz.currentIndex];
+                const total = quiz.questions.length;
+
+                document.getElementById('quiz-question-counter').innerText = `سؤال ${quiz.currentIndex + 1} من ${total}`;
+                document.getElementById('quiz-q-num').innerText = q.id;
+                document.getElementById('quiz-indicator-badge').innerText = `المؤشر ${q.indicator}`;
+                document.getElementById('quiz-question-text').innerText = q.question;
+
+                const progress = Math.round(((quiz.currentIndex + 1) / total) * 100);
+                document.getElementById('quiz-progress-bar').style.width = `${progress}%`;
+
+                const optionsContainer = document.getElementById('quiz-options-container');
+                optionsContainer.innerHTML = '';
+
+                const selectedOption = quiz.answers[q.id];
+
+                q.options.forEach((opt, idx) => {
+                    const isSelected = selectedOption === idx;
+                    const optionBtn = document.createElement('button');
+                    optionBtn.className = `w-full text-right p-4 rounded-xl border text-sm font-semibold transition flex items-center justify-between ${
+                        isSelected 
+                            ? 'bg-brand-50 border-brand-500 text-brand-800 shadow-sm ring-2 ring-brand-500/20' 
+                            : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300'
+                    }`;
+
+                    const optionLetters = ['أ', 'ب', 'ج', 'د'];
+
+                    optionBtn.innerHTML = `
+                        <div class="flex items-center gap-3">
+                            <span class="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${
+                                isSelected ? 'bg-brand-600 text-white' : 'bg-slate-100 text-slate-600'
+                            }">${optionLetters[idx]}</span>
+                            <span>${opt}</span>
+                        </div>
+                        <div class="w-5 h-5 rounded-full border flex items-center justify-center ${
+                            isSelected ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-300'
+                        }">
+                            ${isSelected ? '<i class="fa-solid fa-check text-[10px]"></i>' : ''}
+                        </div>
+                    `;
+
+                    optionBtn.onclick = () => this.selectAnswer(q.id, idx);
+                    optionsContainer.appendChild(optionBtn);
+                });
+
+                const btnPrev = document.getElementById('btn-prev');
+                const btnNext = document.getElementById('btn-next');
+                const btnSubmit = document.getElementById('btn-submit');
+
+                btnPrev.disabled = quiz.currentIndex === 0;
+
+                if (quiz.currentIndex === total - 1) {
+                    btnNext.classList.add('hidden');
+                    btnSubmit.classList.remove('hidden');
+                } else {
+                    btnNext.classList.remove('hidden');
+                    btnSubmit.classList.add('hidden');
+                }
+            }
+
+            selectAnswer(questionId, optionIndex) {
+                this.state.currentQuiz.answers[questionId] = optionIndex;
+                this.renderQuestion();
+            }
+
+            nextQuestion() {
+                if (this.state.currentQuiz.currentIndex < this.state.currentQuiz.questions.length - 1) {
+                    this.state.currentQuiz.currentIndex++;
+                    this.renderQuestion();
+                }
+            }
+
+            prevQuestion() {
+                if (this.state.currentQuiz.currentIndex > 0) {
+                    this.state.currentQuiz.currentIndex--;
+                    this.renderQuestion();
+                }
+            }
+
+            exitQuizConfirm() {
+                const currentAnswersCount = Object.keys(this.state.currentQuiz.answers).length;
+                if (currentAnswersCount > 0) {
+                    this.showModal(
+                        'مغادرة الاختبار',
+                        'هل أنت تأكد من رغبتك في الخروج؟ سيتم حفظ الإجابات التي قمت بها حتى الآن.',
+                        () => {
+                            this.saveCurrentQuizProgress();
+                            this.navigateTo('dashboard');
+                        }
+                    );
+                } else {
+                    this.navigateTo('dashboard');
+                }
+            }
+
+            saveCurrentQuizProgress() {
+                Object.assign(this.state.userAnswers, this.state.currentQuiz.answers);
+                this.saveToStorage();
+            }
+
+            submitQuiz() {
+                this.saveCurrentQuizProgress();
+
+                const quiz = this.state.currentQuiz;
+                const questions = quiz.questions;
+                let correctCount = 0;
+
+                questions.forEach(q => {
+                    if (this.state.userAnswers[q.id] === q.answer) {
+                        correctCount++;
+                    }
+                });
+
+                const total = questions.length;
+                const percent = Math.round((correctCount / total) * 100);
+
+                this.state.history.unshift({
+                    id: Date.now(),
+                    date: new Date().toLocaleString('ar-SA'),
+                    mode: quiz.mode,
+                    topicTitle: quiz.title,
+                    score: correctCount,
+                    total: total,
+                    percent: percent
+                });
+
+                this.saveToStorage();
+                this.renderResultsView(questions, correctCount, total, percent);
+            }
+
+            showTopicResults(topicId) {
+                const topicQuestions = QUESTIONS_BANK.filter(q => q.topicId === topicId);
+                let correctCount = 0;
+                topicQuestions.forEach(q => {
+                    if (this.state.userAnswers[q.id] === q.answer) correctCount++;
+                });
+                const total = topicQuestions.length;
+                const percent = Math.round((correctCount / total) * 100);
+
+                this.renderResultsView(topicQuestions, correctCount, total, percent);
+            }
+
+            renderResultsView(questions, score, total, percent) {
+                this.navigateTo('results');
+
+                const banner = document.getElementById('result-banner');
+                const title = document.getElementById('result-status-title');
+                const desc = document.getElementById('result-status-desc');
+                const icon = document.getElementById('result-icon');
+
+                document.getElementById('result-score-num').innerText = `${score} / ${total}`;
+                document.getElementById('result-score-percent').innerText = `(${percent}%)`;
+
+                if (percent >= 85) {
+                    banner.className = "rounded-2xl p-6 sm:p-8 text-white text-center space-y-4 shadow-xl bg-gradient-to-r from-emerald-600 to-teal-600";
+                    title.innerText = "ممتاز! أداء استثنائي 🌟";
+                    desc.innerText = "لقد أظهرت إتقاناً ممتازاً لمفاهيم ومؤشرات علوم الأرض والفضاء.";
+                    icon.className = "fa-solid fa-trophy";
+                } else if (percent >= 65) {
+                    banner.className = "rounded-2xl p-6 sm:p-8 text-white text-center space-y-4 shadow-xl bg-gradient-to-r from-brand-600 to-teal-600";
+                    title.innerText = "جيد جداً! أداء قوبل بالتوفيق 👍";
+                    desc.innerText = "لديك مستوى جيد، ويمكنك مراجعة بعض المؤشرات لتحقيق الدرجة الكاملة.";
+                    icon.className = "fa-solid fa-award";
+                } else {
+                    banner.className = "rounded-2xl p-6 sm:p-8 text-white text-center space-y-4 shadow-xl bg-gradient-to-r from-amber-600 to-orange-600";
+                    title.innerText = "تحتاج إلى مزيد من المراجعة والتركيز 📚";
+                    desc.innerText = "راجع المفاهيم الموضحة أدناه وأعد المحاولة لتحسين مستواك في المؤشرات.";
+                    icon.className = "fa-solid fa-book-open-reader";
+                }
+
+                const breakdownContainer = document.getElementById('results-topics-breakdown');
+                breakdownContainer.innerHTML = '';
+
+                const topicGroups = {};
+                questions.forEach(q => {
+                    if (!topicGroups[q.topicId]) topicGroups[q.topicId] = [];
+                    topicGroups[q.topicId].push(q);
+                });
+
+                Object.keys(topicGroups).forEach(topicId => {
+                    const topObj = TOPICS_DATA.find(t => t.id == topicId);
+                    const qList = topicGroups[topicId];
+                    const tCorrect = qList.filter(q => this.state.userAnswers[q.id] === q.answer).length;
+                    const tPercent = Math.round((tCorrect / qList.length) * 100);
+
+                    const topicHtml = `
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                            <div class="flex justify-between items-center flex-wrap gap-2">
+                                <h4 class="font-bold text-slate-800 text-sm">${topObj.title}</h4>
+                                <span class="text-xs font-extrabold px-2.5 py-1 rounded-md ${tPercent >= 75 ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                                    ${tCorrect} / ${qList.length} صحيح (${tPercent}%)
+                                </span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                <div class="bg-brand-600 h-full transition-all duration-300" style="width: ${tPercent}%"></div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 pt-2">
+                                ${topObj.indicators.map(ind => {
+                                    const indQs = qList.filter(q => q.indicator === ind);
+                                    if (indQs.length === 0) return '';
+                                    const indCorrect = indQs.filter(q => this.state.userAnswers[q.id] === q.answer).length;
+                                    const isPass = indCorrect === indQs.length;
+                                    return `
+                                        <div class="p-2 rounded-lg bg-white border border-slate-200 text-center text-xs">
+                                            <span class="block text-slate-500 text-[10px]">مؤشر ${ind}</span>
+                                            <span class="font-bold ${isPass ? 'text-emerald-600' : 'text-amber-600'}">${indCorrect}/${indQs.length}</span>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                    breakdownContainer.insertAdjacentHTML('beforeend', topicHtml);
+                });
+
+                this.renderReviewQuestions(questions, 'all');
+            }
+
+            renderReviewQuestions(questions, filter) {
+                const reviewContainer = document.getElementById('results-review-container');
+                reviewContainer.innerHTML = '';
+
+                const optionLetters = ['أ', 'ب', 'ج', 'د'];
+
+                questions.forEach((q) => {
+                    const userAns = this.state.userAnswers[q.id];
+                    const isCorrect = userAns === q.answer;
+
+                    if (filter === 'wrong' && isCorrect) return;
+
+                    const reviewCard = document.createElement('div');
+                    reviewCard.className = `p-5 rounded-xl border space-y-3 ${
+                        isCorrect ? 'bg-emerald-50/50 border-emerald-200' : 'bg-red-50/50 border-red-200'
+                    }`;
+
+                    reviewCard.innerHTML = `
+                        <div class="flex justify-between items-start gap-2">
+                            <div class="flex items-start gap-3">
+                                <span class="w-7 h-7 rounded-lg ${isCorrect ? 'bg-emerald-600' : 'bg-red-600'} text-white font-extrabold text-xs flex items-center justify-center shrink-0">
+                                    ${q.id}
+                                </span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">${q.question}</h4>
+                                    <span class="text-[11px] text-slate-500">المؤشر ${q.indicator}</span>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-md text-xs font-bold shrink-0 ${
+                                isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'
+                            }">
+                                ${isCorrect ? '<i class="fa-solid fa-check"></i> إجابة صحيحة' : '<i class="fa-solid fa-xmark"></i> إجابة خاطئة'}
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 text-xs">
+                            ${q.options.map((opt, oIdx) => {
+                                let style = "bg-white border-slate-200 text-slate-600";
+                                if (oIdx === q.answer) {
+                                    style = "bg-emerald-100 border-emerald-300 text-emerald-900 font-bold ring-1 ring-emerald-400";
+                                } else if (oIdx === userAns && !isCorrect) {
+                                    style = "bg-red-100 border-red-300 text-red-900 font-bold line-through";
+                                }
+                                return `
+                                    <div class="p-2.5 rounded-lg border ${style} flex items-center gap-2">
+                                        <span class="font-bold">${optionLetters[oIdx]})</span>
+                                        <span>${opt}</span>${oIdx === q.answer ? '<i class="fa-solid fa-check text-emerald-600 mr-auto"></i>' : ''}
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    `;
+                    reviewContainer.appendChild(reviewCard);
+                });
+
+                if (reviewContainer.children.length === 0) {
+                    reviewContainer.innerHTML = '<p class="text-center text-slate-500 text-sm py-4">لا توجد أخطاء لمراجعتها! عمل ممتاز 🎉</p>';
+                }
+            }
+
+            filterReview(filterType) {
+                document.querySelectorAll('.review-filter-btn').forEach(btn => {
+                    if (btn.dataset.filter === filterType) {
+                        btn.className = "review-filter-btn px-3 py-1 rounded-lg text-xs font-semibold bg-brand-600 text-white";
+                    } else {
+                        btn.className = "review-filter-btn px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200";
+                    }
+                });
+
+                const questions = this.state.currentQuiz.questions.length > 0 ? this.state.currentQuiz.questions : QUESTIONS_BANK;
+                this.renderReviewQuestions(questions, filterType);
+            }
+
+            renderAnalytics() {
+                const matrixContainer = document.getElementById('analytics-indicators-matrix');
+                matrixContainer.innerHTML = '';
+
+                TOPICS_DATA.forEach(topic => {
+                    topic.indicators.forEach(ind => {
+                        const indQuestions = QUESTIONS_BANK.filter(q => q.topicId === topic.id && q.indicator === ind);
+                        const answered = indQuestions.filter(q => this.state.userAnswers.hasOwnProperty(q.id));
+                        const correct = indQuestions.filter(q => this.state.userAnswers[q.id] === q.answer);
+                        const percent = answered.length > 0 ? Math.round((correct.length / indQuestions.length) * 100) : 0;
+
+                        const card = `
+                            <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xs font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded border border-emerald-100">
+                                        الموضوع ${topic.id} - مؤشر ${ind}
+                                    </span>
+                                    <span class="text-xs font-extrabold ${percent === 100 ? 'text-emerald-600' : 'text-slate-700'}">
+                                        ${correct.length} / ${indQuestions.length}
+                                    </span>
+                                </div>
+                                <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-emerald-600 h-full transition-all duration-300" style="width: ${percent}%"></div>
+                                </div>
+                                <p class="text-[11px] text-slate-500 truncate" title="${topic.title}">${topic.title}</p>
+                            </div>
+                        `;
+                        matrixContainer.insertAdjacentHTML('beforeend', card);
+                    });
+                });
+
+                const historyBody = document.getElementById('analytics-history-table');
+                historyBody.innerHTML = '';
+
+                if (this.state.history.length === 0) {
+                    historyBody.innerHTML = '<tr><td colspan="5" class="p-4 text-center text-slate-400">لا توجد محاولات مكتملة مسبقاً</td></tr>';
+                    return;
+                }
+
+                this.state.history.forEach(item => {
+                    const row = `
+                        <tr class="border-b border-slate-100 hover:bg-slate-50">
+                            <td class="p-3 text-xs text-slate-600">${item.date}</td>
+                            <td class="p-3 text-xs font-bold text-slate-800">${item.topicTitle}</td>
+                            <td class="p-3 text-xs text-slate-700 font-semibold">${item.score} / ${item.total}</td>
+                            <td class="p-3 text-xs font-bold ${item.percent >= 75 ? 'text-emerald-600' : 'text-amber-600'}">${item.percent}%</td>
+                            <td class="p-3 text-xs">
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold ${item.percent >= 60 ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'}">
+                                    ${item.percent >= 60 ? 'ناجح' : 'يحتاج تحسين'}
+                                </span>
+                            </td>
+                        </tr>
+                    `;
+                    historyBody.insertAdjacentHTML('beforeend', row);
+                });
+            }
+
+            showModal(title, message, onConfirm) {
+                const modal = document.getElementById('custom-modal');
+                document.getElementById('modal-title').innerText = title;
+                document.getElementById('modal-message').innerText = message;
+
+                const confirmBtn = document.getElementById('modal-confirm-btn');
+                const cancelBtn = document.getElementById('modal-cancel-btn');
+
+                modal.classList.remove('hidden');
+
+                const close = () => {
+                    modal.classList.add('hidden');
+                    confirmBtn.onclick = null;
+                    cancelBtn.onclick = null;
+                };
+
+                confirmBtn.onclick = () => {
+                    close();
+                    if (onConfirm) onConfirm();
+                };
+
+                cancelBtn.onclick = () => close();
+            }
+        }
+
+        let app;
+        window.onload = function() {
+            app = new QuizApp();
+        };
+    </script>
+</body>
+</html>
