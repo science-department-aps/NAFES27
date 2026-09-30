@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دوري نافس - الصفحة الرئيسية</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* شريط التنقل العلوي */
+        .navbar {
+            background-color: #1e293b;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #334155;
+        }
+
+        /* القسم الرئيسي WELCOME */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #0284c7, #2563eb);
+            color: white;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* قسم المسارات */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: #1e293b;
+        }
+
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* بطاقات المسارات */
+        .track-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .track-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .track-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .track-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .track-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-start {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-start:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* ألوان مخصصة لكل مسار */
+        .card-physical { border-top: 5px solid #ef4444; }
+        .card-earth { border-top: 5px solid #10b981; }
+        .card-life { border-top: 5px solid #8b5cf6; }
+
+        /* التذييل FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط العناوين -->
+    <nav class="navbar">
+        <div class="logo">🏆 دوري نافس</div>
+        <div>
+            <a href="index.html">الرئيسية</a>
+        </div>
+    </nav>
+
+    <!-- قسم الترحيب -->
+    <section class="hero">
+        <h1>مرحباً بك في منصة دوري نافس T</h1>
+        <p>اختر المسار الذي ترغب في التنافس فيه واختبار معلوماتك فوراً!</p>
+    </section>
+
+    <!-- بطاقات المسارات -->
+    <div class="container">
+        <h2 class="section-title">المسارات التعليمية المتاحة</h2>
+        
+        <div class="tracks-grid">
+            
+            <!-- مسار العلوم الفيزيائية -->
+            <div class="track-card card-physical">
+                <div>
+                    <div class="track-icon">⚡</div>
+                    <h3>العلوم الفيزيائية</h3>
+                    <p>Physical Science</p>
+                    <p>اختبر مهاراتك في الفيزياء، المادة، والطاقة من خلال أسئلة تفاعلية.</p>
+                </div>
+                <a href="physical-science.html" class="btn-start">دخول المسار</a>
+            </div>
+
+            <!-- مسار علوم الأرض -->
+            <div class="track-card card-earth">
+                <div>
+                    <div class="track-icon">🌍</div>
+                    <h3>علوم الأرض</h3>
+                    <p>Earth Science</p>
+                    <p>اكتشف أسئلة كوكب الأرض، الصخور، والمناخ والأنظمة البيئية.</p>
+                </div>
+                <a href="earth-science.html" class="btn-start">دخول المسار</a>
+            </div>
+
+            <!-- مسار علوم الحياة -->
+            <div class="track-card card-life">
+                <div>
+                    <div class="track-icon">🧬</div>
+                    <h3>علوم الحياة</h3>
+                    <p>Life Science</p>
+                    <p>تحدَّ نفسك في أسئلة الأحياء، الكائنات الحية، الخلايا ووظائف الأعضاء.</p>
+                </div>
+                <a href="life-science.html" class="btn-start">دخول المسار</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>جميع الحقوق محفوظة لمنصة دوري نافس &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
