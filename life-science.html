@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل وبنك أسئلة علوم الحياة - الصف السادس</title>
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --primary-light: #e8f5e9;
+            --secondary-color: #1b5e20;
+            --accent-color: #388e3c;
+            --text-color: #2c3e50;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .indicator-header {
+            background-color: var(--primary-light);
+            color: var(--secondary-color);
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin: 20px 0 15px 0;
+            font-weight: bold;
+            border-right: 5px solid var(--primary-color);
+        }
+
+        .question-item {
+            background-color: #fafafa;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .indicator-tag {
+            font-size: 0.8em;
+            color: #666;
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .option {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .answer-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.85em;
+            transition: background-color 0.2s;
+        }
+
+        .answer-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .answer-text {
+            display: none;
+            margin-top: 8px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .answer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .answer-box {
+            background-color: var(--primary-light);
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        @media print {
+            body { background-color: white; }
+            .section-card { box-shadow: none; border: 1px solid #ccc; }
+            .answer-btn { display: none; }
+            .answer-text { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>بنك أسئلة علوم الحياة – الصف السادس</h1>
+        <p>تحليل المؤشرات + 106 سؤالًا + نموذج إجابة مجمّع</p>
+    </header>
+
+    <!-- أولاً: جدول التحليل -->
+    <div class="section-card">
+        <h2>أولًا: جدول التحليل</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>المحور</th>
+                    <th>كود المؤشر</th>
+                    <th>الموضوع</th>
+                    <th>عدد الأسئلة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>علوم الحياة-1</td><td>1-1-1-5-6</td><td>التركيب والوظيفة في المخلوقات الحية</td><td>10</td></tr>
+                <tr><td>علوم الحياة-1</td><td>2-1-1-5-6</td><td>التركيب والوظيفة في المخلوقات الحية</td><td>10</td></tr>
+                <tr><td>علوم الحياة-1</td><td>3-1-1-5-6</td><td>التركيب والوظيفة في المخلوقات الحية</td><td>10</td></tr>
+                <tr><td>علوم الحياة-1</td><td>4-1-1-5-6</td><td>التركيب والوظيفة في المخلوقات الحية</td><td>10</td></tr>
+                <tr><td>علوم الحياة-1</td><td>1-2-1-5-6</td><td>تنظيم المخلوقات الحية وتنوعها</td><td>9</td></tr>
+                <tr><td>علوم الحياة-1</td><td>1-3-1-5-6</td><td>الأنظمة البيئية وتفاعلاتها</td><td>10</td></tr>
+                <tr><td>علوم الحياة-1</td><td>2-3-1-5-6</td><td>الأنظمة البيئية وتفاعلاتها</td><td>10</td></tr>
+                <tr><td>علوم الحياة-1</td><td>3-3-1-5-6</td><td>الأنظمة البيئية وتفاعلاتها</td><td>10</td></tr>
+                <tr><td>علوم الحياة-1</td><td>4-3-1-5-6</td><td>الأنظمة البيئية وتفاعلاتها</td><td>10</td></tr>
+                <tr><td>علوم الحياة-1</td><td>5-3-1-5-6</td><td>الأنظمة البيئية وتفاعلاتها</td><td>9</td></tr>
+                <tr><td>علوم الحياة-1</td><td>1-4-1-5-6</td><td>الوراثة</td><td>8</td></tr>
+            </tbody>
+            <tfoot>
+                <tr style="font-weight: bold; background-color: var(--primary-light);">
+                    <td colspan="3" style="text-align: right;">إجمالي الأسئلة:</td>
+                    <td>106 سؤالًا</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <!-- ثانياً: الأسئلة الـ106 -->
+    <div class="section-card">
+        <h2>ثانيًا: الأسئلة الـ106 حسب المحور والمؤشر</h2>
+
+        <!-- المؤشر 1-1-1-5-6 -->
+        <div class="indicator-header">1-1 – المؤشر 1-1-1-5-6: وصف تراكيب الخلية، وربطها بوظائفها الحيوية.</div>
+        
+        <div class="question-item">
+            <div class="question-text">1. أي تركيب خلوي يُعد مركز التحكم في معظم أنشطة الخلية؟ <span class="indicator-tag">1-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) النواة</div>
+                <div class="option">ب) الجدار الخلوي</div>
+                <div class="option">ج) السيتوبلازم</div>
+                <div class="option">د) الغشاء الخلوي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) النواة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">2. أي مما يأتي يوجد داخل الخلية ويساعد على احتواء التراكيب الخلوية؟ <span class="indicator-tag">1-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الغشاء الخلوي</div>
+                <div class="option">ب) النواة</div>
+                <div class="option">ج) الجدار الخلوي</div>
+                <div class="option">د) البلاستيدة الخضراء</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الغشاء الخلوي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">3. ما الوظيفة الأساسية للغشاء الخلوي؟ <span class="indicator-tag">1-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تنظيم دخول المواد وخروجها</div>
+                <div class="option">ب) إنتاج الغذاء</div>
+                <div class="option">ج) حمل الصفات الوراثية فقط</div>
+                <div class="option">د) إعطاء النبات لونه الأخضر</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تنظيم دخول المواد وخروجها</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">4. أي تركيب يوجد في الخلية النباتية ويساعدها على القيام بالبناء الضوئي؟ <span class="indicator-tag">1-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) البلاستيدات الخضراء</div>
+                <div class="option">ب) النواة</div>
+                <div class="option">ج) السيتوبلازم</div>
+                <div class="option">د) الغشاء الخلوي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) البلاستيدات الخضراء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">5. أين توجد معظم مكونات الخلية وتحدث فيها كثير من العمليات الحيوية؟ <span class="indicator-tag">1-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) السيتوبلازم</div>
+                <div class="option">ب) الجدار الخلوي</div>
+                <div class="option">ج) النواة</div>
+                <div class="option">د) البلاستيدات الخضراء</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) السيتوبلازم</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">6. أي زوج يمثل تركيبًا خلويًا ووظيفة مرتبطة به بصورة صحيحة؟ <span class="indicator-tag">1-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) النواة ـ تنظيم أنشطة الخلية</div>
+                <div class="option">ب) الجدار الخلوي ـ إنتاج الغذاء</div>
+                <div class="option">ج) السيتوبلازم ـ منع مرور جميع المواد</div>
+                <div class="option">د) الغشاء الخلوي ـ تخزين المعلومات الوراثية</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) النواة ـ تنظيم أنشطة الخلية</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">7. أي مما يأتي مثال على مخلوق وحيد الخلية؟ <span class="indicator-tag">1-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) البكتيريا</div>
+                <div class="option">ب) الإنسان</div>
+                <div class="option">ج) شجرة النخيل</div>
+                <div class="option">د) القط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) البكتيريا</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">8. ما الذي يميز المخلوق عديد الخلايا عن المخلوق وحيد الخلية؟ <span class="indicator-tag">1-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) يتكون من عدد كبير من الخلايا</div>
+                <div class="option">ب) لا يحتوي على خلايا</div>
+                <div class="option">ج) لا يقوم بعمليات حيوية</div>
+                <div class="option">د) لا يحتاج إلى الغذاء</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) يتكون من عدد كبير من الخلايا</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">9. إذا تضررت النواة في خلية، فأي وظيفة تتأثر مباشرة أكثر؟ <span class="indicator-tag">1-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تنظيم أنشطة الخلية</div>
+                <div class="option">ب) تكوين الجدار الخلوي فقط</div>
+                <div class="option">ج) امتصاص الضوء فقط</div>
+                <div class="option">د) إعطاء الخلية شكلها فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تنظيم أنشطة الخلية</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">10. أي عبارة تربط التركيب بالوظيفة بصورة صحيحة؟ <span class="indicator-tag">1-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) البلاستيدات الخضراء تساعد النبات على إنتاج الغذاء</div>
+                <div class="option">ب) النواة تسمح بمرور الماء فقط</div>
+                <div class="option">ج) الغشاء الخلوي ينتج الضوء</div>
+                <div class="option">د) السيتوبلازم يحمي النبات من الحيوانات</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) البلاستيدات الخضراء تساعد النبات على إنتاج الغذاء</div>
+        </div>
+
+        <!-- المؤشر 2-1-1-5-6 -->
+        <div class="indicator-header">1-1 – المؤشر 2-1-1-5-6: تحديد الاختلافات الأساسية من حيث التركيب والوظيفة بين الخلية النباتية والخلية الحيوانية.</div>
+
+        <div class="question-item">
+            <div class="question-text">11. أي تركيب يميز الخلية النباتية عن الخلية الحيوانية ويساعدها على الدعامة؟ <span class="indicator-tag">2-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الجدار الخلوي</div>
+                <div class="option">ب) الغشاء الخلوي</div>
+                <div class="option">ج) النواة</div>
+                <div class="option">د) السيتوبلازم</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الجدار الخلوي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">12. أي تركيب يوجد في الخلايا النباتية ويساعد على إنتاج الغذاء؟ <span class="indicator-tag">2-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) البلاستيدات الخضراء</div>
+                <div class="option">ب) الجدار الخلوي</div>
+                <div class="option">ج) النواة</div>
+                <div class="option">د) السيتوبلازم</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) البلاستيدات الخضراء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">13. ما التركيب الموجود في الخلية النباتية والحيوانية معًا؟ <span class="indicator-tag">2-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الغشاء الخلوي</div>
+                <div class="option">ب) الجدار الخلوي</div>
+                <div class="option">ج) البلاستيدة الخضراء</div>
+                <div class="option">د) لا شيء مما سبق</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الغشاء الخلوي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">14. ما الوظيفة المشتركة للغشاء الخلوي في الخلية النباتية والحيوانية؟ <span class="indicator-tag">2-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تنظيم مرور المواد إلى الخلية ومنها</div>
+                <div class="option">ب) إنتاج الغذاء</div>
+                <div class="option">ج) إعطاء الخلية اللون الأخضر</div>
+                <div class="option">د) تكوين الجدار الخلوي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تنظيم مرور المواد إلى الخلية ومنها</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">15. أي مقارنة صحيحة بين الجدار الخلوي والغشاء الخلوي؟ <span class="indicator-tag">2-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الجدار الخلوي أكثر دعامة، والغشاء ينظم مرور المواد</div>
+                <div class="option">ب) كلاهما ينتج الغذاء</div>
+                <div class="option">ج) الغشاء يوجد في النبات فقط</div>
+                <div class="option">د) الجدار الخلوي يوجد في الحيوان فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الجدار الخلوي أكثر دعامة، والغشاء ينظم مرور المواد</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">16. وجود البلاستيدات الخضراء في خلية يدل غالبًا على أن الخلية: <span class="indicator-tag">2-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) نباتية وقادرة على البناء الضوئي</div>
+                <div class="option">ب) حيوانية ولا تنتج الغذاء</div>
+                <div class="option">ج) وحيدة الخلية بالضرورة</div>
+                <div class="option">د) لا تحتوي على غشاء خلوي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) نباتية وقادرة على البناء الضوئي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">17. أي عملية حيوية ذُكرت ضمن العمليات التي تقوم بها الخلايا النباتية والحيوانية؟ <span class="indicator-tag">2-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) التنفس الخلوي</div>
+                <div class="option">ب) تكوين الصخور</div>
+                <div class="option">ج) دوران الكواكب</div>
+                <div class="option">د) التجوية</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) التنفس الخلوي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">18. أي تركيب يمنح الخلية النباتية دعامة إضافية مقارنة بالخلية الحيوانية؟ <span class="indicator-tag">2-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الجدار الخلوي</div>
+                <div class="option">ب) السيتوبلازم</div>
+                <div class="option">ج) النواة</div>
+                <div class="option">د) الغشاء الخلوي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الجدار الخلوي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">19. إذا فقدت خلية نباتية البلاستيدات الخضراء، فما العملية التي تتأثر مباشرة؟ <span class="indicator-tag">2-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) البناء الضوئي</div>
+                <div class="option">ب) التنفس فقط</div>
+                <div class="option">ج) الانتشار فقط</div>
+                <div class="option">د) النقل السلبي فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) البناء الضوئي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">20. أي عبارة أدق عن الخلايا النباتية والحيوانية؟ <span class="indicator-tag">2-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تشترك في تراكيب أساسية، وتختلف في تراكيب ووظائف أخرى</div>
+                <div class="option">ب) لا تشترك في أي تركيب</div>
+                <div class="option">ج) الخلايا الحيوانية تحتوي على جدار خلوي</div>
+                <div class="option">د) الخلايا النباتية لا تحتوي على غشاء خلوي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تشترك في تراكيب أساسية، وتختلف في تراكيب ووظائف أخرى</div>
+        </div>
+
+        <!-- المؤشر 3-1-1-5-6 -->
+        <div class="indicator-header">1-1 – المؤشر 3-1-1-5-6: تحديد أجهزة الجسم الرئيسة وأعضائها المتخصصة وربطها بوظائفها لدعم نمو المخلوقات الحية وبقائها.</div>
+
+        <div class="question-item">
+            <div class="question-text">21. أي جهاز مسؤول بصورة رئيسة عن هضم الطعام؟ <span class="indicator-tag">3-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الجهاز الهضمي</div>
+                <div class="option">ب) الجهاز العصبي</div>
+                <div class="option">ج) الجهاز الهيكلي</div>
+                <div class="option">د) الجهاز الإخراجي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الجهاز الهضمي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">22. أي جهاز ينقل المواد المختلفة عبر الجسم؟ <span class="indicator-tag">3-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الجهاز الدوري</div>
+                <div class="option">ب) الجهاز الهضمي</div>
+                <div class="option">ج) الجهاز الهيكلي</div>
+                <div class="option">د) الجهاز العصبي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الجهاز الدوري</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">23. أي جهاز يساعد الجسم على الحصول على الأكسجين والتخلص من ثاني أكسيد الكربون؟ <span class="indicator-tag">3-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الجهاز التنفسي</div>
+                <div class="option">ب) الجهاز الدوري</div>
+                <div class="option">ج) الجهاز الهضمي</div>
+                <div class="option">د) الجهاز العضلي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الجهاز التنفسي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">24. أي جهاز يتخلص من بعض الفضلات الناتجة عن العمليات الحيوية؟ <span class="indicator-tag">3-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الجهاز الإخراجي</div>
+                <div class="option">ب) الجهاز الهيكلي</div>
+                <div class="option">ج) الجهاز العصبي</div>
+                <div class="option">د) الجهاز الهضمي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الجهاز الإخراجي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">25. أي جهاز يساعد على استقبال المعلومات والاستجابة لها؟ <span class="indicator-tag">3-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الجهاز العصبي</div>
+                <div class="option">ب) الجهاز الهضمي</div>
+                <div class="option">ج) الجهاز الهيكلي</div>
+                <div class="option">د) الجهاز الإخراجي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الجهاز العصبي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">26. أي تركيب نباتي يمتص الماء والأملاح من التربة؟ <span class="indicator-tag">3-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الجذر</div>
+                <div class="option">ب) الساق</div>
+                <div class="option">ج) الورقة</div>
+                <div class="option">د) الزهرة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الجذر</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">27. أي تركيب نباتي ينقل الماء والمواد داخل النبات ويدعم أجزاءه؟ <span class="indicator-tag">3-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الساق</div>
+                <div class="option">ب) الجذر</div>
+                <div class="option">ج) الزهرة</div>
+                <div class="option">د) الثمرة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الساق</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">28. أي تركيب نباتي يرتبط بصورة رئيسة بإنتاج الغذاء؟ <span class="indicator-tag">3-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الأوراق</div>
+                <div class="option">ب) الجذور</div>
+                <div class="option">ج) الساق فقط</div>
+                <div class="option">د) الأزهار فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الأوراق</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">29. أي عبارة تفسر أهمية تخصص الأعضاء؟ <span class="indicator-tag">3-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تؤدي الأعضاء المتخصصة وظائف تساعد المخلوق على النمو والبقاء</div>
+                <div class="option">ب) تمنع المخلوق من القيام بالعمليات الحيوية</div>
+                <div class="option">ج) تجعل جميع الأعضاء تؤدي الوظيفة نفسها</div>
+                <div class="option">د) تقلل حاجة المخلوق إلى الغذاء</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تؤدي الأعضاء المتخصصة وظائف تساعد المخلوق على النمو والبقاء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">30. أي زوج يمثل تركيبًا ووظيفة بصورة صحيحة؟ <span class="indicator-tag">3-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الجذر ـ امتصاص الماء والأملاح</div>
+                <div class="option">ب) المعدة ـ ضخ الدم</div>
+                <div class="option">ج) القلب ـ هضم الطعام</div>
+                <div class="option">د) الورقة ـ إخراج الفضلات من الحيوان</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الجذر ـ امتصاص الماء والأملاح</div>
+        </div>
+
+        <!-- المؤشر 4-1-1-5-6 -->
+        <div class="indicator-header">1-1 – المؤشر 4-1-1-5-6: وصف الأنماط المختلفة لدورات حياة الحيوانات والنباتات والتغيرات المصاحبة لها، والمقارنة بينها.</div>
+
+        <div class="question-item">
+            <div class="question-text">31. أي مرحلة تُعد جزءًا من دورة حياة المخلوق الحي؟ <span class="indicator-tag">4-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) مرحلة النمو</div>
+                <div class="option">ب) تكوين الصخور</div>
+                <div class="option">ج) التجوية</div>
+                <div class="option">د) تبخر الماء فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) مرحلة النمو</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">32. أي مجموعة تمثل أنماطًا لدورات حياة ذُكرت في المؤشر؟ <span class="indicator-tag">4-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الحشرات والبرمائيات والثدييات</div>
+                <div class="option">ب) الطيور والصخور والمعادن</div>
+                <div class="option">ج) الأسماك والتربة والهواء</div>
+                <div class="option">د) الجبال والأنهار والحشرات</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الحشرات والبرمائيات والثدييات</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">33. أي مخلوق يمر عادة بمرحلة يرقة خلال دورة حياته؟ <span class="indicator-tag">4-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الفراشة</div>
+                <div class="option">ب) القطة</div>
+                <div class="option">ج) الإنسان</div>
+                <div class="option">د) الحصان</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الفراشة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">34. ما الذي يمكن استخدامه للمقارنة بين دورات حياة المخلوقات؟ <span class="indicator-tag">4-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) التغيرات والمراحل التي تمر بها</div>
+                <div class="option">ب) لون موطنها فقط</div>
+                <div class="option">ج) درجة حرارة جسمها فقط</div>
+                <div class="option">د) حجمها النهائي فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) التغيرات والمراحل التي تمر بها</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">35. أي عبارة تصف دورة حياة بصورة صحيحة؟ <span class="indicator-tag">4-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تتغير صفات المخلوق خلال مراحل نموه وتطوره</div>
+                <div class="option">ب) يبقى المخلوق دون تغير منذ ولادته</div>
+                <div class="option">ج) لا تتكرر الأنماط في النوع نفسه</div>
+                <div class="option">د) لا علاقة للتكاثر بدورة الحياة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تتغير صفات المخلوق خلال مراحل نموه وتطوره</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">36. أي مجموعة تتضمن مخلوقات لها دورات حياة مختلفة يمكن مقارنتها؟ <span class="indicator-tag">4-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) ضفدع وفراشة</div>
+                <div class="option">ب) صخرة وفراشة</div>
+                <div class="option">ج) ماء وقطة</div>
+                <div class="option">د) هواء وضفدع</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) ضفدع وفراشة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">37. عند دراسة دورة حياة نبات، ما الذي ينبغي تتبعه؟ <span class="indicator-tag">4-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) المراحل والتغيرات من بداية النمو إلى النضج</div>
+                <div class="option">ب) لون التربة فقط</div>
+                <div class="option">ج) عدد الصخور حوله فقط</div>
+                <div class="option">د) درجة حرارة الشمس فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) المراحل والتغيرات من بداية النمو إلى النضج</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">38. ما العامل الذي يساعد على توقع التغيرات في دورة الحياة وفق المؤشر؟ <span class="indicator-tag">4-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) نمط التكاثر ودورة الحياة</div>
+                <div class="option">ب) لون الحيوان فقط</div>
+                <div class="option">ج) حجم الموطن فقط</div>
+                <div class="option">د) عدد أفراد النوع فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) نمط التكاثر ودورة الحياة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">39. أي عبارة تمثل المقارنة العلمية بين دورتَي حياة؟ <span class="indicator-tag">4-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تحديد أوجه التشابه والاختلاف في المراحل والتغيرات</div>
+                <div class="option">ب) اختيار الدورة الأطول دون دليل</div>
+                <div class="option">ج) تجاهل مراحل النمو</div>
+                <div class="option">د) مقارنة الألوان فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تحديد أوجه التشابه والاختلاف في المراحل والتغيرات</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">40. لماذا تعد دراسة دورات الحياة مهمة؟ <span class="indicator-tag">4-1-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) لفهم التغيرات التي تحدث للمخلوقات أثناء نموها وتكاثرها</div>
+                <div class="option">ب) لإثبات أن جميع المخلوقات لها الدورة نفسها</div>
+                <div class="option">ج) لتحديد درجة حرارة البيئة فقط</div>
+                <div class="option">د) لتصنيف الصخور</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) لفهم التغيرات التي تحدث للمخلوقات أثناء نموها وتكاثرها</div>
+        </div>
+
+        <!-- المؤشر 1-2-1-5-6 -->
+        <div class="indicator-header">2-1 – المؤشر 1-2-1-5-6: تصنيف المخلوقات الحية إلى مجموعات بناءً على صفاتها الظاهرية المشتركة.</div>
+
+        <div class="question-item">
+            <div class="question-text">41. على أي أساس يمكن تصنيف المخلوقات الحية إلى مجموعات؟ <span class="indicator-tag">1-2-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الصفات الظاهرية المشتركة</div>
+                <div class="option">ب) مكان وجودها فقط</div>
+                <div class="option">ج) حجمها فقط</div>
+                <div class="option">د) اسمها الشائع فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الصفات الظاهرية المشتركة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">42. أي صفة يمكن استخدامها في تصنيف النباتات ظاهريًا؟ <span class="indicator-tag">1-2-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) وجود الأزهار</div>
+                <div class="option">ب) سرعة نموها فقط</div>
+                <div class="option">ج) كمية الماء التي تحتاجها فقط</div>
+                <div class="option">د) عمر النبات فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) وجود الأزهار</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">43. النباتات الزهرية وغير الزهرية تمثلان مجموعتين يمكن التمييز بينهما اعتمادًا على: <span class="indicator-tag">1-2-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) سمات وخصائص ظاهرية مشتركة</div>
+                <div class="option">ب) درجة حرارة التربة فقط</div>
+                <div class="option">ج) حجم الجذر فقط</div>
+                <div class="option">د) لون الماء</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) سمات وخصائص ظاهرية مشتركة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">44. إذا تشابهت مجموعة من الحيوانات في صفات ظاهرية مشتركة، فإن ذلك قد يساعد على: <span class="indicator-tag">1-2-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تصنيفها في مجموعة واحدة</div>
+                <div class="option">ب) إثبات أنها من النوع نفسه دائمًا</div>
+                <div class="option">ج) إثبات أنها تعيش في الموطن نفسه</div>
+                <div class="option">د) إثبات أنها تتغذى بالطريقة نفسها</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تصنيفها في مجموعة واحدة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">45. أي مثال يمثل تصنيفًا اعتمادًا على صفة ظاهرة؟ <span class="indicator-tag">1-2-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) جمع الحيوانات ذات الجسم المغطى بالشعر في مجموعة</div>
+                <div class="option">ب) جمع الحيوانات حسب أسماء أصحابها</div>
+                <div class="option">ج) جمع النباتات حسب سعرها</div>
+                <div class="option">د) جمع الكائنات حسب تاريخ اكتشافها</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) جمع الحيوانات ذات الجسم المغطى بالشعر في مجموعة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">46. ما الهدف من تصنيف المخلوقات الحية؟ <span class="indicator-tag">1-2-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تنظيمها في مجموعات وفق صفات مشتركة</div>
+                <div class="option">ب) تغيير صفاتها الوراثية</div>
+                <div class="option">ج) زيادة عددها</div>
+                <div class="option">د) تغيير مواطنها</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تنظيمها في مجموعات وفق صفات مشتركة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">47. أي سؤال يساعد في تصنيف نباتين إلى مجموعتين زهريّة وغير زهريّة؟ <span class="indicator-tag">1-2-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) هل ينتج النبات أزهارًا؟</div>
+                <div class="option">ب) كم عمر النبات؟</div>
+                <div class="option">ج) كم مرة رُوي؟</div>
+                <div class="option">د) كم شخصًا شاهده؟</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) هل ينتج النبات أزهارًا؟</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">48. إذا كان لحيوانين صفات ظاهرية مشتركة، فما الاستنتاج الأكثر مباشرة؟ <span class="indicator-tag">1-2-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) يمكن وضعهما في مجموعة تصنيفية مناسبة وفق تلك الصفات</div>
+                <div class="option">ب) هما متطابقان في كل الصفات</div>
+                <div class="option">ج) لا يمكن تصنيفهما</div>
+                <div class="option">د) هما من البيئة نفسها بالضرورة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) يمكن وضعهما في مجموعة تصنيفية مناسبة وفق تلك الصفات</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">49. أي عبارة تتفق مع مؤشر التصنيف؟ <span class="indicator-tag">1-2-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) يمكن استخدام أكثر من صفة ظاهرية مشتركة لتكوين مجموعات</div>
+                <div class="option">ب) يُصنف كل مخلوق في مجموعة منفردة</div>
+                <div class="option">ج) التصنيف يعتمد على اللون وحده دائمًا</div>
+                <div class="option">د) التصنيف لا يحتاج إلى ملاحظة الصفات</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) يمكن استخدام أكثر من صفة ظاهرية مشتركة لتكوين مجموعات</div>
+        </div>
+
+        <!-- المؤشر 1-3-1-5-6 -->
+        <div class="indicator-header">3-1 – المؤشر 1-3-1-5-6: تمثيل المجتمع الحيوي، وتحديد الجماعات الحيوية التي تعيش فيه، ووصف علاقاتها المتبادلة معًا وتفاعلاتها مع المكونات غير الحيوية.</div>
+
+        <div class="question-item">
+            <div class="question-text">50. ما المجتمع الحيوي؟ <span class="indicator-tag">1-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) مجموعة من الجماعات الحيوية التي تعيش في منطقة معينة</div>
+                <div class="option">ب) مخلوق حي واحد</div>
+                <div class="option">ج) عامل غير حي فقط</div>
+                <div class="option">د) مجموعة من الصخور</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) مجموعة من الجماعات الحيوية التي تعيش في منطقة معينة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">51. ما المقصود بالجماعة الحيوية؟ <span class="indicator-tag">1-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) مجموعة من أفراد النوع نفسه تعيش في منطقة معينة</div>
+                <div class="option">ب) جميع المكونات غير الحيوية</div>
+                <div class="option">ج) جميع أنواع الصخور</div>
+                <div class="option">د) مخلوق واحد فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) مجموعة من أفراد النوع نفسه تعيش في منطقة معينة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">52. أي مما يأتي يمثل تفاعلًا بين مخلوق حي ومكوّن غير حي؟ <span class="indicator-tag">1-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) نبات يحصل على الماء من التربة</div>
+                <div class="option">ب) أسد يصطاد غزالًا</div>
+                <div class="option">ج) نحلة تزور زهرة</div>
+                <div class="option">د) طائر يبني عشًا</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) نبات يحصل على الماء من التربة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">53. كيف تؤثر الموارد المتاحة في قدرة المخلوقات على البقاء؟ <span class="indicator-tag">1-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) توفير الموارد يساعدها على تلبية حاجاتها</div>
+                <div class="option">ب) الموارد لا تؤثر مطلقًا</div>
+                <div class="option">ج) زيادة الموارد تمنع جميع المخلوقات من البقاء</div>
+                <div class="option">د) الموارد تؤثر في الصخور فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) توفير الموارد يساعدها على تلبية حاجاتها</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">54. إذا انخفض عدد النباتات في مجتمع حيوي، فما احتمال حدوثه مباشرة؟ <span class="indicator-tag">1-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تتأثر الجماعات التي تعتمد عليها في الغذاء</div>
+                <div class="option">ب) لا يتأثر أي مخلوق</div>
+                <div class="option">ج) تزداد الموارد الغذائية دائمًا</div>
+                <div class="option">د) تختفي جميع المكونات غير الحيوية</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تتأثر الجماعات التي تعتمد عليها في الغذاء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">55. أي مثال يوضح علاقة متبادلة بين مخلوقات حية؟ <span class="indicator-tag">1-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) افتراس صقر لفأر</div>
+                <div class="option">ب) تبخر الماء</div>
+                <div class="option">ج) سقوط المطر</div>
+                <div class="option">د) ارتفاع درجة الحرارة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) افتراس صقر لفأر</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">56. أي عامل غير حي يمكن أن يؤثر في الجماعات الحيوية؟ <span class="indicator-tag">1-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) درجة الحرارة</div>
+                <div class="option">ب) الحيوانات المفترسة</div>
+                <div class="option">ج) النباتات</div>
+                <div class="option">د) الفطريات</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) درجة الحرارة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">57. إذا تغيرت مكونات المجتمع الحيوي، فقد يحدث: <span class="indicator-tag">1-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تغير في بقاء الأنواع واستمرارها</div>
+                <div class="option">ب) ثبات جميع الجماعات دائمًا</div>
+                <div class="option">ج) اختفاء العوامل غير الحيوية</div>
+                <div class="option">د) عدم تغير أي علاقة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تغير في بقاء الأنواع واستمرارها</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">58. أي تمثيل يساعد على دراسة العلاقات داخل مجتمع حيوي؟ <span class="indicator-tag">1-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) مخطط يوضح الجماعات وتفاعلاتها</div>
+                <div class="option">ب) قائمة بأسماء الطلاب</div>
+                <div class="option">ج) جدول درجات الحرارة وحده</div>
+                <div class="option">د) صورة لمخلوق منفرد دون سياق</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) مخطط يوضح الجماعات وتفاعلاتها</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">59. لماذا تحتاج المخلوقات إلى التفاعل مع مكونات مواطنها؟ <span class="indicator-tag">1-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) للحصول على حاجاتها والبقاء</div>
+                <div class="option">ب) لتغيير نوعها</div>
+                <div class="option">ج) لإلغاء العلاقات الغذائية</div>
+                <div class="option">د) لمنع انتقال الطاقة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) للحصول على حاجاتها والبقاء</div>
+        </div>
+
+        <!-- المؤشر 2-3-1-5-6 -->
+        <div class="indicator-header">3-1 – المؤشر 2-3-1-5-6: وصف مكونات النظام البيئي، وتفسير أثر توافر الموارد واستقرار النظام البيئي.</div>
+
+        <div class="question-item">
+            <div class="question-text">60. أي مما يأتي مكوّن حيوي في النظام البيئي؟ <span class="indicator-tag">2-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) نبات</div>
+                <div class="option">ب) ماء</div>
+                <div class="option">ج) ضوء</div>
+                <div class="option">د) تربة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) نبات</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">61. أي مما يأتي مكوّن غير حيوي؟ <span class="indicator-tag">2-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) درجة الحرارة</div>
+                <div class="option">ب) الأشجار</div>
+                <div class="option">ج) الحشرات</div>
+                <div class="option">د) الفطريات</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) درجة الحرارة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">62. كيف تؤثر الموارد في بقاء المخلوقات؟ <span class="indicator-tag">2-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) توافر الغذاء والماء والمأوى يساعد على البقاء</div>
+                <div class="option">ب) الموارد تمنع النمو</div>
+                <div class="option">ج) الموارد لا علاقة لها بالبقاء</div>
+                <div class="option">د) الموارد تؤثر في المخلوقات غير الحية فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) توافر الغذاء والماء والمأوى يساعد على البقاء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">63. إذا قلت كمية الماء في موطن ما، فما النتيجة المحتملة؟ <span class="indicator-tag">2-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تتأثر المخلوقات التي تعتمد على الماء</div>
+                <div class="option">ب) تزداد جميع الجماعات</div>
+                <div class="option">ج) لا يتغير أي مخلوق</div>
+                <div class="option">د) تزداد كمية الماء تلقائيًا</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تتأثر المخلوقات التي تعتمد على الماء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">64. أي حالة تمثل تغيرًا في موطن بيئي؟ <span class="indicator-tag">2-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) انخفاض مصادر الماء بسبب الجفاف</div>
+                <div class="option">ب) تغير اسم الحيوان</div>
+                <div class="option">ج) زيادة عدد صفحات كتاب</div>
+                <div class="option">د) تغير لون لوحة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) انخفاض مصادر الماء بسبب الجفاف</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">65. ما الخطوة المناسبة عند تحديد مشكلة تهدد استقرار نظام بيئي؟ <span class="indicator-tag">2-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تحديد سبب المشكلة وتأثيرها ثم اقتراح حل مناسب</div>
+                <div class="option">ب) تجاهل السبب</div>
+                <div class="option">ج) إزالة جميع المخلوقات</div>
+                <div class="option">د) الاعتماد على التخمين فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تحديد سبب المشكلة وتأثيرها ثم اقتراح حل مناسب</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">66. أي حل قد يساعد على استعادة اتزان نظام بيئي متضرر من نقص الموارد؟ <span class="indicator-tag">2-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) ترشيد استخدام المورد وحمايته</div>
+                <div class="option">ب) زيادة استهلاكه</div>
+                <div class="option">ج) إزالة النباتات</div>
+                <div class="option">د) منع جميع المخلوقات من التكاثر</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) ترشيد استخدام المورد وحمايته</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">67. لماذا تؤثر المكونات غير الحيوية في المخلوقات الحية؟ <span class="indicator-tag">2-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) لأنها توفر ظروفًا وموارد تؤثر في حياتها</div>
+                <div class="option">ب) لأنها مخلوقات حية</div>
+                <div class="option">ج) لأنها تنتج الحيوانات</div>
+                <div class="option">د) لأنها تغير الصفات الوراثية مباشرة دائمًا</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) لأنها توفر ظروفًا وموارد تؤثر في حياتها</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">68. أي مثال يوضح أثر تغير الموطن؟ <span class="indicator-tag">2-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تلوث الماء قد يقلل قدرة الكائنات المائية على البقاء</div>
+                <div class="option">ب) زيادة الضوء تجعل كل الحيوانات تختفي</div>
+                <div class="option">ج) تغير الصخور لا يؤثر في أي مخلوق</div>
+                <div class="option">د) زيادة الماء تمنع النباتات من النمو دائمًا</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تلوث الماء قد يقلل قدرة الكائنات المائية على البقاء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">69. ما المقصود باستقرار النظام البيئي؟ <span class="indicator-tag">2-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) استمرار تفاعلاته وتوازن مكوناته بما يدعم بقاء المخلوقات</div>
+                <div class="option">ب) اختفاء جميع المفترسات</div>
+                <div class="option">ج) ثبات عدد كل المخلوقات دائمًا</div>
+                <div class="option">د) غياب التغير تمامًا</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) استمرار تفاعلاته وتوازن مكوناته بما يدعم بقاء المخلوقات</div>
+        </div>
+
+        <!-- المؤشر 3-3-1-5-6 -->
+        <div class="indicator-header">3-1 – المؤشر 3-3-1-5-6: تمثيل العلاقات لتدوير المادة، وتحديد العلاقة بين النباتات وطاقة الشمس.</div>
+
+        <div class="question-item">
+            <div class="question-text">70. أي مخلوق يُعد منتجًا في السلسلة الغذائية؟ <span class="indicator-tag">3-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) نبات أخضر</div>
+                <div class="option">ب) أسد</div>
+                <div class="option">ج) فطر محلل</div>
+                <div class="option">د) أرنب مستهلك</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) نبات أخضر</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">71. أي دور يصف الحيوان الذي يتغذى على مخلوقات أخرى؟ <span class="indicator-tag">3-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) مستهلك</div>
+                <div class="option">ب) منتج</div>
+                <div class="option">ج) محلل</div>
+                <div class="option">د) مكوّن غير حي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) مستهلك</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">72. ما دور المحللات في النظام البيئي؟ <span class="indicator-tag">3-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تفكيك بقايا المخلوقات والمساعدة في تدوير المواد</div>
+                <div class="option">ب) إنتاج ضوء الشمس</div>
+                <div class="option">ج) منع انتقال الطاقة</div>
+                <div class="option">د) إنتاج الصخور</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تفكيك بقايا المخلوقات والمساعدة في تدوير المواد</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">73. في السلسلة: عشب ← أرنب ← ثعلب، ما دور الأرنب؟ <span class="indicator-tag">3-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) مستهلك</div>
+                <div class="option">ب) منتج</div>
+                <div class="option">ج) محلل</div>
+                <div class="option">د) مكوّن غير حي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) مستهلك</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">74. ما مصدر الطاقة الذي تعتمد عليه النباتات لإنتاج الغذاء؟ <span class="indicator-tag">3-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الشمس</div>
+                <div class="option">ب) التربة فقط</div>
+                <div class="option">ج) القمر</div>
+                <div class="option">د) الرياح فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الشمس</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">75. ما العملية التي يستخدم فيها النبات طاقة الشمس لإنتاج الغذاء؟ <span class="indicator-tag">3-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) البناء الضوئي</div>
+                <div class="option">ب) الهضم</div>
+                <div class="option">ج) الإخراج</div>
+                <div class="option">د) الافتراس</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) البناء الضوئي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">76. ما الذي ينتقل في السلسلة الغذائية بين المخلوقات؟ <span class="indicator-tag">3-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الطاقة</div>
+                <div class="option">ب) الصخور فقط</div>
+                <div class="option">ج) الماء فقط دون تغير</div>
+                <div class="option">د) الضوء دون تحول</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الطاقة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">77. أي عبارة تشرح تدوير المواد في النظام البيئي؟ <span class="indicator-tag">3-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تنتقل المواد بين المخلوقات والبيئة عبر عمليات مختلفة</div>
+                <div class="option">ب) تختفي المواد نهائيًا بعد استخدامها</div>
+                <div class="option">ج) تنتقل الطاقة إلى النبات من الحيوان</div>
+                <div class="option">د) لا تعود المواد إلى البيئة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تنتقل المواد بين المخلوقات والبيئة عبر عمليات مختلفة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">78. أي زوج يمثل نمطَي تغذية وردا في المؤشر؟ <span class="indicator-tag">3-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) ذاتية التغذية وغير ذاتية التغذية</div>
+                <div class="option">ب) هوائية ولاهوائية فقط</div>
+                <div class="option">ج) سريعة وبطيئة</div>
+                <div class="option">د) ليلية ونهارية</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) ذاتية التغذية وغير ذاتية التغذية</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">79. أي تسلسل يوضح علاقة النبات بالطاقة الشمسية؟ <span class="indicator-tag">3-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الشمس → النبات → إنتاج الغذاء</div>
+                <div class="option">ب) النبات → الشمس → إنتاج الغذاء</div>
+                <div class="option">ج) الحيوان → الشمس → النبات</div>
+                <div class="option">د) التربة → الشمس → الحيوان</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الشمس → النبات → إنتاج الغذاء</div>
+        </div>
+
+        <!-- المؤشر 4-3-1-5-6 -->
+        <div class="indicator-header">3-1 – المؤشر 4-3-1-5-6: تأثير التغيرات البيئية واستنتاج دور التكيفات التركيبية والسلوكية.</div>
+
+        <div class="question-item">
+            <div class="question-text">80. أي عامل فيزيائي قد يؤثر في بقاء حيوان في موطنه؟ <span class="indicator-tag">4-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) درجة الحرارة</div>
+                <div class="option">ب) عدد المفترسات فقط</div>
+                <div class="option">ج) نوع غذائه فقط</div>
+                <div class="option">د) عدد النباتات فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) درجة الحرارة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">81. إذا انخفضت درجة الحرارة بشدة في موطن ما، فما الذي قد يحدث؟ <span class="indicator-tag">4-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تتأثر قدرة بعض المخلوقات على البقاء</div>
+                <div class="option">ب) تزداد قدرة جميع المخلوقات</div>
+                <div class="option">ج) لا يتغير أي مخلوق</div>
+                <div class="option">د) تختفي الشمس</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تتأثر قدرة بعض المخلوقات على البقاء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">82. ما المقصود بالتكيف التركيبي؟ <span class="indicator-tag">4-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) صفة في تركيب الجسم تساعد المخلوق على البقاء</div>
+                <div class="option">ب) تغير مؤقت في الطقس</div>
+                <div class="option">ج) سلوك لا علاقة له بالبقاء</div>
+                <div class="option">د) تغير في الصخور</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) صفة في تركيب الجسم تساعد المخلوق على البقاء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">83. أي مثال يمثل تكيفًا سلوكيًا؟ <span class="indicator-tag">4-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) هجرة بعض الطيور إلى مناطق أنسب</div>
+                <div class="option">ب) وجود فرو كثيف</div>
+                <div class="option">ج) شكل منقار الطائر</div>
+                <div class="option">د) وجود أشواك على النبات</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) هجرة بعض الطيور إلى مناطق أنسب</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">84. أي مثال يمثل تكيفًا تركيبيًا؟ <span class="indicator-tag">4-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) فرو كثيف يساعد حيوانًا على العيش في البرد</div>
+                <div class="option">ب) هجرة الطيور</div>
+                <div class="option">ج) اختباء الحيوان عند الخطر</div>
+                <div class="option">د) تغير وقت النشاط اليومي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) فرو كثيف يساعد حيوانًا على العيش في البرد</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">85. كيف تساعد التكيفات المخلوقات؟ <span class="indicator-tag">4-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تزيد قدرتها على العيش والبقاء في مواطن محددة</div>
+                <div class="option">ب) تمنعها من الحصول على الغذاء</div>
+                <div class="option">ج) تجعل جميع المخلوقات متشابهة</div>
+                <div class="option">د) تلغي تأثير البيئة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تزيد قدرتها على العيش والبقاء في مواطن محددة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">86. إذا اختفى مصدر الغذاء الرئيس من موطن ما، فما التوقع الأكثر مباشرة؟ <span class="indicator-tag">4-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) قد تتغير أعداد المخلوقات التي تعتمد عليه</div>
+                <div class="option">ب) تزداد جميع الجماعات</div>
+                <div class="option">ج) لا يتأثر أي نوع</div>
+                <div class="option">د) تتوقف العوامل المناخية</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) قد تتغير أعداد المخلوقات التي تعتمد عليه</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">87. أي عبارة تصف العلاقة بين المناخ والمخلوقات؟ <span class="indicator-tag">4-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة</div>
+                <div class="option">ب) المناخ لا يؤثر في المخلوقات</div>
+                <div class="option">ج) المخلوقات تغير المناخ دائمًا</div>
+                <div class="option">د) المناخ يؤثر في الصخور فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">88. أي موقف يوضح تكيفًا يساعد على البقاء في موطن محدد؟ <span class="indicator-tag">4-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) حيوان صحراوي يحتفظ بالماء بكفاءة</div>
+                <div class="option">ب) حيوان يختار اسمًا جديدًا</div>
+                <div class="option">ج) نبات يتغير لونه بسبب رسم عليه</div>
+                <div class="option">د) سمكة تعيش خارج الماء</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) حيوان صحراوي يحتفظ بالماء بكفاءة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">89. عند توقع أثر تغير بيئي على نوع معين، ما المعلومات الأكثر فائدة؟ <span class="indicator-tag">4-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) ظروف الموطن واحتياجات النوع وتكيفاته</div>
+                <div class="option">ب) اسم النوع فقط</div>
+                <div class="option">ج) حجم الكتاب المدرسي</div>
+                <div class="option">د) لون الصورة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) ظروف الموطن واحتياجات النوع وتكيفاته</div>
+        </div>
+
+        <!-- المؤشر 5-3-1-5-6 -->
+        <div class="indicator-header">3-1 – المؤشر 5-3-1-5-6: تأثير النشاط الإنساني واقتراح الحلول لحمايتها.</div>
+
+        <div class="question-item">
+            <div class="question-text">90. أي نشاط بشري قد يؤدي إلى تدهور موطن بيئي؟ <span class="indicator-tag">5-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) إزالة الغطاء النباتي</div>
+                <div class="option">ب) حماية الغابات</div>
+                <div class="option">ج) ترشيد استهلاك الماء</div>
+                <div class="option">د) إعادة التشجير</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) إزالة الغطاء النباتي</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">91. أي نشاط بشري يمكن أن يكون له أثر إيجابي في الموطن؟ <span class="indicator-tag">5-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) إعادة التشجير</div>
+                <div class="option">ب) رمي النفايات</div>
+                <div class="option">ج) الصيد الجائر</div>
+                <div class="option">د) تجريف المواطن</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) إعادة التشجير</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">92. ما أثر التلوث في جماعة حيوية؟ <span class="indicator-tag">5-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) قد يقلل قدرتها على البقاء والتكاثر</div>
+                <div class="option">ب) يزيد أعدادها دائمًا</div>
+                <div class="option">ج) لا يؤثر فيها مطلقًا</div>
+                <div class="option">د) يمنع تغير الموطن</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) قد يقلل قدرتها على البقاء والتكاثر</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">93. إذا زادت النفايات في موطن طبيعي، فما الأثر المتوقع؟ <span class="indicator-tag">5-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) قد تتدهور جودة الموطن وتتعرض المخلوقات للخطر</div>
+                <div class="option">ب) تزداد جودة الموطن</div>
+                <div class="option">ج) تزداد الموارد دائمًا</div>
+                <div class="option">د) لا يحدث أي تغير</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) قد تتدهور جودة الموطن وتتعرض المخلوقات للخطر</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">94. أي حل يساعد على حماية مورد مائي من النشاط البشري؟ <span class="indicator-tag">5-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) تقليل مصادر التلوث وترشيد الاستهلاك</div>
+                <div class="option">ب) زيادة تصريف الملوثات</div>
+                <div class="option">ج) إلقاء النفايات في الماء</div>
+                <div class="option">د) إزالة النباتات حوله</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) تقليل مصادر التلوث وترشيد الاستهلاك</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">95. ما الذي ينبغي فعله عند اقتراح حل لمشكلة بيئية؟ <span class="indicator-tag">5-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) ربط الحل بسبب المشكلة وقياس أثره المتوقع</div>
+                <div class="option">ب) اختيار الحل دون تحديد المشكلة</div>
+                <div class="option">ج) تجاهل البيانات</div>
+                <div class="option">د) اختيار الحل الأكثر تكلفة دائمًا</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) ربط الحل بسبب المشكلة وقياس أثره المتوقع</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">96. أي حدث طبيعي ذُكر في نواتج التعلم بوصفه موضوعًا للدراسة؟ <span class="indicator-tag">5-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الأحداث الطبيعية في بيئات المملكة العربية السعودية</div>
+                <div class="option">ب) تغير أسعار المنتجات</div>
+                <div class="option">ج) ازدحام الطرق</div>
+                <div class="option">د) تغير ألوان المباني</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الأحداث الطبيعية في بيئات المملكة العربية السعودية</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">97. إذا وقع حدث طبيعي في بيئة سعودية، فما الذي يمكن دراسته؟ <span class="indicator-tag">5-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) آثاره الإيجابية والسلبية في البيئة</div>
+                <div class="option">ب) عدد سكان العالم فقط</div>
+                <div class="option">ج) أسعار الغذاء العالمية فقط</div>
+                <div class="option">د) تركيب الخلية</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) آثاره الإيجابية والسلبية في البيئة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">98. أي ممارسة تدعم حماية المواطن والجماعات البيئية؟ <span class="indicator-tag">5-3-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) المحافظة على الموارد وتقليل الأنشطة الضارة</div>
+                <div class="option">ب) إزالة المواطن الطبيعية</div>
+                <div class="option">ج) زيادة التلوث</div>
+                <div class="option">د) استنزاف الموارد</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) المحافظة على الموارد وتقليل الأنشطة الضارة</div>
+        </div>
+
+        <!-- المؤشر 1-4-1-5-6 -->
+        <div class="indicator-header">4-1 – المؤشر 1-4-1-5-6: التعرف على وراثة الصفات، وتفسير التباين فيها، وتتبع انتقالها والتمييز بين السائدة والمتنحية.</div>
+
+        <div class="question-item">
+            <div class="question-text">99. ما المقصود بالصفة الوراثية؟ <span class="indicator-tag">1-4-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) صفة يمكن أن تنتقل من الآباء إلى الأبناء</div>
+                <div class="option">ب) صفة تنتج فقط عن التدريب</div>
+                <div class="option">ج) صفة لا تظهر في المخلوقات</div>
+                <div class="option">د) صفة مرتبطة بالطقس فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) صفة يمكن أن تنتقل من الآباء إلى الأبناء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">100. ما الذي يمكن أن يسبب تباينًا في الصفات الوراثية بين أفراد النوع؟ <span class="indicator-tag">1-4-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) اختلاف الصفات الوراثية</div>
+                <div class="option">ب) تشابه جميع الجينات تمامًا</div>
+                <div class="option">ج) نوع الغذاء فقط</div>
+                <div class="option">د) درجة الحرارة فقط</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) اختلاف الصفات الوراثية</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">101. ما الأداة التي تستخدم لتتبع انتقال الصفات من الآباء إلى الأبناء؟ <span class="indicator-tag">1-4-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) مخطط السلالة</div>
+                <div class="option">ب) خريطة الطقس</div>
+                <div class="option">ج) السلسلة الغذائية</div>
+                <div class="option">د) مخطط دورة الماء</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) مخطط السلالة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">102. أي صفة تمثل صفة مكتسبة أكثر من كونها وراثية؟ <span class="indicator-tag">1-4-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) مهارة تعلمها الفرد بالتدريب</div>
+                <div class="option">ب) لون العينين</div>
+                <div class="option">ج) فصيلة الدم</div>
+                <div class="option">د) نوع الشعر الوراثي</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) مهارة تعلمها الفرد بالتدريب</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">103. أي عبارة تميز الصفة السائدة؟ <span class="indicator-tag">1-4-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) يمكن أن تظهر عند وجود نسخة واحدة منها في بعض أنماط الوراثة</div>
+                <div class="option">ب) لا تظهر إلا بوجود نسختين دائمًا</div>
+                <div class="option">ج) لا يمكن أن تنتقل للأبناء</div>
+                <div class="option">د) تنتج فقط عن البيئة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) يمكن أن تظهر عند وجود نسخة واحدة منها في بعض أنماط الوراثة</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">104. أي مما يأتي عامل بيئي يمكن أن يؤثر في صفات مكتسبة؟ <span class="indicator-tag">1-4-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) كمية الغذاء</div>
+                <div class="option">ب) رموز الحروف الوراثية فقط</div>
+                <div class="option">ج) عدد الكروموسومات فقط</div>
+                <div class="option">د) نوع مخطط السلالة</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) كمية الغذاء</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">105. أي صفة وردت مثالًا على صفة قد تتأثر بالعوامل البيئية؟ <span class="indicator-tag">1-4-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) الطول</div>
+                <div class="option">ب) فصيلة الدم</div>
+                <div class="option">ج) نوع الجين</div>
+                <div class="option">د) عدد الكروموسومات</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) الطول</div>
+        </div>
+
+        <div class="question-item">
+            <div class="question-text">106. لماذا نستخدم مخطط السلالة؟ <span class="indicator-tag">1-4-1-5-6</span></div>
+            <div class="options-grid">
+                <div class="option">أ) لتتبع انتقال صفة وراثية عبر الأجيال</div>
+                <div class="option">ب) لتحديد درجة حرارة البيئة</div>
+                <div class="option">ج) لتصنيف الأنظمة البيئية</div>
+                <div class="option">د) لرسم السلاسل الغذائية</div>
+            </div>
+            <button class="answer-btn" onclick="toggleAnswer(this)">عرض الإجابة</button>
+            <div class="answer-text">الإجابة الصحيحة: أ) لتتبع انتقال صفة وراثية عبر الأجيال</div>
+        </div>
+
+    </div>
+
+    <!-- ثالثاً: نموذج الإجابة المجمّع -->
+    <div class="section-card">
+        <h2>ثالثًا: نموذج الإجابة المجمّع</h2>
+        <p>الإجابات مرتبة حسب المؤشرات وأرقام الأسئلة:</p>
+
+        <h3>المؤشر 1-1-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">1: أ</div>
+            <div class="answer-box">2: أ</div>
+            <div class="answer-box">3: أ</div>
+            <div class="answer-box">4: أ</div>
+            <div class="answer-box">5: أ</div>
+            <div class="answer-box">6: أ</div>
+            <div class="answer-box">7: أ</div>
+            <div class="answer-box">8: أ</div>
+            <div class="answer-box">9: أ</div>
+            <div class="answer-box">10: أ</div>
+        </div>
+
+        <h3>المؤشر 2-1-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">11: أ</div>
+            <div class="answer-box">12: أ</div>
+            <div class="answer-box">13: أ</div>
+            <div class="answer-box">14: أ</div>
+            <div class="answer-box">15: أ</div>
+            <div class="answer-box">16: أ</div>
+            <div class="answer-box">17: أ</div>
+            <div class="answer-box">18: أ</div>
+            <div class="answer-box">19: أ</div>
+            <div class="answer-box">20: أ</div>
+        </div>
+
+        <h3>المؤشر 3-1-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">21: أ</div>
+            <div class="answer-box">22: أ</div>
+            <div class="answer-box">23: أ</div>
+            <div class="answer-box">24: أ</div>
+            <div class="answer-box">25: أ</div>
+            <div class="answer-box">26: أ</div>
+            <div class="answer-box">27: أ</div>
+            <div class="answer-box">28: أ</div>
+            <div class="answer-box">29: أ</div>
+            <div class="answer-box">30: أ</div>
+        </div>
+
+        <h3>المؤشر 4-1-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">31: أ</div>
+            <div class="answer-box">32: أ</div>
+            <div class="answer-box">33: أ</div>
+            <div class="answer-box">34: أ</div>
+            <div class="answer-box">35: أ</div>
+            <div class="answer-box">36: أ</div>
+            <div class="answer-box">37: أ</div>
+            <div class="answer-box">38: أ</div>
+            <div class="answer-box">39: أ</div>
+            <div class="answer-box">40: أ</div>
+        </div>
+
+        <h3>المؤشر 1-2-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">41: أ</div>
+            <div class="answer-box">42: أ</div>
+            <div class="answer-box">43: أ</div>
+            <div class="answer-box">44: أ</div>
+            <div class="answer-box">45: أ</div>
+            <div class="answer-box">46: أ</div>
+            <div class="answer-box">47: أ</div>
+            <div class="answer-box">48: أ</div>
+            <div class="answer-box">49: أ</div>
+        </div>
+
+        <h3>المؤشر 1-3-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">50: أ</div>
+            <div class="answer-box">51: أ</div>
+            <div class="answer-box">52: أ</div>
+            <div class="answer-box">53: أ</div>
+            <div class="answer-box">54: أ</div>
+            <div class="answer-box">55: أ</div>
+            <div class="answer-box">56: أ</div>
+            <div class="answer-box">57: أ</div>
+            <div class="answer-box">58: أ</div>
+            <div class="answer-box">59: أ</div>
+        </div>
+
+        <h3>المؤشر 2-3-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">60: أ</div>
+            <div class="answer-box">61: أ</div>
+            <div class="answer-box">62: أ</div>
+            <div class="answer-box">63: أ</div>
+            <div class="answer-box">64: أ</div>
+            <div class="answer-box">65: أ</div>
+            <div class="answer-box">66: أ</div>
+            <div class="answer-box">67: أ</div>
+            <div class="answer-box">68: أ</div>
+            <div class="answer-box">69: أ</div>
+        </div>
+
+        <h3>المؤشر 3-3-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">70: أ</div>
+            <div class="answer-box">71: أ</div>
+            <div class="answer-box">72: أ</div>
+            <div class="answer-box">73: أ</div>
+            <div class="answer-box">74: أ</div>
+            <div class="answer-box">75: أ</div>
+            <div class="answer-box">76: أ</div>
+            <div class="answer-box">77: أ</div>
+            <div class="answer-box">78: أ</div>
+            <div class="answer-box">79: أ</div>
+        </div>
+
+        <h3>المؤشر 4-3-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">80: أ</div>
+            <div class="answer-box">81: أ</div>
+            <div class="answer-box">82: أ</div>
+            <div class="answer-box">83: أ</div>
+            <div class="answer-box">84: أ</div>
+            <div class="answer-box">85: أ</div>
+            <div class="answer-box">86: أ</div>
+            <div class="answer-box">87: أ</div>
+            <div class="answer-box">88: أ</div>
+            <div class="answer-box">89: أ</div>
+        </div>
+
+        <h3>المؤشر 5-3-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">90: أ</div>
+            <div class="answer-box">91: أ</div>
+            <div class="answer-box">92: أ</div>
+            <div class="answer-box">93: أ</div>
+            <div class="answer-box">94: أ</div>
+            <div class="answer-box">95: أ</div>
+            <div class="answer-box">96: أ</div>
+            <div class="answer-box">97: أ</div>
+            <div class="answer-box">98: أ</div>
+        </div>
+
+        <h3>المؤشر 1-4-1-5-6</h3>
+        <div class="answer-grid">
+            <div class="answer-box">99: أ</div>
+            <div class="answer-box">100: أ</div>
+            <div class="answer-box">101: أ</div>
+            <div class="answer-box">102: أ</div>
+            <div class="answer-box">103: أ</div>
+            <div class="answer-box">104: أ</div>
+            <div class="answer-box">105: أ</div>
+            <div class="answer-box">106: أ</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleAnswer(btn) {
+        var answerText = btn.nextElementSibling;
+        if (answerText.style.display === "block") {
+            answerText.style.display = "none";
+            btn.textContent = "عرض الإجابة";
+        } else {
+            answerText.style.display = "block";
+            btn.textContent = "إخفاء الإجابة";
+        }
+    }
+</script>
+
+</body>
+</html>
