@@ -64,20 +64,19 @@
         
         <!-- Dashboard Section -->
         <div id="overview-section">
-            <!-- Hero Banner -->
             <div class="bg-gradient-to-r from-brand-700 to-brand-600 rounded-3xl p-8 text-white relative overflow-hidden shadow-lg mb-8">
                 <div class="absolute -left-10 -bottom-10 opacity-10 text-white pointer-events-none">
                     <i class="fa-solid fa-dna text-[240px]"></i>
                 </div>
                 <div class="relative z-10 max-w-3xl">
                     <span class="inline-block bg-brand-800/60 backdrop-blur-md text-emerald-200 text-xs px-3 py-1 rounded-full font-semibold mb-4 border border-brand-500/30">
-                        بنك الأسئلة المعتمد والكامل
+                        وضع الاختبار التقييمي (التصحيح النهائي)
                     </span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold mb-3 leading-snug">
                         اختبارات علوم الحياة التفاعلية
                     </h2>
                     <p class="text-brand-100 text-sm sm:text-base mb-8 leading-relaxed">
-                        يحتوي هذا بنك على 106 سؤالاً موزعة بصلابة على جميع المؤشرات الوطنية لعلوم الحياة للصف السادس، مع ترتيب خيارات عشوائي تمامًا وغير متكرر.
+                        يحتوي البنك على 106 سؤالاً. لن تظهر الإجابة الصحيحة أثناء الحل، بل سيتم تصحيح جميع الإجابات وعرض تقرير كامل بالنتيجة والأخطاء عند الانتهاء.
                     </p>
 
                     <div class="flex flex-wrap gap-4 items-center">
@@ -90,7 +89,6 @@
 
             <!-- Categories Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Branch 1 -->
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -105,7 +103,6 @@
                     </button>
                 </div>
 
-                <!-- Branch 2 -->
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -120,7 +117,6 @@
                     </button>
                 </div>
 
-                <!-- Branch 3 -->
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -135,7 +131,6 @@
                     </button>
                 </div>
 
-                <!-- Branch 4 -->
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-3">
@@ -174,43 +169,53 @@
                     <!-- Options injected dynamically -->
                 </div>
 
-                <!-- Feedback Area -->
-                <div id="feedback-area" class="hidden p-4 rounded-xl mb-6 text-sm"></div>
-
                 <!-- Quiz Actions -->
                 <div class="flex justify-between items-center pt-4 border-t border-slate-100">
                     <button onclick="exitQuiz()" class="text-slate-400 hover:text-slate-600 text-sm font-semibold">
                         إلغاء الاختبار
                     </button>
-                    <button id="next-btn" onclick="nextQuestion()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition hidden">
+                    <button id="next-btn" onclick="nextQuestion()" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-6 py-2.5 rounded-xl text-sm transition opacity-50 cursor-not-allowed" disabled>
                         السؤال التالي <i class="fa-solid fa-arrow-left text-xs mr-1"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Result Screen -->
-        <div id="result-section" class="hidden max-w-lg mx-auto text-center bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
-            <div class="w-20 h-20 bg-emerald-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
-                <i class="fa-solid fa-trophy"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-slate-800 mb-2">أحسنت! اكملت الاختبار</h3>
-            <p class="text-slate-500 text-sm mb-6">إليك ملخص نتيجتك النهائية:</p>
-
-            <div class="bg-slate-50 p-4 rounded-2xl mb-6 flex justify-around">
-                <div>
-                    <span class="block text-xs text-slate-400 font-semibold">الدرجة النهائية</span>
-                    <span id="score-text" class="text-2xl font-bold text-brand-700">0 / 0</span>
+        <!-- Result Screen & Full Review -->
+        <div id="result-section" class="hidden max-w-4xl mx-auto">
+            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm text-center mb-8">
+                <div class="w-20 h-20 bg-emerald-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                    <i class="fa-solid fa-trophy"></i>
                 </div>
-                <div>
-                    <span class="block text-xs text-slate-400 font-semibold">النسبة المئوية</span>
-                    <span id="percentage-text" class="text-2xl font-bold text-brand-700">0%</span>
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">تم الانتهاء من الاختبار بنجاح!</h3>
+                <p class="text-slate-500 text-sm mb-6">إليك ملخص النتيجة والتقرير التفصيلي للأسئلة:</p>
+
+                <div class="bg-slate-50 p-6 rounded-2xl mb-6 flex justify-around max-w-md mx-auto">
+                    <div>
+                        <span class="block text-xs text-slate-400 font-semibold mb-1">الدرجة النهائية</span>
+                        <span id="score-text" class="text-3xl font-bold text-brand-700">0 / 0</span>
+                    </div>
+                    <div class="border-r border-slate-200"></div>
+                    <div>
+                        <span class="block text-xs text-slate-400 font-semibold mb-1">النسبة المئوية</span>
+                        <span id="percentage-text" class="text-3xl font-bold text-brand-700">0%</span>
+                    </div>
                 </div>
+
+                <button onclick="showSection('overview')" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-3 rounded-xl transition">
+                    العودة للرئيسية
+                </button>
             </div>
 
-            <button onclick="showSection('overview')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded-xl transition">
-                العودة للشاشة الرئيسية
-            </button>
+            <!-- Detailed Answers Review -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <h4 class="font-bold text-slate-800 text-lg mb-6 border-b pb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-brand-600"></i> مراجعة الإجابات التفصيلية
+                </h4>
+                <div id="review-container" class="space-y-6">
+                    <!-- Dynamic review items injected here -->
+                </div>
+            </div>
         </div>
 
     </main>
@@ -220,7 +225,7 @@
         بنك أسئلة علوم الحياة المعتمد (106 أسئلة) - الصف السادس © 2026
     </footer>
 
-    <!-- Full 106 Questions Data Script -->
+    <!-- Questions Data & Logic -->
     <script>
         const rawQuestionsBank = [
             // --- 1-1 – المؤشر 1-1-1-5-6 (1-10) ---
@@ -278,7 +283,7 @@
             { category: '2-1', indicator: '1-2-1-5-6', question: '44. إذا تشابهت مجموعة من الحيوانات في صفات ظاهرية مشتركة، فإن ذلك قد يساعد على:', options: ['تصنيفها في مجموعة واحدة', 'إثبات أنها من النوع نفسه دائمًا', 'إثبات أنها تعيش في الموطن نفسه', 'إثبات أنها تتغذى بالطريقة نفسها'], correctText: 'تصنيفها في مجموعة واحدة' },
             { category: '2-1', indicator: '1-2-1-5-6', question: '45. أي مثال يمثل تصنيفًا اعتمادًا على صفة ظاهرة؟', options: ['جمع الحيوانات ذات الجسم المغطى بالشعر في مجموعة', 'جمع الحيوانات حسب أسماء أصحابها', 'جمع النباتات حسب سعرها', 'جمع الكائنات حسب تاريخ اكتشافها'], correctText: 'جمع الحيوانات ذات الجسم المغطى بالشعر في مجموعة' },
             { category: '2-1', indicator: '1-2-1-5-6', question: '46. ما الهدف من تصنيف المخلوقات الحية؟', options: ['تنظيمها في مجموعات وفق صفات مشتركة', 'تغيير صفاتها الوراثية', 'زيادة عددها', 'تغيير مواطنها'], correctText: 'تنظيمها في مجموعات وفق صفات مشتركة' },
-            { category: '2-1', indicator: '1-2-1-5-6', question: '47. أي سؤال يساعد في تصنيف نباتين إلى مجموعتين زهريّة وغير زهريّة؟', options: ['هل ينتج النبات أزهارًا؟', 'كم عمر النبات؟', 'كم مرة رُوي؟', 'كم شخصًا شاهده؟'], correctText: 'هل ينتج النبات أزهارًا؟' },
+            { category: '2-1', indicator: '1-2-1-5-6', question: '47. أي سؤال يساعد في تصنيف نباتين إلى مجموعتين زهريّة وغير زهريّة؟', options: ['هل ينتج النبات أزهارًا؟', 'كم عمر النبات؟', 'كم مرة رُوي؟', 'كم شخصًا شاهد؟'], correctText: 'هل ينتج النبات أزهارًا؟' },
             { category: '2-1', indicator: '1-2-1-5-6', question: '48. إذا كان لحيوانين صفات ظاهرية مشتركة، فما الاستنتاج الأكثر مباشرة؟', options: ['يمكن وضعهما في مجموعة تصنيفية مناسبة وفق تلك الصفات', 'هما متطابقان في كل الصفات', 'لا يمكن تصنيفهما', 'هما من البيئة نفسها بالضرورة'], correctText: 'يمكن وضعهما في مجموعة تصنيفية مناسبة وفق تلك الصفات' },
             { category: '2-1', indicator: '1-2-1-5-6', question: '49. أي عبارة تتفق مع مؤشر التصنيف؟', options: ['يمكن استخدام أكثر من صفة ظاهرية مشتركة لتكوين مجموعات', 'يُصنف كل مخلوق في مجموعة منفردة', 'التصنيف يعتمد على اللون وحده دائمًا', 'التصنيف لا يحتاج إلى ملاحظة الصفات'], correctText: 'يمكن استخدام أكثر من صفة ظاهرية مشتركة لتكوين مجموعات' },
 
@@ -326,7 +331,7 @@
             { category: '3-1', indicator: '4-3-1-5-6', question: '84. أي مثال يمثل تكيفًا تركيبيًا؟', options: ['فرو كثيف يساعد حيوانًا على العيش في البرد', 'هجرة الطيور', 'اختباء الحيوان عند الخطر', 'تغير وقت النشاط اليومي'], correctText: 'فرو كثيف يساعد حيوانًا على العيش في البرد' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '85. كيف تساعد التكيفات المخلوقات؟', options: ['تزيد قدرتها على العيش والبقاء في مواطن محددة', 'تمنعها من الحصول على الغذاء', 'تجعل جميع المخلوقات متشابهة', 'تلغي تأثير البيئة'], correctText: 'تزيد قدرتها على العيش والبقاء في مواطن محددة' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '86. إذا اختفى مصدر الغذاء الرئيس من موطن ما، فما التوقع الأكثر مباشرة؟', options: ['قد تتغير أعداد المخلوقات التي تعتمد عليه', 'تزداد جميع الجماعات', 'لا يتأثر أي نوع', 'تتوقف العوامل المناخية'], correctText: 'قد تتغير أعداد المخلوقات التي تعتمد عليه' },
-            { category: '3-1', indicator: '4-3-1-5-6', question: '87. أي عبارة تصف العلاقة بين المناخ والمخلوقات؟', options: ['الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة', 'المناخ لا يؤثر في المخلوقات', 'المخلوقات تغير المناخ دائمًا', 'المناخ يؤثر في الصخور فقط'], correctText: 'الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة' },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '87. أي عبارة تصف العلاقة بين المناخ والمخلوقات؟', options: ['الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة', 'المناخ لا يؤثر في المخلوقات', 'المخلوقات تغير المناخ دائمًا', 'المناخ تؤثر في الصخور فقط'], correctText: 'الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '88. أي موقف يوضح تكيفًا يساعد على البقاء في موطن محدد؟', options: ['حيوان صحراوي يحتفظ بالماء بكفاءة', 'حيوان يختار اسمًا جديدًا', 'نبات يتغير لونه بسبب رسم عليه', 'سمكة تعيش خارج الماء'], correctText: 'حيوان صحراوي يحتفظ بالماء بكفاءة' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '89. عند توقع أثر تغير بيئي على نوع معين، ما المعلومات الأكثر فائدة؟', options: ['ظروف الموطن وااحتياجات النوع وتكيفاته', 'اسم النوع فقط', 'حجم الكتاب المدرسي', 'لون الصورة'], correctText: 'ظروف الموطن وااحتياجات النوع وتكيفاته' },
 
@@ -354,7 +359,6 @@
 
         const prefixes = ['أ) ', 'ب) ', 'ج) ', 'د) '];
 
-        // دالة الخلط العشوائي (Fisher-Yates Shuffle Algorithm) لضمان عدم وجود نمط متكرر
         function shuffleArray(array) {
             let arr = [...array];
             for (let i = arr.length - 1; i > 0; i--) {
@@ -364,9 +368,9 @@
             return arr;
         }
 
-        let currentQuestions = [];
+        let activeQuestions = [];
         let currentIndex = 0;
-        let score = 0;
+        let userAnswers = []; // لتخزين إجابات الطالب
 
         function showSection(sectionId) {
             document.getElementById('overview-section').classList.add('hidden');
@@ -377,27 +381,35 @@
         }
 
         function startQuiz(category) {
+            let filtered = [];
             if (category === 'all') {
-                currentQuestions = [...rawQuestionsBank];
+                filtered = [...rawQuestionsBank];
             } else {
-                currentQuestions = rawQuestionsBank.filter(q => q.category === category);
+                filtered = rawQuestionsBank.filter(q => q.category === category);
             }
 
-            // خلط ترتيب الأسئلة أيضًا لزيادة التنوع في كل مرة
-            currentQuestions = shuffleArray(currentQuestions);
+            // خلط ترتيب الأسئلة وخلط الخيارات ديناميكيًا بدون إظهار النتيجة فورًا
+            activeQuestions = shuffleArray(filtered).map(q => {
+                const shuffledOpts = shuffleArray(q.options);
+                return {
+                    ...q,
+                    shuffledOptions: shuffledOpts
+                };
+            });
 
             currentIndex = 0;
-            score = 0;
+            userAnswers = new Array(activeQuestions.length).fill(null);
+
             showSection('quiz');
             loadQuestion();
         }
 
         function loadQuestion() {
-            const q = currentQuestions[currentIndex];
-            document.getElementById('question-indicator').innerText = `السؤال ${currentIndex + 1} من ${currentQuestions.length}`;
+            const q = activeQuestions[currentIndex];
+            document.getElementById('question-indicator').innerText = `السؤال ${currentIndex + 1} من ${activeQuestions.length}`;
             document.getElementById('indicator-tag').innerText = `المؤشر: ${q.indicator}`;
             
-            const progressPct = ((currentIndex) / currentQuestions.length) * 100;
+            const progressPct = ((currentIndex) / activeQuestions.length) * 100;
             document.getElementById('quiz-progress').style.width = `${progressPct}%`;
 
             document.getElementById('question-text').innerText = q.question;
@@ -405,60 +417,47 @@
             const optionsContainer = document.getElementById('options-container');
             optionsContainer.innerHTML = '';
 
-            document.getElementById('feedback-area').classList.add('hidden');
-            document.getElementById('next-btn').classList.add('hidden');
+            const nextBtn = document.getElementById('next-btn');
+            
+            // إذا كان المستخدم قد أجاب سابقًا على هذا السؤال
+            const selectedOptText = userAnswers[currentIndex];
+            if (selectedOptText !== null) {
+                nextBtn.disabled = false;
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            } else {
+                nextBtn.disabled = true;
+                nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
 
-            // خلط الخيارات ديناميكيًا بصورة عشوائية تمامًا لكل سؤال أثناء العرض
-            const shuffledOptions = shuffleArray(q.options);
-            let correctIndex = -1;
-
-            shuffledOptions.forEach((optText, idx) => {
-                if (optText === q.correctText) {
-                    correctIndex = idx;
-                }
-            });
-
-            const correctLetter = prefixes[correctIndex].substring(0, 1);
-
-            shuffledOptions.forEach((optText, idx) => {
+            q.shuffledOptions.forEach((optText, idx) => {
                 const btn = document.createElement('button');
-                btn.className = 'w-full text-right p-4 rounded-xl border border-slate-200 hover:border-brand-500 hover:bg-emerald-50/50 transition font-medium text-sm text-slate-700 flex items-center justify-between';
-                btn.innerHTML = `<span>${prefixes[idx]}${optText}</span><i class="fa-regular fa-circle text-slate-300 text-xs"></i>`;
-                btn.onclick = () => selectOption(idx, correctIndex, correctLetter);
+                const isSelected = (selectedOptText === optText);
+
+                btn.className = `w-full text-right p-4 rounded-xl border transition font-medium text-sm flex items-center justify-between ${
+                    isSelected 
+                    ? 'border-brand-600 bg-emerald-50 text-brand-900 font-bold ring-2 ring-brand-500/20' 
+                    : 'border-slate-200 hover:border-brand-400 hover:bg-slate-50 text-slate-700'
+                }`;
+
+                btn.innerHTML = `<span>${prefixes[idx]}${optText}</span><i class="${isSelected ? 'fa-solid fa-circle-check text-brand-600' : 'fa-regular fa-circle text-slate-300'} text-sm"></i>`;
+                
+                btn.onclick = () => selectOption(optText);
                 optionsContainer.appendChild(btn);
             });
         }
 
-        function selectOption(selectedIdx, correctIdx, correctLetter) {
-            const buttons = document.getElementById('options-container').children;
+        function selectOption(selectedText) {
+            userAnswers[currentIndex] = selectedText;
             
-            for (let i = 0; i < buttons.length; i++) {
-                buttons[i].disabled = true;
-                if (i === correctIdx) {
-                    buttons[i].className = 'w-full text-right p-4 rounded-xl border border-emerald-500 bg-emerald-50 font-bold text-sm text-emerald-800 flex items-center justify-between';
-                } else if (i === selectedIdx && selectedIdx !== correctIdx) {
-                    buttons[i].className = 'w-full text-right p-4 rounded-xl border border-rose-500 bg-rose-50 font-bold text-sm text-rose-800 flex items-center justify-between';
-                }
-            }
-
-            const feedbackArea = document.getElementById('feedback-area');
-            feedbackArea.classList.remove('hidden');
-
-            if (selectedIdx === correctIdx) {
-                score++;
-                feedbackArea.className = 'p-4 rounded-xl mb-6 text-sm bg-emerald-100 text-emerald-900 border border-emerald-200';
-                feedbackArea.innerHTML = `<p class="font-bold"><i class="fa-solid fa-circle-check"></i> إجابة صحيحة!</p>`;
-            } else {
-                feedbackArea.className = 'p-4 rounded-xl mb-6 text-sm bg-rose-100 text-rose-900 border border-rose-200';
-                feedbackArea.innerHTML = `<p class="font-bold"><i class="fa-solid fa-circle-xmark"></i> إجابة خاطئة! الخيار الصحيح هو (${correctLetter})</p>`;
-            }
-
-            document.getElementById('next-btn').classList.remove('hidden');
+            // إعادة رسم الخيارات لتوضيح الخيار المكتمل فقط
+            loadQuestion();
         }
 
         function nextQuestion() {
+            if (userAnswers[currentIndex] === null) return;
+
             currentIndex++;
-            if (currentIndex < currentQuestions.length) {
+            if (currentIndex < activeQuestions.length) {
                 loadQuestion();
             } else {
                 finishQuiz();
@@ -466,14 +465,49 @@
         }
 
         function finishQuiz() {
-            showSection('result');
-            document.getElementById('score-text').innerText = `${score} / ${currentQuestions.length}`;
-            const pct = Math.round((score / currentQuestions.length) * 100);
+            let correctCount = 0;
+
+            const reviewContainer = document.getElementById('review-container');
+            reviewContainer.innerHTML = '';
+
+            activeQuestions.forEach((q, idx) => {
+                const userAns = userAnswers[idx];
+                const isCorrect = (userAns === q.correctText);
+                if (isCorrect) correctCount++;
+
+                const reviewCard = document.createElement('div');
+                reviewCard.className = `p-5 rounded-2xl border ${isCorrect ? 'border-emerald-200 bg-emerald-50/40' : 'border-rose-200 bg-rose-50/40'}`;
+
+                reviewCard.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-xs font-semibold ${isCorrect ? 'text-emerald-700 bg-emerald-100' : 'text-rose-700 bg-rose-100'} px-2.5 py-1 rounded-md">
+                            ${isCorrect ? '<i class="fa-solid fa-check"></i> إجابة صحيحة' : '<i class="fa-solid fa-xmark"></i> إجابة خاطئة'}
+                        </span>
+                        <span class="text-xs text-slate-400">السؤال ${idx + 1} (${q.indicator})</span>
+                    </div>
+                    <p class="font-bold text-slate-800 text-sm mb-3">${q.question}</p>
+                    <div class="space-y-1.5 text-xs sm:text-sm">
+                        <div class="${isCorrect ? 'text-emerald-800 font-semibold' : 'text-rose-700 font-semibold'}">
+                            إجابتك: ${userAns || 'لم يتم الإجابة'}
+                        </div>
+                        ${!isCorrect ? `<div class="text-emerald-800 font-bold"><i class="fa-solid fa-circle-check"></i> الإجابة الصحيحة: ${q.correctText}</div>` : ''}
+                    </div>
+                `;
+
+                reviewContainer.appendChild(reviewCard);
+            });
+
+            document.getElementById('score-text').innerText = `${correctCount} / ${activeQuestions.length}`;
+            const pct = Math.round((correctCount / activeQuestions.length) * 100);
             document.getElementById('percentage-text').innerText = `${pct}%`;
+
+            showSection('result');
         }
 
         function exitQuiz() {
-            showSection('overview');
+            if (confirm('هل أنت تأكد من الخروج من الاختبار؟ لن يتم حفظ إجاباتك.')) {
+                showSection('overview');
+            }
         }
     </script>
 </body>
