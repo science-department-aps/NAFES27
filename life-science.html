@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اختبار علوم الحياة الشامل - 106 سؤالاً</title>
+    <title>اختبار علوم الحياة - سجل تطور الأداء</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -44,16 +44,19 @@
                 </div>
                 <div>
                     <h1 class="font-bold text-slate-900 text-lg leading-tight">بنك أسئلة علوم الحياة (106 سؤالاً)</h1>
-                    <p class="text-xs text-slate-500">منصة الاختبارات التفاعلية - الصف السادس</p>
+                    <p class="text-xs text-slate-500">منصة الاختبارات التفاعلية ومتابعة تطور الأداء</p>
                 </div>
             </div>
             
-            <nav class="flex items-center gap-6 text-sm font-semibold text-slate-600">
+            <nav class="flex items-center gap-4 sm:gap-6 text-sm font-semibold text-slate-600">
                 <button onclick="showSection('overview')" class="hover:text-brand-600 flex items-center gap-2 transition">
-                    <i class="fa-solid fa-layer-group text-slate-400"></i> المحاور والكتل
+                    <i class="fa-solid fa-layer-group text-slate-400"></i> المحاور
+                </button>
+                <button onclick="showSection('history')" class="hover:text-brand-600 flex items-center gap-2 transition text-slate-700">
+                    <i class="fa-solid fa-chart-line text-brand-600"></i> سجل المحاولات
                 </button>
                 <button onclick="startQuiz('all')" class="text-brand-600 flex items-center gap-2 font-bold bg-brand-50 px-3 py-1.5 rounded-lg">
-                    <i class="fa-solid fa-play"></i> الاختبار الشامل (106)
+                    <i class="fa-solid fa-play"></i> الاختبار الشامل
                 </button>
             </nav>
         </div>
@@ -70,18 +73,21 @@
                 </div>
                 <div class="relative z-10 max-w-3xl">
                     <span class="inline-block bg-brand-800/60 backdrop-blur-md text-emerald-200 text-xs px-3 py-1 rounded-full font-semibold mb-4 border border-brand-500/30">
-                        وضع الاختبار التقييمي (التصحيح النهائي)
+                        وضع متابعة وتتبع مستوى الطلاب
                     </span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold mb-3 leading-snug">
-                        اختبارات علوم الحياة التفاعلية
+                        اختبارات علوم الحياة وتتبع المحاولات
                     </h2>
                     <p class="text-brand-100 text-sm sm:text-base mb-8 leading-relaxed">
-                        يحتوي البنك على 106 سؤالاً. لن تظهر الإجابة الصحيحة أثناء الحل، بل سيتم تصحيح جميع الإجابات وعرض تقرير كامل بالنتيجة والأخطاء عند الانتهاء.
+                        يتم إخفاء الإجابات فورًا أثناء الاختبار، ويتم تسجيل وتخزين درجة كل محاولة تلقائيًا لعرض تقرير شامل بتطور أداء الطالب من محاولة لتعزيز التحسن المستمر.
                     </p>
 
                     <div class="flex flex-wrap gap-4 items-center">
                         <button onclick="startQuiz('all')" class="bg-white text-brand-700 hover:bg-brand-50 px-6 py-3 rounded-xl font-bold text-sm shadow-md transition flex items-center gap-2">
                             <i class="fa-solid fa-play text-xs"></i> بدء الاختبار الشامل (106 سؤالاً)
+                        </button>
+                        <button onclick="showSection('history')" class="bg-brand-800/80 hover:bg-brand-900 border border-brand-500/30 text-white px-6 py-3 rounded-xl font-bold text-sm transition flex items-center gap-2">
+                            <i class="fa-solid fa-chart-line text-xs"></i> عرض سجل تطور الأداء
                         </button>
                     </div>
                 </div>
@@ -147,6 +153,27 @@
             </div>
         </div>
 
+        <!-- Student Performance History Section -->
+        <div id="history-section" class="hidden max-w-4xl mx-auto">
+            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm mb-6">
+                <div class="flex justify-between items-center mb-6 pb-4 border-b">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 flex items-center gap-3">
+                            <i class="fa-solid fa-chart-line text-brand-600"></i> سجل تطور أداء الطالب
+                        </h3>
+                        <p class="text-slate-500 text-xs sm:text-sm mt-1">تتبع النتائج والنسب المئوية المسجلة في كل محاولة اختبار.</p>
+                    </div>
+                    <button onclick="clearHistory()" class="text-rose-600 hover:bg-rose-50 border border-rose-200 px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-trash-can"></i> مسح السجل
+                    </button>
+                </div>
+
+                <div id="history-container" class="space-y-4">
+                    <!-- Dynamic Attempts list injected here -->
+                </div>
+            </div>
+        </div>
+
         <!-- Quiz Container Section -->
         <div id="quiz-section" class="hidden max-w-3xl mx-auto">
             <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8">
@@ -187,8 +214,8 @@
                 <div class="w-20 h-20 bg-emerald-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
                     <i class="fa-solid fa-trophy"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-slate-800 mb-2">تم الانتهاء من الاختبار بنجاح!</h3>
-                <p class="text-slate-500 text-sm mb-6">إليك ملخص النتيجة والتقرير التفصيلي للأسئلة:</p>
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">تم تسجيل محاولتك بنجاح!</h3>
+                <p class="text-slate-500 text-sm mb-6">تم حفظ النتيجة في "سجل تطور الأداء". إليك تفاصيل محاولتك الحالية:</p>
 
                 <div class="bg-slate-50 p-6 rounded-2xl mb-6 flex justify-around max-w-md mx-auto">
                     <div>
@@ -202,15 +229,20 @@
                     </div>
                 </div>
 
-                <button onclick="showSection('overview')" class="bg-brand-600 hover:bg-brand-700 text-white font-bold px-8 py-3 rounded-xl transition">
-                    العودة للرئيسية
-                </button>
+                <div class="flex justify-center gap-3">
+                    <button onclick="showSection('history')" class="bg-brand-800 hover:bg-brand-900 text-white font-bold px-6 py-3 rounded-xl transition text-sm">
+                        <i class="fa-solid fa-chart-line ml-1"></i> عرض سجل المحاولات
+                    </button>
+                    <button onclick="showSection('overview')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-6 py-3 rounded-xl transition text-sm">
+                        العودة للرئيسية
+                    </button>
+                </div>
             </div>
 
             <!-- Detailed Answers Review -->
             <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
                 <h4 class="font-bold text-slate-800 text-lg mb-6 border-b pb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-list-check text-brand-600"></i> مراجعة الإجابات التفصيلية
+                    <i class="fa-solid fa-list-check text-brand-600"></i> مراجعة إجابات المحاولة الحالية
                 </h4>
                 <div id="review-container" class="space-y-6">
                     <!-- Dynamic review items injected here -->
@@ -222,7 +254,7 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-12">
-        بنك أسئلة علوم الحياة المعتمد (106 أسئلة) - الصف السادس © 2026
+        بنك أسئلة علوم الحياة المعتمد - نظام تتبع أداء الطلاب © 2026
     </footer>
 
     <!-- Questions Data & Logic -->
@@ -331,12 +363,12 @@
             { category: '3-1', indicator: '4-3-1-5-6', question: '84. أي مثال يمثل تكيفًا تركيبيًا؟', options: ['فرو كثيف يساعد حيوانًا على العيش في البرد', 'هجرة الطيور', 'اختباء الحيوان عند الخطر', 'تغير وقت النشاط اليومي'], correctText: 'فرو كثيف يساعد حيوانًا على العيش في البرد' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '85. كيف تساعد التكيفات المخلوقات؟', options: ['تزيد قدرتها على العيش والبقاء في مواطن محددة', 'تمنعها من الحصول على الغذاء', 'تجعل جميع المخلوقات متشابهة', 'تلغي تأثير البيئة'], correctText: 'تزيد قدرتها على العيش والبقاء في مواطن محددة' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '86. إذا اختفى مصدر الغذاء الرئيس من موطن ما، فما التوقع الأكثر مباشرة؟', options: ['قد تتغير أعداد المخلوقات التي تعتمد عليه', 'تزداد جميع الجماعات', 'لا يتأثر أي نوع', 'تتوقف العوامل المناخية'], correctText: 'قد تتغير أعداد المخلوقات التي تعتمد عليه' },
-            { category: '3-1', indicator: '4-3-1-5-6', question: '87. أي عبارة تصف العلاقة بين المناخ والمخلوقات؟', options: ['الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة', 'المناخ لا يؤثر في المخلوقات', 'المخلوقات تغير المناخ دائمًا', 'المناخ تؤثر في الصخور فقط'], correctText: 'الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة' },
+            { category: '3-1', indicator: '4-3-1-5-6', question: '87. أي عبارة تصف العلاقة بين المناخ والمخلوقات؟', options: ['الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة', 'المناخ لا تؤثر في المخلوقات', 'المخلوقات تغير المناخ دائمًا', 'المناخ تؤثر في الصخور فقط'], correctText: 'الظروف المناخية تؤثر في أنواع المخلوقات القادرة على العيش في البيئة' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '88. أي موقف يوضح تكيفًا يساعد على البقاء في موطن محدد؟', options: ['حيوان صحراوي يحتفظ بالماء بكفاءة', 'حيوان يختار اسمًا جديدًا', 'نبات يتغير لونه بسبب رسم عليه', 'سمكة تعيش خارج الماء'], correctText: 'حيوان صحراوي يحتفظ بالماء بكفاءة' },
             { category: '3-1', indicator: '4-3-1-5-6', question: '89. عند توقع أثر تغير بيئي على نوع معين، ما المعلومات الأكثر فائدة؟', options: ['ظروف الموطن وااحتياجات النوع وتكيفاته', 'اسم النوع فقط', 'حجم الكتاب المدرسي', 'لون الصورة'], correctText: 'ظروف الموطن وااحتياجات النوع وتكيفاته' },
 
             // --- 3-1 – المؤشر 5-3-1-5-6 (90-98) ---
-            { category: '3-1', indicator: '5-3-1-5-6', question: '90. أي نشاط بشري قد يؤدي إلى تدهور موطن بيئي؟', options: ['إزالة الغطاء النباتي', 'حماية الغابات', 'ترشيد استهلاك الماء', 'إعادة التشجير'], correctText: 'إزالة الغطاء النباتي' },
+            { category: '3-1', indicator: '5-3-1-5-6', question: '90. أي نشاط بشري قد تؤدي إلى تدهور موطن بيئي؟', options: ['إزالة الغطاء النباتي', 'حماية الغابات', 'ترشيد استهلاك الماء', 'إعادة التشجير'], correctText: 'إزالة الغطاء النباتي' },
             { category: '3-1', indicator: '5-3-1-5-6', question: '91. أي نشاط بشري يمكن أن يكون له أثر إيجابي في الموطن؟', options: ['إعادة التشجير', 'رمي النفايات', 'الصيد الجائر', 'تجريف المواطن'], correctText: 'إعادة التشجير' },
             { category: '3-1', indicator: '5-3-1-5-6', question: '92. ما أثر التلوث في جماعة حيوية؟', options: ['قد يقلل قدرتها على البقاء والتكاثر', 'يزيد أعدادها دائمًا', 'لا يؤثر فيها مطلقًا', 'يمنع تغير الموطن'], correctText: 'قد يقلل قدرتها على البقاء والتكاثر' },
             { category: '3-1', indicator: '5-3-1-5-6', question: '93. إذا زادت النفايات في موطن طبيعي، فما الأثر المتوقع؟', options: ['قد تتدهور جودة الموطن وتتعرض المخلوقات للخطر', 'تزداد جودة الموطن', 'تزداد الموارد دائمًا', 'لا يحدث أي تغير'], correctText: 'قد تتدهور جودة الموطن وتتعرض المخلوقات للخطر' },
@@ -358,6 +390,13 @@
         ];
 
         const prefixes = ['أ) ', 'ب) ', 'ج) ', 'د) '];
+        const categoryTitles = {
+            'all': 'الاختبار الشامل (106 أسئلة)',
+            '1-1': 'المحور 1-1: التركيب والوظيفة',
+            '2-1': 'المحور 2-1: التنظيم والتنوع',
+            '3-1': 'المحور 3-1: الأنظمة البيئية',
+            '4-1': 'المحور 4-1: الوراثة'
+        };
 
         function shuffleArray(array) {
             let arr = [...array];
@@ -370,17 +409,24 @@
 
         let activeQuestions = [];
         let currentIndex = 0;
-        let userAnswers = []; // لتخزين إجابات الطالب
+        let userAnswers = [];
+        let currentCategory = 'all';
 
         function showSection(sectionId) {
             document.getElementById('overview-section').classList.add('hidden');
+            document.getElementById('history-section').classList.add('hidden');
             document.getElementById('quiz-section').classList.add('hidden');
             document.getElementById('result-section').classList.add('hidden');
 
             document.getElementById(sectionId + '-section').classList.remove('hidden');
+
+            if (sectionId === 'history') {
+                renderHistory();
+            }
         }
 
         function startQuiz(category) {
+            currentCategory = category;
             let filtered = [];
             if (category === 'all') {
                 filtered = [...rawQuestionsBank];
@@ -388,7 +434,6 @@
                 filtered = rawQuestionsBank.filter(q => q.category === category);
             }
 
-            // خلط ترتيب الأسئلة وخلط الخيارات ديناميكيًا بدون إظهار النتيجة فورًا
             activeQuestions = shuffleArray(filtered).map(q => {
                 const shuffledOpts = shuffleArray(q.options);
                 return {
@@ -419,7 +464,6 @@
 
             const nextBtn = document.getElementById('next-btn');
             
-            // إذا كان المستخدم قد أجاب سابقًا على هذا السؤال
             const selectedOptText = userAnswers[currentIndex];
             if (selectedOptText !== null) {
                 nextBtn.disabled = false;
@@ -448,8 +492,6 @@
 
         function selectOption(selectedText) {
             userAnswers[currentIndex] = selectedText;
-            
-            // إعادة رسم الخيارات لتوضيح الخيار المكتمل فقط
             loadQuestion();
         }
 
@@ -497,15 +539,100 @@
                 reviewContainer.appendChild(reviewCard);
             });
 
-            document.getElementById('score-text').innerText = `${correctCount} / ${activeQuestions.length}`;
             const pct = Math.round((correctCount / activeQuestions.length) * 100);
+            document.getElementById('score-text').innerText = `${correctCount} / ${activeQuestions.length}`;
             document.getElementById('percentage-text').innerText = `${pct}%`;
+
+            // حفظ المحاولة في LocalStorage
+            saveAttemptRecord(categoryTitles[currentCategory] || 'اختبار', correctCount, activeQuestions.length, pct);
 
             showSection('result');
         }
 
+        // --- إدارة سجل المحاولات وتتبع الأداء ---
+        function saveAttemptRecord(title, score, total, percentage) {
+            const history = JSON.parse(localStorage.getItem('quiz_attempts_history') || '[]');
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('ar-SA', { day: 'numeric', month: 'short', year: 'numeric' }) + ' - ' + now.toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' });
+
+            const newAttempt = {
+                id: Date.now(),
+                title: title,
+                score: score,
+                total: total,
+                percentage: percentage,
+                date: dateStr
+            };
+
+            history.unshift(newAttempt); // إضافة أحدث محاولة في البداية
+            localStorage.setItem('quiz_attempts_history', JSON.stringify(history));
+        }
+
+        function renderHistory() {
+            const historyContainer = document.getElementById('history-container');
+            const history = JSON.parse(localStorage.getItem('quiz_attempts_history') || '[]');
+
+            if (history.length === 0) {
+                historyContainer.innerHTML = `
+                    <div class="text-center py-12 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                        <i class="fa-solid fa-chart-bar text-slate-300 text-4xl mb-3"></i>
+                        <p class="text-slate-500 font-bold text-sm">لا توجد محاولات مسجلة حتى الآن.</p>
+                        <p class="text-slate-400 text-xs mt-1">ابدأ أحد الاختبارات وسيتم تسجيل نتيجتك وتتبع أدائك تلقائيًا هنا.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            historyContainer.innerHTML = '';
+            const totalAttempts = history.length;
+
+            history.forEach((item, index) => {
+                const attemptNum = totalAttempts - index;
+                let badgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-200';
+                if (item.percentage < 60) badgeColor = 'bg-rose-100 text-rose-800 border-rose-200';
+                else if (item.percentage < 80) badgeColor = 'bg-amber-100 text-amber-800 border-amber-200';
+
+                const card = document.createElement('div');
+                card.className = 'bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-brand-300 transition';
+
+                card.innerHTML = `
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-brand-50 text-brand-700 font-extrabold text-xs px-2.5 py-0.5 rounded-md border border-brand-200">
+                                المحاولة رقم ${attemptNum}
+                            </span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock text-xs ml-1"></i>${item.date}</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-base">${item.title}</h4>
+                    </div>
+
+                    <div class="flex items-center gap-6 w-full sm:w-auto justify-between border-t sm:border-t-0 pt-3 sm:pt-0 border-slate-100">
+                        <div class="text-right sm:text-center">
+                            <span class="block text-[10px] text-slate-400 font-bold uppercase">الدرجة</span>
+                            <span class="text-sm font-bold text-slate-700">${item.score} / ${item.total}</span>
+                        </div>
+                        <div class="text-left sm:text-center">
+                            <span class="block text-[10px] text-slate-400 font-bold uppercase">النسبة</span>
+                            <span class="inline-block px-3 py-1 rounded-xl text-sm font-extrabold border ${badgeColor}">
+                                ${item.percentage}%
+                            </span>
+                        </div>
+                    </div>
+                `;
+
+                historyContainer.appendChild(card);
+            });
+        }
+
+        function clearHistory() {
+            if (confirm('هل أنت تأكد من مسح جميع سجلات المحاولات والنتائج؟')) {
+                localStorage.removeItem('quiz_attempts_history');
+                renderHistory();
+            }
+        }
+
         function exitQuiz() {
-            if (confirm('هل أنت تأكد من الخروج من الاختبار؟ لن يتم حفظ إجاباتك.')) {
+            if (confirm('هل أنت تأكد من الخروج من الاختبار؟ لن يتم حفظ هذه المحاولة غير المكتملة.')) {
                 showSection('overview');
             }
         }
